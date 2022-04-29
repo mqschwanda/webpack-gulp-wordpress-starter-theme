@@ -23,32 +23,12 @@ function custom_setup() {
 
 	// HTML 5 - Example : deletes type="*" in scripts and style tags
 	add_theme_support( 'html5', [ 'script', 'style' ] );
-
-	// REMOVE USELESS WP IMAGE SIZES
-	remove_image_size( '1536x1536' );
-	remove_image_size( '2048x2048' );
-
-	// CUSTOM IMAGE SIZES
-	// add_image_size( '424x424', 424, 424, true );
-	// add_image_size( '1920', 1920, 9999 );
 }
 add_action('after_setup_theme', 'custom_setup');
 
-// remove default image sizes to avoid overcharging server - comment line if you need size
-function remove_default_image_sizes( $sizes) {
-	unset( $sizes['large']);
-	unset( $sizes['medium']);
-	unset( $sizes['medium_large']);
-	return $sizes;
-}
-add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes');
-
-// disabling big image sizes scaled
-add_filter( 'big_image_size_threshold', '__return_false' );
-
 // Giving credits
 function remove_footer_admin () {
-	echo 'Thème crée par <a href="http://www.olivier-guilleux.com" target="_blank">Mark Q Schwanda</a>';
+	echo '<span id="footer">footer</span>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 
