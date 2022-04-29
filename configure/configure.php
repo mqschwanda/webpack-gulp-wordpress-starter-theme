@@ -48,7 +48,7 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 
 // Giving credits
 function remove_footer_admin () {
-	echo 'Thème crée par <a href="http://www.olivier-guilleux.com" target="_blank">Olivier Guilleux</a>';
+	echo 'Thème crée par <a href="http://www.olivier-guilleux.com" target="_blank">Mark Q Schwanda</a>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 

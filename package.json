@@ -2,12 +2,12 @@
   "name": "blank-theme",
   "description": "A starter-kit for WordPress themes",
   "version": "1.0.0",
-  "author": "Olivier Guilleux",
-  "authorURI": "https://www.olivier-guilleux.com",
+  "author": "Mark Q Schwanda",
+  "authorURI": "https://www.github.com/mqschwanda/webpack-gulp-wordpress-starter-theme",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/oguilleux/webpack-gulp-wordpress-starter-theme.git"
+    "url": "git://github.com/mqschwanda/webpack-gulp-wordpress-starter-theme.git"
   },
   "keywords": [
     "wordpress",
@@ -15,9 +15,9 @@
     "gulp"
   ],
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
-    "postinstall": "gulp build && echo \"THEME INSTALLED, GOOD TO GO !\""
+    "start": "yarn gulp",
+    "build": "yarn gulp build",
+    "postinstall": "yarn build && echo \"THEME INSTALLED, GOOD TO GO !\""
   },
   "engines": {
     "node": ">=12.0.0"
@@ -50,7 +50,7 @@
     "gulp-postcss": "9.0.1",
     "gulp-sass": "5.1.0",
     "gulp-sourcemaps": "3.0.0",
-    "gulp-squoosh": "0.9.0",
+    "gulp-squoosh": "^0.9.0",
     "gulp-svg-sprite": "1.5.0",
     "gulp-svgmin": "4.1.0",
     "lodash": "4.17.21",

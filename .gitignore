@@ -15,5 +15,5 @@ vendor/
 assets/dist/
 bower_components/
 node_modules/
-
+yarn.lock
 _RESSOURCES/
