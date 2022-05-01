@@ -1,16 +1,5 @@
 <?php
 
-// MENUS
-function _custom_theme_register_menu() {
-    register_nav_menus(
-        array(
-            'menu-main' => __( 'Menu principal' ),
-            //'menu-footer' => __( 'Menu footer' ),
-        )
-    );
-}
-add_action( 'init', '_custom_theme_register_menu' );
-
 function custom_setup() {
 	// IMAGES
 	add_theme_support( 'post-thumbnails' );
@@ -26,9 +15,8 @@ function custom_setup() {
 }
 add_action('after_setup_theme', 'custom_setup');
 
-// Giving credits
 function remove_footer_admin () {
-	echo '<span id="footer">footer</span>';
+	echo '<footer> </footer>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 
@@ -54,7 +42,6 @@ add_action( 'wp_footer', 'my_deregister_scripts' );
 function dequeue_jquery_migrate( &$scripts){
 	if(!is_admin()){
 		$scripts->remove( 'jquery');
-		$scripts->add('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', null, null, true );
 	}
 }
 add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );

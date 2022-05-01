@@ -1,20 +1,26 @@
-import General from './_generalScripts';
+import React from 'react';
+import { render } from '@wordpress/element';
+import Footer from './Footer';
+import Header from './Header';
+import Main from './Main/index';
 
-const App = {
+function renderHeader() {
+	const [header] = document.getElementsByTagName('header');
+	render(<Header/>, header);
+}
 
-	/**
-	 * App.init
-	 */
-	init() {
-		// General scripts
-		function initGeneral() {
-			return new General();
-		}
-		initGeneral();
-	}
+function renderMain() {
+	const [main] = document.getElementsByTagName('main');
+	render(<Main/>, main);
+}
 
-};
+function renderFooter() {
+	const [footer] = document.getElementsByTagName('footer');
+	render(<Footer/>, footer);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-	App.init();
+	renderHeader();
+	renderMain();
+	renderFooter();
 });
