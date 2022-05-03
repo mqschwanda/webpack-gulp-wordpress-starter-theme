@@ -1,5 +1,9 @@
 <?php
 
+// React Wordress WP Customize Manager
+
+include( 'configure/react-wordpress-wp-customize-manager.php' );
+
 // CPT TAXONOMY
 
 include( 'configure/cpt-taxonomy.php' );
