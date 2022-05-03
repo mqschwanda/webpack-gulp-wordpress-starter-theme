@@ -3,6 +3,7 @@
   "description": "Blank Theme with Gulp and Webpack",
   "type": "wordpress-theme",
   "require": {
-    "tgmpa/tgm-plugin-activation": "^2.6"
+    "tgmpa/tgm-plugin-activation": "^2.6",
+    "calcinai/php-imagick": "^0.1.2"
   }
 }

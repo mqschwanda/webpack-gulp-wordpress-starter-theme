@@ -40,6 +40,12 @@ class React_Wordpress_TGM_Plugin_Activation_Manager {
       'force_activation' => true,
     ),
     array(
+      'name'             => 'ImageMagick Engine',
+      'required'         => true,
+      'slug'             => 'imagemagick-engine',
+      'force_activation' => true,
+    ),
+    array(
       'name'             => 'Query Monitor',
       'required'         => true,
       'slug'             => 'query-monitor',
