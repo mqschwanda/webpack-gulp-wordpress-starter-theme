@@ -1,5 +1,8 @@
 {
-  "name": "oguilleux/blankthemewebpack",
+  "name": "mqschwanda/reactwordpress",
   "description": "Blank Theme with Gulp and Webpack",
-  "type": "wordpress-theme"
+  "type": "wordpress-theme",
+  "require": {
+    "tgmpa/tgm-plugin-activation": "^2.6"
+  }
 }

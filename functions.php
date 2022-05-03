@@ -1,5 +1,13 @@
 <?php
 
+// Autoloader
+
+include( 'vendor/autoload.php' );
+
+// React Wordress TGM Plugin Activation
+
+include( 'configure/react-wordpress-tgm-plugin-activation-manager.php' );
+
 // React Wordress WP Customize Manager
 
 include( 'configure/react-wordpress-wp-customize-manager.php' );
