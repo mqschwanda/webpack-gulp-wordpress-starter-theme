@@ -1,5 +1,7 @@
 <?php
 
+namespace React_Wordpress;
+
 $theme_slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', get_current_theme())));
 
 $breakpoint_section = $theme_slug . '_breakpoints';
@@ -206,7 +208,7 @@ $options = array(
  * @link http://codex.wordpress.org/Theme_Customization_API
  * @since React Wordpress 0.0.1
  */
-class React_Wordpress_WP_Customize_Manager {
+class WP_Customize_Manager {
   public static function init () {
     global $options;
   
@@ -277,7 +279,7 @@ class React_Wordpress_WP_Customize_Manager {
       $section = $option['section'];
 
       if ($option['type'] == 'color') {
-        $wp_customize->add_control( new WP_Customize_Color_Control(
+        $wp_customize->add_control( new \WP_Customize_Color_Control(
           $wp_customize,
           $key,
           array(
@@ -321,7 +323,7 @@ class React_Wordpress_WP_Customize_Manager {
   public static function head() {
     global $options;
 
-    $class = React_Wordpress_WP_Customize_Manager::class;
+    $class = WP_Customize_Manager::class;
 
     ?>
       <!-- <?php echo $class ?> CSS--> 
@@ -391,14 +393,14 @@ class React_Wordpress_WP_Customize_Manager {
 }
 
 // Initialize
-add_action('init', array('React_Wordpress_WP_Customize_Manager', 'init'));
+add_action('init', array('\React_Wordpress\WP_Customize_Manager', 'init'));
 
 // Setup the Theme Customizer settings and controls...
-add_action('customize_register', array('React_Wordpress_WP_Customize_Manager', 'customize_register'));
+add_action('customize_register', array('\React_Wordpress\WP_Customize_Manager', 'customize_register'));
 
 // Output custom CSS to live site
-add_action('wp_head', array('React_Wordpress_WP_Customize_Manager', 'head'));
-add_action('admin_head', array('React_Wordpress_WP_Customize_Manager', 'head'));
+add_action('wp_head', array('\React_Wordpress\WP_Customize_Manager', 'head'));
+add_action('admin_head', array('\React_Wordpress\WP_Customize_Manager', 'head'));
 
 // Enqueue live preview javascript in Theme Customizer admin screen
-add_action('customize_preview_init', array('React_Wordpress_WP_Customize_Manager', 'customize_preview_init'));
+add_action('customize_preview_init', array('\React_Wordpress\WP_Customize_Manager', 'customize_preview_init'));

@@ -1,4 +1,7 @@
 <?php
+
+namespace React_Wordpress;
+
 /**
  * This file represents an example of the code that themes would use to register
  * the required plugins.
@@ -8,7 +11,7 @@
  * @package    TGM-Plugin-Activationq
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
-class React_Wordpress_TGM_Plugin_Activation_Manager {
+class TGM_Plugin_Activation_Manager {
   /**
    * Array of plugin arrays. Required keys are name and slug.
    * If the source is NOT from the .org repo, then source is also required.
@@ -190,10 +193,10 @@ class React_Wordpress_TGM_Plugin_Activation_Manager {
    */
   public static function tgmpa_register() {
     tgmpa( 
-      React_Wordpress_TGM_Plugin_Activation_Manager::$plugins, 
-      React_Wordpress_TGM_Plugin_Activation_Manager::$config
+      TGM_Plugin_Activation_Manager::$plugins, 
+      TGM_Plugin_Activation_Manager::$config
     );
   }
 }
 
-add_action('tgmpa_register', array('React_Wordpress_TGM_Plugin_Activation_Manager', 'tgmpa_register'));
+add_action('tgmpa_register', array('\React_Wordpress\TGM_Plugin_Activation_Manager', 'tgmpa_register'));

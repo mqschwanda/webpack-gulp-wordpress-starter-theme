@@ -1,11 +1,13 @@
 <?php
 
-class React_Wordpress_WP_Admin_CSS_Color_Manager {
+namespace React_Wordpress;
+
+class WP_Admin_CSS_Color_Manager {
   public static $admin_css_color_key = 'react_wordpress';
 
   public static function init() {
     wp_admin_css_color( 
-      React_Wordpress_WP_Admin_CSS_Color_Manager::$admin_css_color_key, 
+      WP_Admin_CSS_Color_Manager::$admin_css_color_key, 
       __('React Wordpress'), 
       get_template_directory_uri() . '/assets/dist/css/wp-admin-css-color.css', 
       array(
@@ -28,15 +30,15 @@ class React_Wordpress_WP_Admin_CSS_Color_Manager {
 
   // https://wordpress.stackexchange.com/questions/126697/set-default-admin-colour-for-all-users
   public static function get_user_option_admin_color($color_scheme) {
-    $color_scheme = React_Wordpress_WP_Admin_CSS_Color_Manager::$admin_css_color_key;
+    $color_scheme = WP_Admin_CSS_Color_Manager::$admin_css_color_key;
 
     return $color_scheme;
   }
 }
 
 // Initialize
-add_action('init', array('React_Wordpress_WP_Admin_CSS_Color_Manager', 'init'));
+add_action('init', array('\React_Wordpress\WP_Admin_CSS_Color_Manager', 'init'));
 
-add_filter('get_user_option_admin_color', array('React_Wordpress_WP_Admin_CSS_Color_Manager', 'get_user_option_admin_color'), 5);
+add_filter('get_user_option_admin_color', array('\React_Wordpress\WP_Admin_CSS_Color_Manager', 'get_user_option_admin_color'), 5);
 
 remove_action('admin_color_scheme_picker', 'admin_color_scheme_picker');

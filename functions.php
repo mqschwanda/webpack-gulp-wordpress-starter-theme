@@ -6,15 +6,15 @@ include( 'vendor/autoload.php' );
 
 // React Wordress WP Admin CSS Color Manager
 
-include( 'configure/react-wordpress-wp-admin-css-color-manager.php' );
+include( 'configure/react-wordpress/wp-admin-css-color-manager.php' );
 
 // React Wordress TGM Plugin Activation Manager
 
-include( 'configure/react-wordpress-tgm-plugin-activation-manager.php' );
+include( 'configure/react-wordpress/tgm-plugin-activation-manager.php' );
 
 // React Wordress WP Customize Manager
 
-include( 'configure/react-wordpress-wp-customize-manager.php' );
+include( 'configure/react-wordpress/wp-customize-manager.php' );
 
 // CPT TAXONOMY
 
