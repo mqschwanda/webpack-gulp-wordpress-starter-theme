@@ -33,10 +33,12 @@ $xl_option = $theme_slug . '_xl';
 $mode_option = $theme_slug . '_mode';
 $primary_color_option = $theme_slug . '_primary_color';
 $secondary_color_option = $theme_slug . '_secondary_color';
+$contrast_text_color_option = $theme_slug . '_contrast_text_color';
 $error_color_option = $theme_slug . '_error_color';
 $warning_color_option = $theme_slug . '_warning_color';
 $info_color_option = $theme_slug . '_info_color';
 $success_color_option = $theme_slug . '_success_color';
+$background_color_option = $theme_slug . '_background_color';
 $font_family_option = $theme_slug . '_font_family';
 $font_size_option = $theme_slug . '_font_size';
 $font_weight_light_option = $theme_slug . '_font_weight_light';
@@ -105,6 +107,13 @@ $options = array(
     'section'     => $palette_section,
     'type'        => 'color'
   ),
+  $contrast_text_color_option => array(
+    'default'     => '#ffffff',
+    'description' => '',
+    'label'       => 'Contrast Text Color',
+    'section'     => $palette_section,
+    'type'        => 'color'
+  ),
   $error_color_option => array(
     'default'     => '#ef5350',
     'description' => 'Used to represent interface elements that the user should be made aware of.',
@@ -130,6 +139,13 @@ $options = array(
     'default'     => '#4caf50',
     'description' => 'Used to indicate the successful completion of an action that user triggered.',
     'label'       => 'Success Color',
+    'section'     => $palette_section,
+    'type'        => 'color'
+  ),
+  $background_color_option => array(
+    'default'     => '#fff',
+    'description' => '',
+    'label'       => 'Background Color',
     'section'     => $palette_section,
     'type'        => 'color'
   ),
@@ -296,12 +312,13 @@ class React_Wordpress_WP_Customize_Manager {
    /**
     * This will output the custom WordPress settings to the live theme's WP head.
     * 
-    * Used by hook: 'wp_head'
+    * Used by hook: 'wp_head', 'admin_head'
     * 
     * @see add_action('wp_head',$func)
+    * @see add_action('admin_head',$func)
     * @since React Wordpress 0.0.1
     */
-  public static function wp_head() {
+  public static function head() {
     global $options;
 
     $class = React_Wordpress_WP_Customize_Manager::class;
@@ -380,7 +397,8 @@ add_action('init', array('React_Wordpress_WP_Customize_Manager', 'init'));
 add_action('customize_register', array('React_Wordpress_WP_Customize_Manager', 'customize_register'));
 
 // Output custom CSS to live site
-add_action('wp_head', array('React_Wordpress_WP_Customize_Manager', 'wp_head'));
+add_action('wp_head', array('React_Wordpress_WP_Customize_Manager', 'head'));
+add_action('admin_head', array('React_Wordpress_WP_Customize_Manager', 'head'));
 
 // Enqueue live preview javascript in Theme Customizer admin screen
 add_action('customize_preview_init', array('React_Wordpress_WP_Customize_Manager', 'customize_preview_init'));

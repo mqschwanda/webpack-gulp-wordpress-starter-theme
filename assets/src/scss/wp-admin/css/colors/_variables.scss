@@ -1,0 +1,91 @@
+// assign default value to all undefined variables
+
+$scheme-name: "react_wordpress";
+
+// theme variables
+
+$react_wordpress_sm: var(--react_wordpress_sm);
+$react_wordpress_md: var(--react_wordpress_md);
+$react_wordpress_lg: var(--react_wordpress_lg);
+$react_wordpress_xl: var(--react_wordpress_xl);
+$react_wordpress_mode: var(--react_wordpress_mode);
+$react_wordpress_primary_color: var(--react_wordpress_primary_color);
+$react_wordpress_secondary_color: var(--react_wordpress_secondary_color);
+$react_wordpress_contrast_text_color: var(--react_wordpress_contrast_text_color);
+$react_wordpress_error_color: var(--react_wordpress_error_color);
+$react_wordpress_warning_color: var(--react_wordpress_warning_color);
+$react_wordpress_info_color: var(--react_wordpress_info_color);
+$react_wordpress_success_color: var(--react_wordpress_success_color);
+$react_wordpress_background_color: var(--react_wordpress_background_color);
+$react_wordpress_border_radius: var(--react_wordpress_border_radius);
+$react_wordpress_font_family: var(--react_wordpress_font_family);
+$react_wordpress_font_size: var(--react_wordpress_font_size);
+$react_wordpress_font_weight_light: var(--react_wordpress_font_weight_light);
+$react_wordpress_font_weight_regular: var(--react_wordpress_font_weight_regular);
+$react_wordpress_font_weight_medium: var(--react_wordpress_font_weight_medium);
+$react_wordpress_font_weight_bold: var(--react_wordpress_font_weight_bold);
+$react_wordpress_contrast_text_color: var(--react_wordpress_contrast_text_color);
+
+// core variables
+
+$text-color: $react_wordpress_contrast_text_color;
+$base-color: $react_wordpress_primary_color;
+$icon-color: $react_wordpress_primary_color;
+$highlight-color: $react_wordpress_primary_color;
+$notification-color: $react_wordpress_info_color;
+
+// global
+
+$body-background: $react_wordpress_background_color;
+
+$link: $base-color;
+$link-focus: $link;
+
+$button-color: $react_wordpress_primary_color;
+$button-text-color: $react_wordpress_contrast_text_color;
+
+$form-checked: #7e8993;
+
+// admin menu & admin-bar
+
+$menu-text: $react_wordpress_contrast_text_color;
+$menu-icon: $react_wordpress_contrast_text_color;
+$menu-background: $react_wordpress_primary_color;
+
+$menu-highlight-text: $menu-text;
+$menu-highlight-icon: $menu-icon;
+$menu-highlight-background: $menu-background;
+
+$menu-current-text: $menu-highlight-text;
+$menu-current-icon: $menu-highlight-icon;
+$menu-current-background: $menu-highlight-background;
+
+$menu-submenu-text: $menu-text;
+$menu-submenu-background: $menu-background;
+$menu-submenu-background-alt: $menu-background;
+
+$menu-submenu-focus-text: $menu-submenu-text;
+$menu-submenu-current-text: $menu-submenu-text;
+
+$menu-bubble-text: $text-color;
+$menu-bubble-background: $notification-color;
+$menu-bubble-current-text: $text-color;
+$menu-bubble-current-background: $menu-submenu-background;
+
+$menu-collapse-text: $menu-icon;
+$menu-collapse-icon: $menu-icon;
+$menu-collapse-focus-text: $text-color;
+$menu-collapse-focus-icon: $menu-highlight-icon;
+
+$adminbar-avatar-frame: $menu-background;
+$adminbar-input-background: $menu-background;
+
+$adminbar-recovery-exit-text: $menu-bubble-text;
+$adminbar-recovery-exit-background: $menu-bubble-background;
+$adminbar-recovery-exit-background-alt: $adminbar-recovery-exit-background;
+
+$menu-customizer-text: $react_wordpress_contrast_text_color;
+
+$low-contrast-theme: "false";
+
+@import '../../../../../../../../../wp-admin/css/colors/variables';

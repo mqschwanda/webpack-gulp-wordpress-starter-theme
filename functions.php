@@ -4,7 +4,11 @@
 
 include( 'vendor/autoload.php' );
 
-// React Wordress TGM Plugin Activation
+// React Wordress WP Admin CSS Color Manager
+
+include( 'configure/react-wordpress-wp-admin-css-color-manager.php' );
+
+// React Wordress TGM Plugin Activation Manager
 
 include( 'configure/react-wordpress-tgm-plugin-activation-manager.php' );
 

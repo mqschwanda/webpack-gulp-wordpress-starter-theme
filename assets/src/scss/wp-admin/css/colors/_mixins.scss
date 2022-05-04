@@ -1,0 +1,37 @@
+/*
+ * Button mixin- creates a button effect with correct
+ * highlights/shadows, based on a base color.
+ */
+ @mixin button( $button-color: $react_wordpress_primary_color, $button-text-color: $react_wordpress_contrast_text_color ) {
+	background: $button-color;
+	border-color: $button-color;
+	color: $button-text-color;
+
+	&:hover,
+	&:focus {
+		background: $button-color;
+		border-color: $button-color;
+		color: $button-text-color;
+	}
+
+	&:focus {
+		box-shadow:
+			0 0 0 1px #fff,
+			0 0 0 3px $button-color;
+	}
+
+	&:active {
+		background: $button-color;
+		border-color: $button-color;
+		color: $button-text-color;
+	}
+
+	&.active,
+	&.active:focus,
+	&.active:hover {
+		background: $button-color;
+		color: $button-text-color;
+		border-color: $button-color;
+		box-shadow: inset 0 2px 5px -3px $button-color;
+	}
+}
