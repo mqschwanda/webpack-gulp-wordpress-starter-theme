@@ -15,10 +15,8 @@ function custom_setup() {
 }
 add_action('after_setup_theme', 'custom_setup');
 
-function remove_footer_admin () {
-	echo '<footer> </footer>';
-}
-add_filter('admin_footer_text', 'remove_footer_admin');
+add_filter('admin_footer_text', '__return_empty_string', 11);
+add_filter('update_footer', '__return_empty_string', 11); 
 
 // Move Yoast to bottom
 function yoasttobottom() {

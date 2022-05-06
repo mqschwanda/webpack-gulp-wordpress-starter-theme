@@ -16,6 +16,10 @@ include( 'configure/react-wordpress/tgm-plugin-activation-manager.php' );
 
 include( 'configure/react-wordpress/wp-customize-manager.php' );
 
+// React Wordress MW Adminimize Manager
+
+include( 'configure/react-wordpress/mw-adminimize-manager.php' );
+
 // CPT TAXONOMY
 
 include( 'configure/cpt-taxonomy.php' );

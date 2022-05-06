@@ -25,6 +25,12 @@ class TGM_Plugin_Activation_Manager {
       'force_activation' => true,
     ),
     array(
+      'name'             => 'Adminimize',
+      'required'         => true,
+      'slug'             => 'adminimize',
+      'force_activation' => true,
+    ),
+    array(
       'name'             => 'Advanced Custom Fields',
       'required'         => true,
       'slug'             => 'advanced-custom-fields',
