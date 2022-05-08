@@ -2,7 +2,7 @@
 
 namespace React_Wordpress;
 
-$theme_slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', get_current_theme())));
+$theme_slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', wp_get_theme()->get('Name'))));
 
 $breakpoint_section = $theme_slug . '_breakpoints';
 $palette_section = $theme_slug . '_palette';
@@ -323,7 +323,7 @@ class WP_Customize_Manager {
   public static function head() {
     global $options;
 
-    $class = WP_Customize_Manager::class;
+    $class = self::class;
 
     ?>
       <!-- <?php echo $class ?> CSS--> 

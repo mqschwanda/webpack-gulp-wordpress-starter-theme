@@ -16,7 +16,7 @@ class TGM_Plugin_Activation_Manager {
    * Array of plugin arrays. Required keys are name and slug.
    * If the source is NOT from the .org repo, then source is also required.
    */
-  public static $plugins = array(
+  public const PLUGINS = array(
 
     array(
       'name'             => 'Activity Log',
@@ -96,7 +96,7 @@ class TGM_Plugin_Activation_Manager {
   *
   * Only uncomment the strings in the config array if you want to customize the strings.
   */
-  public static $config = array(
+  public const CONFIG = array(
     'id'           => 'tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
     'default_path' => '',                      // Default absolute path to bundled plugins.
     'menu'         => 'tgmpa-install-plugins', // Menu slug.
@@ -199,8 +199,8 @@ class TGM_Plugin_Activation_Manager {
    */
   public static function tgmpa_register() {
     tgmpa( 
-      TGM_Plugin_Activation_Manager::$plugins, 
-      TGM_Plugin_Activation_Manager::$config
+      self::PLUGINS, 
+      self::CONFIG
     );
   }
 }

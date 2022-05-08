@@ -4,22 +4,22 @@ namespace React_Wordpress;
 
 class MW_Adminimize_Manager {
 
-  const ADMINISTRATOR_ROLE = 'administrator';
-  const SUBSCRIBER_ROLE = 'subscriber';
+  public const ADMINISTRATOR_ROLE = 'administrator';
+  public const SUBSCRIBER_ROLE = 'subscriber';
 
-  const ADMIN_ONLY_DASHBOARD_OPTION_ITEMS = array(
+  public const ADMIN_ONLY_DASHBOARD_OPTION_ITEMS = array(
     'dashboard_site_health', // Site Health
     'dashboard_activity', // Recent Activity
     'blc_dashboard_widget', // Broken Link Chekcer
   );
   
-  const DISABLED_DASHBOARD_OPTION_ITEMS = array(
+  public const DISABLED_DASHBOARD_OPTION_ITEMS = array(
     'dashboard_quick_press', // Quick Content
     'dashboard_right_now', // At a Glance
     'dashboard_primary', // WordPress Events and News
   );
   
-  const ADMIN_ONLY_ADMIN_BAR_ITEMS = array(
+  public const ADMIN_ONLY_ADMIN_BAR_ITEMS = array(
     'switch-off', // Switch off
     'author-switch-to', // User Switching
     'graphiql-ide', // Graphql IDE
@@ -30,7 +30,7 @@ class MW_Adminimize_Manager {
     'edit', // Edit User
   );
   
-  const DISABLED_SUBSCRIBER_ADMIN_BAR_ITEMS = array(
+  public const DISABLED_SUBSCRIBER_ADMIN_BAR_ITEMS = array(
     'user-actions', // User Actions
     'user-info', // User Info 
     'edit-profile', // Edit Profile 
@@ -45,7 +45,7 @@ class MW_Adminimize_Manager {
     'top-secondary', // Account
   );
 
-  const DISABLED_ADMIN_BAR_ITEMS = array(
+  public const DISABLED_ADMIN_BAR_ITEMS = array(
     'wp-logo', // About WordPress
     'about', // About WordPress
     'wporg', // WordPress.org
@@ -60,7 +60,7 @@ class MW_Adminimize_Manager {
     'wp-logo-external', // New Page
   );
 
-  const ADMIN_ONLY_GLOBAL_OPTION_ITEMS = array(
+  public const ADMIN_ONLY_GLOBAL_OPTION_ITEMS = array(
     // '.show-admin-bar',
     '#favorite-actions', // Favorite Actions
     '#screen-meta', // Screen-Meta
@@ -70,10 +70,10 @@ class MW_Adminimize_Manager {
     '.admin-notices', // Admin Notices
   );
   
-  const DISABLED_GLOBAL_OPTION_ITEMS = array(
+  public const DISABLED_GLOBAL_OPTION_ITEMS = array(
   );
 
-  const ADMIN_ONLY_MENU_ITEMS = array(
+  public const ADMIN_ONLY_MENU_ITEMS = array(
     'activity_log_page', // Activity Log
     'themes.php', // Appearance
     'plugins.php', // Plugins
@@ -83,7 +83,7 @@ class MW_Adminimize_Manager {
     'graphiql-ide', // GraphQL
   );
   
-  const DISABLED_SUBSCRIBER_MENU_ITEMS = array(
+  public const DISABLED_SUBSCRIBER_MENU_ITEMS = array(
     'index.php', // Dashboard 
     'edit.php', // Posts
     'upload.php', // Media
@@ -92,13 +92,13 @@ class MW_Adminimize_Manager {
     'edit.php?post_type=acf-field-group', // Custom Fields
   );
 
-  const DISABLED_MENU_ITEMS = array(
+  public const DISABLED_MENU_ITEMS = array(
     'separator1', // Separator
     'separator2', // Separator
     'separator-last', // Separator
   );
 
-  const ADMIN_ONLY_SUBMENU_ITEMS = array(
+  public const ADMIN_ONLY_SUBMENU_ITEMS = array(
     'activity_log_page__0', // Activity Log
     'activity_log_page__1', // Activity Log Settings
     'themes.php__5', // Appearance Themes
@@ -132,7 +132,7 @@ class MW_Adminimize_Manager {
     'graphiql-ide__1', // GraphQL Settings
   );
   
-  const DISABLED_SUBSCRIBER_SUBMENU_ITEMS = array(
+  public const DISABLED_SUBSCRIBER_SUBMENU_ITEMS = array(
     'index.php__0', // Dashboard Home
     'index.php__10', // Dashboard Updates
     'edit.php__5', // Posts All Posts
@@ -149,15 +149,15 @@ class MW_Adminimize_Manager {
     'edit.php?post_type=acf-field-group__2', // Custom Fields Tools
   );
 
-  const DISABLED_SUBMENU_ITEMS = array(
+  public const DISABLED_SUBMENU_ITEMS = array(
     'themes.php__7', // Appearance Theme File Editor
     'plugins.php__15', // Plugins Plugin File Editor
   );
 
-  const ADMIN_ONLY_METABOXES_PAGE_ITEMS = array(
+  public const ADMIN_ONLY_METABOXES_PAGE_ITEMS = array(
   );
 
-  const DISABLED_SUBSCRIBER_METABOXES_PAGE_ITEMS = array(
+  public const DISABLED_SUBSCRIBER_METABOXES_PAGE_ITEMS = array(
     '#contextual-help-link-wrap', // Help
     '#screen-options-link-wrap', // Screen Options
     '.page-title-action', // Add New
@@ -201,13 +201,13 @@ class MW_Adminimize_Manager {
     'tr.inline-edit-post p.inline-edit-save', // QE Cancel/Save Button
   );
   
-  const DISABLED_METABOXES_PAGE_ITEMS = array(
+  public const DISABLED_METABOXES_PAGE_ITEMS = array(
   );
 
-  const ADMIN_ONLY_METABOXES_POST_ITEMS = array(
+  public const ADMIN_ONLY_METABOXES_POST_ITEMS = array(
   );
   
-  const DISABLED_SUBSCRIBER_METABOXES_POST_ITEMS = array(
+  public const DISABLED_SUBSCRIBER_METABOXES_POST_ITEMS = array(
     '#contextual-help-link-wrap', // Help
     '#screen-options-link-wrap', // Screen Options
     '.page-title-action', // Add New
@@ -251,25 +251,25 @@ class MW_Adminimize_Manager {
     'tr.inline-edit-post p.inline-edit-save', // QE Cancel/Save Button
   );
 
-  const DISABLED_METABOXES_POST_ITEMS = array(
+  public const DISABLED_METABOXES_POST_ITEMS = array(
   );
 
-  const ADMIN_ONLY_LINK_ITEMS = array(
+  public const ADMIN_ONLY_LINK_ITEMS = array(
   );
   
-  const DISABLED_LINK_ITEMS = array(
+  public const DISABLED_LINK_ITEMS = array(
   );
 
-  const ADMIN_ONLY_WIDGET_ITEMS = array(
+  public const ADMIN_ONLY_WIDGET_ITEMS = array(
   );
   
-  const DISABLED_WIDGET_ITEMS = array(
+  public const DISABLED_WIDGET_ITEMS = array(
   );
 
-  const ADMIN_ONLY_NAV_MENU_ITEMS = array(
+  public const ADMIN_ONLY_NAV_MENU_ITEMS = array(
   );
   
-  const DISABLED_NAV_MENU_ITEMS = array(
+  public const DISABLED_NAV_MENU_ITEMS = array(
   );
 
   /**
@@ -327,13 +327,13 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_dashboard_option_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_DASHBOARD_OPTION_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_DASHBOARD_OPTION_ITEMS;
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_DASHBOARD_OPTION_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_DASHBOARD_OPTION_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_DASHBOARD_OPTION_ITEMS,
+      self::ADMIN_ONLY_DASHBOARD_OPTION_ITEMS
     ); 
   }
 
@@ -344,21 +344,21 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_admin_bar_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_ADMIN_BAR_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_ADMIN_BAR_ITEMS;
     }
 
-    if ($user_role == MW_Adminimize_Manager::SUBSCRIBER_ROLE) {
-      return MW_Adminimize_Manager::merge_items_arrays(
-        MW_Adminimize_Manager::DISABLED_SUBSCRIBER_ADMIN_BAR_ITEMS,
-        MW_Adminimize_Manager::DISABLED_ADMIN_BAR_ITEMS,
-        MW_Adminimize_Manager::ADMIN_ONLY_ADMIN_BAR_ITEMS
+    if ($user_role == self::SUBSCRIBER_ROLE) {
+      return self::merge_items_arrays(
+        self::DISABLED_SUBSCRIBER_ADMIN_BAR_ITEMS,
+        self::DISABLED_ADMIN_BAR_ITEMS,
+        self::ADMIN_ONLY_ADMIN_BAR_ITEMS
       );
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_ADMIN_BAR_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_ADMIN_BAR_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_ADMIN_BAR_ITEMS,
+      self::ADMIN_ONLY_ADMIN_BAR_ITEMS
     ); 
   }
 
@@ -369,13 +369,13 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_global_option_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_GLOBAL_OPTION_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_GLOBAL_OPTION_ITEMS;
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_GLOBAL_OPTION_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_GLOBAL_OPTION_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_GLOBAL_OPTION_ITEMS,
+      self::ADMIN_ONLY_GLOBAL_OPTION_ITEMS
     ); 
   }
 
@@ -386,21 +386,21 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_menu_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_MENU_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_MENU_ITEMS;
     }
 
-    if ($user_role == MW_Adminimize_Manager::SUBSCRIBER_ROLE) {
-      return MW_Adminimize_Manager::merge_items_arrays(
-        MW_Adminimize_Manager::DISABLED_SUBSCRIBER_MENU_ITEMS,
-        MW_Adminimize_Manager::DISABLED_MENU_ITEMS,
-        MW_Adminimize_Manager::ADMIN_ONLY_MENU_ITEMS
+    if ($user_role == self::SUBSCRIBER_ROLE) {
+      return self::merge_items_arrays(
+        self::DISABLED_SUBSCRIBER_MENU_ITEMS,
+        self::DISABLED_MENU_ITEMS,
+        self::ADMIN_ONLY_MENU_ITEMS
       );
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_MENU_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_MENU_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_MENU_ITEMS,
+      self::ADMIN_ONLY_MENU_ITEMS
     ); 
   }
 
@@ -411,21 +411,21 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_submenu_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_SUBMENU_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_SUBMENU_ITEMS;
     }
 
-    if ($user_role == MW_Adminimize_Manager::SUBSCRIBER_ROLE) {
-      return MW_Adminimize_Manager::merge_items_arrays(
-        MW_Adminimize_Manager::DISABLED_SUBSCRIBER_SUBMENU_ITEMS,
-        MW_Adminimize_Manager::DISABLED_SUBMENU_ITEMS,
-        MW_Adminimize_Manager::ADMIN_ONLY_SUBMENU_ITEMS
+    if ($user_role == self::SUBSCRIBER_ROLE) {
+      return self::merge_items_arrays(
+        self::DISABLED_SUBSCRIBER_SUBMENU_ITEMS,
+        self::DISABLED_SUBMENU_ITEMS,
+        self::ADMIN_ONLY_SUBMENU_ITEMS
       );
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_SUBMENU_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_SUBMENU_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_SUBMENU_ITEMS,
+      self::ADMIN_ONLY_SUBMENU_ITEMS
     ); 
   }
 
@@ -436,21 +436,21 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_metaboxes_page_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_METABOXES_PAGE_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_METABOXES_PAGE_ITEMS;
     }
 
-    if ($user_role == MW_Adminimize_Manager::SUBSCRIBER_ROLE) {
-      return MW_Adminimize_Manager::merge_items_arrays(
-        MW_Adminimize_Manager::DISABLED_SUBSCRIBER_METABOXES_PAGE_ITEMS,
-        MW_Adminimize_Manager::DISABLED_METABOXES_PAGE_ITEMS,
-        MW_Adminimize_Manager::ADMIN_ONLY_METABOXES_PAGE_ITEMS
+    if ($user_role == self::SUBSCRIBER_ROLE) {
+      return self::merge_items_arrays(
+        self::DISABLED_SUBSCRIBER_METABOXES_PAGE_ITEMS,
+        self::DISABLED_METABOXES_PAGE_ITEMS,
+        self::ADMIN_ONLY_METABOXES_PAGE_ITEMS
       );
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_METABOXES_PAGE_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_METABOXES_PAGE_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_METABOXES_PAGE_ITEMS,
+      self::ADMIN_ONLY_METABOXES_PAGE_ITEMS
     ); 
   }
 
@@ -461,21 +461,21 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_metaboxes_post_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_METABOXES_POST_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_METABOXES_POST_ITEMS;
     }
 
-    if ($user_role == MW_Adminimize_Manager::SUBSCRIBER_ROLE) {
-      return MW_Adminimize_Manager::merge_items_arrays(
-        MW_Adminimize_Manager::DISABLED_SUBSCRIBER_METABOXES_POST_ITEMS,
-        MW_Adminimize_Manager::DISABLED_METABOXES_POST_ITEMS,
-        MW_Adminimize_Manager::ADMIN_ONLY_METABOXES_POST_ITEMS
+    if ($user_role == self::SUBSCRIBER_ROLE) {
+      return self::merge_items_arrays(
+        self::DISABLED_SUBSCRIBER_METABOXES_POST_ITEMS,
+        self::DISABLED_METABOXES_POST_ITEMS,
+        self::ADMIN_ONLY_METABOXES_POST_ITEMS
       );
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_METABOXES_POST_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_METABOXES_POST_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_METABOXES_POST_ITEMS,
+      self::ADMIN_ONLY_METABOXES_POST_ITEMS
     ); 
   }
 
@@ -486,13 +486,13 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_link_option_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_LINK_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_LINK_ITEMS;
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_LINK_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_LINK_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_LINK_ITEMS,
+      self::ADMIN_ONLY_LINK_ITEMS
     ); 
   }
 
@@ -503,13 +503,13 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_widget_option_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_WIDGET_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_WIDGET_ITEMS;
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_WIDGET_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_WIDGET_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_WIDGET_ITEMS,
+      self::ADMIN_ONLY_WIDGET_ITEMS
     ); 
   }
 
@@ -520,13 +520,13 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_nav_menu_option_items($user_role) {
-    if ($user_role == MW_Adminimize_Manager::ADMINISTRATOR_ROLE) {
-      return MW_Adminimize_Manager::DISABLED_NAV_MENU_ITEMS;
+    if ($user_role == self::ADMINISTRATOR_ROLE) {
+      return self::DISABLED_NAV_MENU_ITEMS;
     }
 
-    return MW_Adminimize_Manager::merge_items_arrays(
-      MW_Adminimize_Manager::DISABLED_NAV_MENU_ITEMS,
-      MW_Adminimize_Manager::ADMIN_ONLY_NAV_MENU_ITEMS
+    return self::merge_items_arrays(
+      self::DISABLED_NAV_MENU_ITEMS,
+      self::ADMIN_ONLY_NAV_MENU_ITEMS
     ); 
   }
 
@@ -649,27 +649,27 @@ class MW_Adminimize_Manager {
   public static function get_disabled_options_config($user_role) {
     return array(
       // Admin Bar Frontend
-      MW_Adminimize_Manager::get_disabled_admin_bar_frontend_items_key($user_role) => MW_Adminimize_Manager::get_disabled_admin_bar_items($user_role),
+      self::get_disabled_admin_bar_frontend_items_key($user_role) => self::get_disabled_admin_bar_items($user_role),
       // Admin Bar Backend
-      MW_Adminimize_Manager::get_disabled_admin_bar_backend_items_key($user_role) => MW_Adminimize_Manager::get_disabled_admin_bar_items($user_role),
+      self::get_disabled_admin_bar_backend_items_key($user_role) => self::get_disabled_admin_bar_items($user_role),
       // Global
-      MW_Adminimize_Manager::get_disabled_global_option_items_key($user_role) => MW_Adminimize_Manager::get_disabled_global_option_items($user_role),
+      self::get_disabled_global_option_items_key($user_role) => self::get_disabled_global_option_items($user_role),
       // Dashboard Options
-      MW_Adminimize_Manager::get_disabled_dashboard_option_items_key($user_role) => MW_Adminimize_Manager::get_disabled_dashboard_option_items($user_role),
+      self::get_disabled_dashboard_option_items_key($user_role) => self::get_disabled_dashboard_option_items($user_role),
       // Menu
-      MW_Adminimize_Manager::get_disabled_menu_items_key($user_role) => MW_Adminimize_Manager::get_disabled_menu_items($user_role),
+      self::get_disabled_menu_items_key($user_role) => self::get_disabled_menu_items($user_role),
       // Submenu
-      MW_Adminimize_Manager::get_disabled_submenu_items_key($user_role) => MW_Adminimize_Manager::get_disabled_submenu_items($user_role),
+      self::get_disabled_submenu_items_key($user_role) => self::get_disabled_submenu_items($user_role),
       // Page Write
-      MW_Adminimize_Manager::get_disabled_metaboxes_page_items_key($user_role) => MW_Adminimize_Manager::get_disabled_metaboxes_page_items($user_role),
+      self::get_disabled_metaboxes_page_items_key($user_role) => self::get_disabled_metaboxes_page_items($user_role),
       // Post Write
-      MW_Adminimize_Manager::get_disabled_metaboxes_post_items_key($user_role) => MW_Adminimize_Manager::get_disabled_metaboxes_post_items($user_role),
+      self::get_disabled_metaboxes_post_items_key($user_role) => self::get_disabled_metaboxes_post_items($user_role),
       // Link
-      MW_Adminimize_Manager::get_disabled_link_option_items_key($user_role) => MW_Adminimize_Manager::get_disabled_link_option_items($user_role),
+      self::get_disabled_link_option_items_key($user_role) => self::get_disabled_link_option_items($user_role),
       // Widgets
-      MW_Adminimize_Manager::get_disabled_widget_option_items_key($user_role) => MW_Adminimize_Manager::get_disabled_widget_option_items($user_role),
+      self::get_disabled_widget_option_items_key($user_role) => self::get_disabled_widget_option_items($user_role),
       // WP Nav Menu
-      MW_Adminimize_Manager::get_disabled_nav_menu_option_items_key($user_role) => MW_Adminimize_Manager::get_disabled_nav_menu_option_items($user_role)
+      self::get_disabled_nav_menu_option_items_key($user_role) => self::get_disabled_nav_menu_option_items($user_role)
     );
   }
 
@@ -677,8 +677,8 @@ class MW_Adminimize_Manager {
    * Configure MW Adminimize 
    */
   public static function init() {
-    $user_roles = MW_Adminimize_Manager::get_user_roles();
-    $options = MW_Adminimize_Manager::get_options();
+    $user_roles = self::get_user_roles();
+    $options = self::get_options();
 
     // Backend options
     $options['_mw_adminimize_user_info'] = 0; // show user info area on the top right side of backend
@@ -688,15 +688,15 @@ class MW_Adminimize_Manager {
 
     // configure disabled options for each user role
     foreach ($user_roles as $user_role) {
-      $disabled_options_config = MW_Adminimize_Manager::get_disabled_options_config($user_role);
+      $disabled_options_config = self::get_disabled_options_config($user_role);
 
       // go through each disabled option key and configure the default settings
       foreach ($disabled_options_config as $key => $value) {
-        $options[$key] = MW_Adminimize_Manager::merge_items_arrays($options[$key], $value);
+        $options[$key] = self::merge_items_arrays($options[$key], $value);
       }
     }
 
-    MW_Adminimize_Manager::set_options($options);
+    self::set_options($options);
   }
 
 
