@@ -695,7 +695,50 @@ class MW_Adminimize_Manager {
     self::set_options($options);
   }
 
+  /**
+   * Handle the output buffer
+   */
+  public static function ob_start($buffer) {
+    $user_roles = self::get_user_roles();
+    $patterns = array();
+
+    // configure disabled options for each user role
+    foreach ($user_roles as $user_role) {
+      $disabled_options_config = self::get_disabled_options_config($user_role);
+      // go through each disabled option key and get the array of disabled values
+      foreach ($disabled_options_config as $name => $values) {
+        // configure pattern for each input value
+        foreach ($values as $value) {
+          $pattern = '/<input(.*)(name="'.$name.'\[\]")(.*)(value="'.$value.'")(.*)\/>/m';
+          array_push($patterns, $pattern);
+        }
+      }
+    }
+
+    $replacement = '<input$1$2$3$4$5 disabled="true" />';
+    $buffer = preg_replace($patterns, $replacement, $buffer);
+
+    return $buffer;
+  }
+
+  /**
+   * Turn on output buffering before the mw adminimize forms are generated
+   */
+  public static function mw_adminimize_before_settings_form() {
+    ob_start('self::ob_start');
+  }
+
+  /**
+   * Send the output buffer and turn off output buffering after mw adminimize forms are generated
+   */
+  public static function mw_adminimize_after_settings_form() {
+    ob_end_flush();
+  }
+
 
 }
 
 add_action('init', array('\React_Wordpress\MW_Adminimize_Manager', 'init'));
+
+add_action('mw_adminimize_before_settings_form', array('\React_Wordpress\MW_Adminimize_Manager', 'mw_adminimize_before_settings_form'));
+add_action('mw_adminimize_after_settings_form', array('\React_Wordpress\MW_Adminimize_Manager', 'mw_adminimize_after_settings_form'));
