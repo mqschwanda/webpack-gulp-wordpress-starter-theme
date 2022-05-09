@@ -9,9 +9,6 @@ namespace React_Wordpress;
  * @since React Wordpress 0.0.1
  */
 class WP_Customize_Manager {
-  public const THEME_SLUG = 'react_wordpress';
-  public const CAPABILITY = User_Role_Editor_Manager::EDIT_THEME_OPTIONS_CAPABILITY;
-
   public const BREAKPOINT_SECTION = 'breakpoints';
   public const PALETTE_SECTION = 'palette';
   public const SHAPE_SECTION = 'shape';
@@ -36,27 +33,27 @@ class WP_Customize_Manager {
     )
   );
 
-  public const XS_OPTION = self::THEME_SLUG . '_xs';
-  public const SM_OPTION = self::THEME_SLUG . '_sm';
-  public const MD_OPTION = self::THEME_SLUG . '_md';
-  public const LG_OPTION = self::THEME_SLUG . '_lg';
-  public const XL_OPTION = self::THEME_SLUG . '_xl';
-  public const MODE_OPTION = self::THEME_SLUG . '_mode';
-  public const PRIMARY_COLOR_OPTION = self::THEME_SLUG . '_primary_color';
-  public const SECONDARY_COLOR_OPTION = self::THEME_SLUG . '_secondary_color';
-  public const CONTRAST_TEXT_COLOR_OPTION = self::THEME_SLUG . '_contrast_text_color';
-  public const ERROR_COLOR_OPTION = self::THEME_SLUG . '_error_color';
-  public const WARNING_COLOR_OPTION = self::THEME_SLUG . '_warning_color';
-  public const INFO_COLOR_OPTION = self::THEME_SLUG . '_info_color';
-  public const SUCCESS_COLOR_OPTION = self::THEME_SLUG . '_success_color';
-  public const BACKGROUND_COLOR_OPTION = self::THEME_SLUG . '_background_color';
-  public const FONT_FAMILY_OPTION = self::THEME_SLUG . '_font_family';
-  public const FONT_SIZE_OPTION = self::THEME_SLUG . '_font_size';
-  public const FONT_WEIGHT_LIGHT_OPTION = self::THEME_SLUG . '_font_weight_light';
-  public const FONT_WEIGHT_REGULAR_OPTION = self::THEME_SLUG . '_font_weight_regular';
-  public const FONT_WEIGHT_MEDIUM_OPTION = self::THEME_SLUG . '_font_weight_medium';
-  public const FONT_WEIGHT_BOLD_OPTION = self::THEME_SLUG . '_font_weight_bold';
-  public const BORDER_RADIUS_OPTION = self::THEME_SLUG . '_border_radius';
+  public const XS_OPTION = React_Wordpress_Manager::THEME_SLUG . '_xs';
+  public const SM_OPTION = React_Wordpress_Manager::THEME_SLUG . '_sm';
+  public const MD_OPTION = React_Wordpress_Manager::THEME_SLUG . '_md';
+  public const LG_OPTION = React_Wordpress_Manager::THEME_SLUG . '_lg';
+  public const XL_OPTION = React_Wordpress_Manager::THEME_SLUG . '_xl';
+  public const MODE_OPTION = React_Wordpress_Manager::THEME_SLUG . '_mode';
+  public const PRIMARY_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_primary_color';
+  public const SECONDARY_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_secondary_color';
+  public const CONTRAST_TEXT_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_contrast_text_color';
+  public const ERROR_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_error_color';
+  public const WARNING_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_warning_color';
+  public const INFO_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_info_color';
+  public const SUCCESS_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_success_color';
+  public const BACKGROUND_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_background_color';
+  public const FONT_FAMILY_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_family';
+  public const FONT_SIZE_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_size';
+  public const FONT_WEIGHT_LIGHT_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_weight_light';
+  public const FONT_WEIGHT_REGULAR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_weight_regular';
+  public const FONT_WEIGHT_MEDIUM_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_weight_medium';
+  public const FONT_WEIGHT_BOLD_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_weight_bold';
+  public const BORDER_RADIUS_OPTION = React_Wordpress_Manager::THEME_SLUG . '_border_radius';
 
   public const OPTIONS = array(
     self::XS_OPTION => array(
@@ -265,7 +262,7 @@ class WP_Customize_Manager {
       $wp_customize->add_section( 
         $key,
         array(
-          'capability'         => self::CAPABILITY,
+          'capability'         => User_Role_Editor_Manager::EDIT_THEME_OPTIONS_CAPABILITY,
           'description'        => $description,
           'description_hidden' => $description_hidden,
           'priority'           => $priority,
@@ -279,7 +276,7 @@ class WP_Customize_Manager {
       $wp_customize->add_setting( 
         $key,
         array(
-          'capability'   => self::CAPABILITY,
+          'capability'   => User_Role_Editor_Manager::EDIT_THEME_OPTIONS_CAPABILITY,
           'default'      => $option['default'],
           'transport'    => 'postMessage', 
           'type'         => 'theme_mod',

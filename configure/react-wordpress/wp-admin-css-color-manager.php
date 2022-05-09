@@ -3,12 +3,13 @@
 namespace React_Wordpress;
 
 class WP_Admin_CSS_Color_Manager {
-  public const ADMIN_CSS_COLOR_KEY = 'react_wordpress';
+  public const ADMIN_CSS_COLOR_NAME = React_Wordpress_Manager::THEME_NAME;
+  public const ADMIN_CSS_COLOR_KEY = React_Wordpress_Manager::THEME_SLUG;
 
   public static function init() {
     wp_admin_css_color( 
       self::ADMIN_CSS_COLOR_KEY, 
-      __('React Wordpress'), 
+      __(self::ADMIN_CSS_COLOR_NAME), 
       get_template_directory_uri() . '/assets/dist/css/wp-admin-css-color.css', 
       array(
         'var(--react_wordpress_primary_color)',

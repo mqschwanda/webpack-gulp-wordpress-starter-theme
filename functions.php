@@ -4,6 +4,10 @@
 
 include( 'vendor/autoload.php' );
 
+// React Wordress React Wordress Manager
+
+include( 'configure/react-wordpress/react-wordpress-manager.php' );
+
 // React Wordress User Role Editor Manager
 
 include( 'configure/react-wordpress/user-role-editor-manager.php' );
