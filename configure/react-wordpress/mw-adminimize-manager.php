@@ -3,10 +3,6 @@
 namespace React_Wordpress;
 
 class MW_Adminimize_Manager {
-
-  public const ADMINISTRATOR_ROLE = 'administrator';
-  public const SUBSCRIBER_ROLE = 'subscriber';
-
   public const ADMIN_ONLY_DASHBOARD_OPTION_ITEMS = array(
     'dashboard_site_health', // Site Health
     'dashboard_activity', // Recent Activity
@@ -327,7 +323,7 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_dashboard_option_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_DASHBOARD_OPTION_ITEMS;
     }
 
@@ -344,11 +340,11 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_admin_bar_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_ADMIN_BAR_ITEMS;
     }
 
-    if ($user_role == self::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_ADMIN_BAR_ITEMS,
         self::DISABLED_ADMIN_BAR_ITEMS,
@@ -369,7 +365,7 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_global_option_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_GLOBAL_OPTION_ITEMS;
     }
 
@@ -386,11 +382,11 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_menu_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_MENU_ITEMS;
     }
 
-    if ($user_role == self::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_MENU_ITEMS,
         self::DISABLED_MENU_ITEMS,
@@ -411,11 +407,11 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_submenu_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_SUBMENU_ITEMS;
     }
 
-    if ($user_role == self::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_SUBMENU_ITEMS,
         self::DISABLED_SUBMENU_ITEMS,
@@ -436,11 +432,11 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_metaboxes_page_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_METABOXES_PAGE_ITEMS;
     }
 
-    if ($user_role == self::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_METABOXES_PAGE_ITEMS,
         self::DISABLED_METABOXES_PAGE_ITEMS,
@@ -461,11 +457,11 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_metaboxes_post_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_METABOXES_POST_ITEMS;
     }
 
-    if ($user_role == self::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_METABOXES_POST_ITEMS,
         self::DISABLED_METABOXES_POST_ITEMS,
@@ -486,7 +482,7 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_link_option_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_LINK_ITEMS;
     }
 
@@ -503,7 +499,7 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_widget_option_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_WIDGET_ITEMS;
     }
 
@@ -520,7 +516,7 @@ class MW_Adminimize_Manager {
    * @return array
    */
   public static function get_disabled_nav_menu_option_items($user_role) {
-    if ($user_role == self::ADMINISTRATOR_ROLE) {
+    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
       return self::DISABLED_NAV_MENU_ITEMS;
     }
 

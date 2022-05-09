@@ -10,7 +10,7 @@ namespace React_Wordpress;
  */
 class WP_Customize_Manager {
   public const THEME_SLUG = 'react_wordpress';
-  public const CAPABILITY = 'edit_theme_options';
+  public const CAPABILITY = User_Role_Editor_Manager::EDIT_THEME_OPTIONS_CAPABILITY;
 
   public const BREAKPOINT_SECTION = 'breakpoints';
   public const PALETTE_SECTION = 'palette';
@@ -255,8 +255,6 @@ class WP_Customize_Manager {
   * @since React Wordpress 0.0.1
   */
   public static function customize_register ($wp_customize) {
-    $capability = 'edit_theme_options';
-
     // 1. Define a new section (if desired) to the Theme Customizer    
     foreach (self::SECTIONS as $key => $section) {
       $description = __($section['description']);
@@ -267,7 +265,7 @@ class WP_Customize_Manager {
       $wp_customize->add_section( 
         $key,
         array(
-          'capability'         => $capability,
+          'capability'         => self::CAPABILITY,
           'description'        => $description,
           'description_hidden' => $description_hidden,
           'priority'           => $priority,
@@ -281,7 +279,7 @@ class WP_Customize_Manager {
       $wp_customize->add_setting( 
         $key,
         array(
-          'capability'   => $capability,
+          'capability'   => self::CAPABILITY,
           'default'      => $option['default'],
           'transport'    => 'postMessage', 
           'type'         => 'theme_mod',

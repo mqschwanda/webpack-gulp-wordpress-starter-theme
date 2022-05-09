@@ -4,6 +4,10 @@
 
 include( 'vendor/autoload.php' );
 
+// React Wordress User Role Editor Manager
+
+include( 'configure/react-wordpress/user-role-editor-manager.php' );
+
 // React Wordress WP Admin CSS Color Manager
 
 include( 'configure/react-wordpress/wp-admin-css-color-manager.php' );
