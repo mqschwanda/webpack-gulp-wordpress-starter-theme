@@ -2,7 +2,7 @@
 
 namespace React_Wordpress;
 
-class MW_Adminimize_Manager {
+class MW_Adminimize_Manager extends React_Wordpress_Class {
   public const ADMIN_ONLY_DASHBOARD_OPTION_ITEMS = array(
     'dashboard_site_health', // Site Health
     'dashboard_activity', // Recent Activity
@@ -267,6 +267,15 @@ class MW_Adminimize_Manager {
   
   public const DISABLED_NAV_MENU_ITEMS = array(
   );
+
+  public function __construct() {
+    parent::__construct();
+
+    add_action('init', array($this, 'init'));
+
+    add_action('mw_adminimize_before_settings_form', array($this, 'mw_adminimize_before_settings_form'));
+    add_action('mw_adminimize_after_settings_form', array($this, 'mw_adminimize_after_settings_form'));
+  }
 
   /**
    * Get user roles using MW Adminimize helper function
@@ -734,11 +743,4 @@ class MW_Adminimize_Manager {
   public static function mw_adminimize_after_settings_form() {
     ob_end_flush();
   }
-
-
 }
-
-add_action('init', array('\React_Wordpress\MW_Adminimize_Manager', 'init'));
-
-add_action('mw_adminimize_before_settings_form', array('\React_Wordpress\MW_Adminimize_Manager', 'mw_adminimize_before_settings_form'));
-add_action('mw_adminimize_after_settings_form', array('\React_Wordpress\MW_Adminimize_Manager', 'mw_adminimize_after_settings_form'));

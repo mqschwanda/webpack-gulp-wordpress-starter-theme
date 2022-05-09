@@ -2,7 +2,7 @@
 
 namespace React_Wordpress;
 
-class User_Role_Editor_Manager {
+class User_Role_Editor_Manager extends React_Wordpress_Class {
   /**
    * enabled roles
    */
@@ -310,6 +310,12 @@ class User_Role_Editor_Manager {
   public const DISABLED_CAPABILITIES = array(
   );
 
+  public function __construct() {
+    parent::__construct();
+
+    add_action('init', array($this, 'init'));
+  }
+
   public static function init() {
     foreach (self::DISABLED_ROLES as $disabled_role) {
       remove_role($disabled_role);
@@ -364,6 +370,3 @@ class User_Role_Editor_Manager {
     }
   }
 }
-
-// Initialize
-add_action('init', array('\React_Wordpress\User_Role_Editor_Manager', 'init'));

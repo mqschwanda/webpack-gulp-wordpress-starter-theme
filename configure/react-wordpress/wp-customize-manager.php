@@ -8,7 +8,7 @@ namespace React_Wordpress;
  * @link http://codex.wordpress.org/Theme_Customization_API
  * @since React Wordpress 0.0.1
  */
-class WP_Customize_Manager {
+class WP_Customize_Manager extends React_Wordpress_Class {
   public const BREAKPOINT_SECTION = 'breakpoints';
   public const PALETTE_SECTION = 'palette';
   public const SHAPE_SECTION = 'shape';
@@ -230,6 +230,22 @@ class WP_Customize_Manager {
     ),
   );
 
+  public function __construct() {
+    parent::__construct();
+
+    add_action('init', array($this, 'init'));
+    
+    // Setup the Theme Customizer settings and controls...
+    add_action('customize_register', array($this, 'customize_register'));
+    
+    // Output custom CSS to live site
+    add_action('wp_head', array($this, 'head'));
+    add_action('admin_head', array($this, 'head'));
+    
+    // Enqueue live preview javascript in Theme Customizer admin screen
+    add_action('customize_preview_init', array($this, 'customize_preview_init'));
+  }
+
   public static function init () {
     foreach (self::OPTIONS as $key => $option) {
       $theme_mod = get_theme_mod($key);
@@ -404,16 +420,3 @@ class WP_Customize_Manager {
     return $return;
   }
 }
-
-// Initialize
-add_action('init', array('\React_Wordpress\WP_Customize_Manager', 'init'));
-
-// Setup the Theme Customizer settings and controls...
-add_action('customize_register', array('\React_Wordpress\WP_Customize_Manager', 'customize_register'));
-
-// Output custom CSS to live site
-add_action('wp_head', array('\React_Wordpress\WP_Customize_Manager', 'head'));
-add_action('admin_head', array('\React_Wordpress\WP_Customize_Manager', 'head'));
-
-// Enqueue live preview javascript in Theme Customizer admin screen
-add_action('customize_preview_init', array('\React_Wordpress\WP_Customize_Manager', 'customize_preview_init'));

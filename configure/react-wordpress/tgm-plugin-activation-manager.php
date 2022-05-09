@@ -11,7 +11,7 @@ namespace React_Wordpress;
  * @package    TGM-Plugin-Activationq
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
-class TGM_Plugin_Activation_Manager {
+class TGM_Plugin_Activation_Manager extends React_Wordpress_Class {
   /**
    * Array of plugin arrays. Required keys are name and slug.
    * If the source is NOT from the .org repo, then source is also required.
@@ -185,6 +185,12 @@ class TGM_Plugin_Activation_Manager {
     */
   );
 
+  public function __construct() {
+    parent::__construct();
+
+    add_action('tgmpa_register', array($this, 'tgmpa_register'));
+  }
+
   /**
    * Register the required plugins for this theme.
    *
@@ -204,5 +210,3 @@ class TGM_Plugin_Activation_Manager {
     );
   }
 }
-
-add_action('tgmpa_register', array('\React_Wordpress\TGM_Plugin_Activation_Manager', 'tgmpa_register'));
