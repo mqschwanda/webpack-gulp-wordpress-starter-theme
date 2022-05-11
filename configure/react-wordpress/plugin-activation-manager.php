@@ -202,22 +202,6 @@ class Plugin_Activation_Manager extends React_WordPress_Class
   );
 
   /**
-   * Initialize `React_WordPress_Manager` class
-   * 
-   * @return Plugin_Activation_Manager
-   * 
-   * @since React WordPress 0.0.1
-   */
-  public function __construct()
-  {
-    parent::__construct();
-
-    add_action('tgmpa_register', array($this, 'tgmpa_register'));
-
-    return $this;
-  }
-
-  /**
    * Register the required plugins for this theme.
    *
    * The variables passed to the `tgmpa()` function should be:
@@ -237,5 +221,21 @@ class Plugin_Activation_Manager extends React_WordPress_Class
       self::PLUGINS, 
       self::CONFIG
     );
+  }
+
+  /**
+   * Private 
+   */
+
+  /**
+   * Initialize `Plugin_Activation_Manager` class
+   * 
+   * @since React WordPress 0.0.1
+   */
+  private function __construct()
+  {
+    parent::__construct();
+
+    add_action('tgmpa_register', array($this, 'tgmpa_register'));
   }
 }

@@ -16,15 +16,11 @@ class React_WordPress_Class
   /**
    * Initialize `React_WordPress_Class` class
    * 
-   * @return React_WordPress_Class
-   * 
    * @since React WordPress 0.0.1
    */
   protected function __construct()
   {
     // code and stuff...
-
-    return $this;
   }
 }
 

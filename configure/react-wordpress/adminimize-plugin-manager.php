@@ -284,25 +284,6 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
   );
 
   /**
-   * Initialize `Adminimize_Plugin_Manager` class
-   * 
-   * @return Adminimize_Plugin_Manager
-   * 
-   * @since React WordPress 0.0.1
-   */
-  public function __construct()
-  {
-    parent::__construct();
-
-    add_action('init', array($this, 'init'));
-
-    add_action('mw_adminimize_before_settings_form', array($this, 'mw_adminimize_before_settings_form'));
-    add_action('mw_adminimize_after_settings_form', array($this, 'mw_adminimize_after_settings_form'));
-
-    return $this;
-  }
-
-  /**
    * Fires after WordPress has finished loading but before any headers are sent.
    * 
    * @see https://developer.wordpress.org/reference/hooks/init/
@@ -828,6 +809,21 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
   /**
    * Private
    */
+
+  /**
+   * Initialize `Adminimize_Plugin_Manager` class
+   * 
+   * @since React WordPress 0.0.1
+   */
+  private function __construct()
+  {
+    parent::__construct();
+
+    add_action('init', array($this, 'init'));
+
+    add_action('mw_adminimize_before_settings_form', array($this, 'mw_adminimize_before_settings_form'));
+    add_action('mw_adminimize_after_settings_form', array($this, 'mw_adminimize_after_settings_form'));
+  }
 
   /**
    * Get disabled options config by mapping keys and values

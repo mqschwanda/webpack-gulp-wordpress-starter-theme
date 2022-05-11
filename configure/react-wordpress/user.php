@@ -14,22 +14,6 @@ class User extends React_WordPress_Class
    */
 
   /**
-   * Initialize `User_User_Editor_Plugin_Manager` class
-   * 
-   * @return User
-   * 
-   * @since React WordPress 0.0.1
-   */
-  public function __construct()
-  {
-    parent::__construct();
-
-    add_action('init', array($this, 'init'));
-
-    return $this;
-  }
-
-  /**
    * Fires after WordPress has finished loading but before any headers are sent.
    * 
    * @see https://developer.wordpress.org/reference/hooks/init/
@@ -74,5 +58,21 @@ class User extends React_WordPress_Class
   public static function is_current_user_role_admin()
   { 
     return self::is_current_user_role(Role::ADMINISTRATOR);
+  }
+
+  /**
+   * Private
+   */
+
+  /**
+   * Initialize `User` class
+   * 
+   * @since React WordPress 0.0.1
+   */
+  private function __construct()
+  {
+    parent::__construct();
+
+    add_action('init', array($this, 'init'));
   }
 }

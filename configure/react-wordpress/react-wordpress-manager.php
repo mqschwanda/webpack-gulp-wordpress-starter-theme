@@ -155,8 +155,6 @@ class React_WordPress_Manager extends React_WordPress_Class
   /**
    * Initialize `React_WordPress_Manager` class
    * 
-   * @return React_WordPress_Manager
-   * 
    * @since React WordPress 0.0.1
    */
   private function __construct() 
@@ -166,8 +164,6 @@ class React_WordPress_Manager extends React_WordPress_Class
     add_action('init', array($this, 'init'));
 
     self::construct_react_wordpress_classes();
-
-    return $this;
   }
 
   /**
@@ -177,22 +173,28 @@ class React_WordPress_Manager extends React_WordPress_Class
    */
   private function construct_react_wordpress_classes()
   {
-    include('adminimize-plugin-manager.php');
+    // base
     include('capability.php');
-    include('plugin-activation-manager.php');
     include('role.php');
-    include('user-role-editor-plugin-manager.php');
     include('user.php');
-    include('wp-admin-css-color-manager.php');
-    include('wp-customize-manager.php');
-
-    $this->adminimize_plugin_manager = new Adminimize_Plugin_Manager();
     $this->capability = new Capability();
-    $this->plugin_activation_manager = new Plugin_Activation_Manager();
     $this->role = new Role();
     $this->user = new User();
-    $this->user_role_editor_plugin_manager = new User_Role_Editor_Plugin_Manager();
+    
+    // wordpress core
+    include('wp-admin-css-color-manager.php');
+    include('wp-customize-manager.php');
     $this->wp_admin_css_color_manager = new WP_Admin_CSS_Color_Manager();
     $this->wp_customize_manager = new WP_Customize_Manager();
+
+    // plugins
+    include('plugin-activation-manager.php');
+    $this->plugin_activation_manager = new Plugin_Activation_Manager();
+
+    include('adminimize-plugin-manager.php');
+    include('user-role-editor-plugin-manager.php');
+    $this->adminimize_plugin_manager = new Adminimize_Plugin_Manager();
+    $this->user_role_editor_plugin_manager = new User_Role_Editor_Plugin_Manager();
+    
   }
 }

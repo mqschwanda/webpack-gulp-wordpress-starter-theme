@@ -236,31 +236,6 @@ class WP_Customize_Manager extends React_WordPress_Class
   );
 
   /**
-   * Initialize `WP_Customize_Manager` class
-   * 
-   * @return WP_Customize_Manager
-   * 
-   * @since React WordPress 0.0.1
-   */
-  public function __construct() {
-    parent::__construct();
-
-    add_action('init', array($this, 'init'));
-    
-    // Setup the Theme Customizer settings and controls...
-    add_action('customize_register', array($this, 'customize_register'));
-    
-    // Output custom CSS to live site
-    add_action('wp_head', array($this, 'head'));
-    add_action('admin_head', array($this, 'head'));
-    
-    // Enqueue live preview javascript in Theme Customizer admin screen
-    add_action('customize_preview_init', array($this, 'customize_preview_init'));
-
-    return $this;
-  }
-
-  /**
    * Fires after WordPress has finished loading but before any headers are sent.
    * 
    * @see https://developer.wordpress.org/reference/hooks/init/
@@ -414,6 +389,27 @@ class WP_Customize_Manager extends React_WordPress_Class
   /**
    * Private
    */
+  
+  /**
+   * Initialize `WP_Customize_Manager` class
+   * 
+   * @since React WordPress 0.0.1
+   */
+  private function __construct() {
+    parent::__construct();
+
+    add_action('init', array($this, 'init'));
+    
+    // Setup the Theme Customizer settings and controls...
+    add_action('customize_register', array($this, 'customize_register'));
+    
+    // Output custom CSS to live site
+    add_action('wp_head', array($this, 'head'));
+    add_action('admin_head', array($this, 'head'));
+    
+    // Enqueue live preview javascript in Theme Customizer admin screen
+    add_action('customize_preview_init', array($this, 'customize_preview_init'));
+  }
 
   /**
    * Configure any theme mods that are missing.
