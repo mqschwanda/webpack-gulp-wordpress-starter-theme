@@ -1,7 +1,7 @@
 {
-  "name": "blank-theme",
+  "name": "@mqs/react_wordpress",
   "description": "A starter-kit for WordPress themes",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Mark Q Schwanda",
   "authorURI": "https://www.github.com/mqschwanda/webpack-gulp-wordpress-starter-theme",
   "license": "MIT",

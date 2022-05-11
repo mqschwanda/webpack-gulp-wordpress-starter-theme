@@ -1,20 +1,32 @@
 <?php
 
-namespace React_Wordpress;
+namespace React_WordPress;
 
 /**
- * This file represents an example of the code that themes would use to register
- * the required plugins.
+ * TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your
+ * WordPress themes (and plugins). It allows your users to install, update and even automatically activate
+ * plugins in singular or bulk fashion using native WordPress classes, functions and interfaces. You can
+ * reference bundled plugins, plugins from the WordPress Plugin Repository or even plugins hosted elsewhere
+ * on the internet.
  *
- * @see http://tgmpluginactivation.com/configuration/ for detailed documentation.
- *
- * @package    TGM-Plugin-Activationq
- * @link       https://github.com/TGMPA/TGM-Plugin-Activation
+ * @see http://tgmpluginactivation.com/configuration/
+ * @see https://github.com/TGMPA/TGM-Plugin-Activation
+ * @since React WordPress 0.0.1
+ * @package TGM-Plugin-Activation
  */
-class TGM_Plugin_Activation_Manager extends React_Wordpress_Class {
+class Plugin_Activation_Manager extends React_WordPress_Class
+{
+  /**
+   * Public
+   */
+
   /**
    * Array of plugin arrays. Required keys are name and slug.
    * If the source is NOT from the .org repo, then source is also required.
+   * 
+   * @var array
+   * 
+   * @since React WordPress 0.0.1
    */
   public const PLUGINS = array(
 
@@ -95,13 +107,17 @@ class TGM_Plugin_Activation_Manager extends React_Wordpress_Class {
   * sending in a pull-request with .po file(s) with the translations.
   *
   * Only uncomment the strings in the config array if you want to customize the strings.
+  * 
+  * @var array
+  * 
+  * @since React WordPress 0.0.1
   */
   public const CONFIG = array(
     'id'           => 'tgmpa',                                                 // Unique ID for hashing notices for multiple instances of TGMPA.
     'default_path' => '',                                                      // Default absolute path to bundled plugins.
     'menu'         => 'tgmpa-install-plugins',                                 // Menu slug.
     'parent_slug'  => 'themes.php',                                            // Parent menu slug.
-    'capability'   => User_Role_Editor_Manager::EDIT_THEME_OPTIONS_CAPABILITY, // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+    'capability'   => User_Role_Editor_Plugin_Manager::EDIT_THEME_OPTIONS_CAPABILITY, // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
     'has_notices'  => true,                                                    // Show admin notices or not.
     'dismissable'  => false,                                                   // If false, a user cannot dismiss the nag message.
     'dismiss_msg'  => '',                                                      // If 'dismissable' is false, this message will be output at top of nag.
@@ -185,10 +201,20 @@ class TGM_Plugin_Activation_Manager extends React_Wordpress_Class {
     */
   );
 
-  public function __construct() {
+  /**
+   * Initialize `React_WordPress_Manager` class
+   * 
+   * @return Plugin_Activation_Manager
+   * 
+   * @since React WordPress 0.0.1
+   */
+  public function __construct()
+  {
     parent::__construct();
 
     add_action('tgmpa_register', array($this, 'tgmpa_register'));
+
+    return $this;
   }
 
   /**
@@ -202,8 +228,11 @@ class TGM_Plugin_Activation_Manager extends React_Wordpress_Class {
    * In that case, the TGMPA default settings will be used.
    *
    * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function tgmpa_register() {
+  public static function tgmpa_register()
+  {
     tgmpa( 
       self::PLUGINS, 
       self::CONFIG

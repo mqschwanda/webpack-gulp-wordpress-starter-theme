@@ -1,8 +1,23 @@
 <?php
 
-namespace React_Wordpress;
+namespace React_WordPress;
 
-class User_Role_Editor_Manager extends React_Wordpress_Class {
+/**
+ * Manager for the WordPress Plugin: `User Role Editor`.
+ * 
+ * User Role Editor allows you to change user roles and capabilities easy.
+ * 
+ * @see https://www.role-editor.com/
+ * @see https://wordpress.org/plugins/user-role-editor/
+ * @since React WordPress 0.0.1
+ * @package User Role Editor
+ */
+class User_Role_Editor_Plugin_Manager extends React_WordPress_Class
+{
+  /**
+   * Public
+   */
+
   /**
    * enabled roles
    */
@@ -310,62 +325,102 @@ class User_Role_Editor_Manager extends React_Wordpress_Class {
   public const DISABLED_CAPABILITIES = array(
   );
 
-  public function __construct() {
+  /**
+   * Initialize `User_Role_Editor_Plugin_Manager` class
+   * 
+   * @return User_Role_Editor_Plugin_Manager
+   * 
+   * @since React WordPress 0.0.1
+   */
+  public function __construct()
+  {
     parent::__construct();
 
     add_action('init', array($this, 'init'));
+
+    return $this;
   }
 
-  public static function init() {
-    foreach (self::DISABLED_ROLES as $disabled_role) {
+  /**
+   * Fires after WordPress has finished loading but before any headers are sent.
+   * 
+   * @see https://developer.wordpress.org/reference/hooks/init/
+   * @since React WordPress 0.0.1
+   */
+  public static function init()
+  {
+    self::configure_roles_and_capabilities();
+  }
+
+  /**
+   * Private
+   */
+
+  /**
+   * Configure default roles and capabilities.
+   *
+   * @since React WordPress 0.0.1
+   */
+  private function configure_roles_and_capabilities()
+  {
+    foreach (self::DISABLED_ROLES as $disabled_role)
+    {
       remove_role($disabled_role);
     }
     
     add_role(self::ADMINISTRATOR_ROLE, __('Administrator'));
     $administrator_role = get_role(self::ADMINISTRATOR_ROLE);
-    foreach (self::ADMINISTRATOR_CAPABILITIES as $administrator_capability) {
+    foreach (self::ADMINISTRATOR_CAPABILITIES as $administrator_capability)
+    {
       $administrator_role->add_cap($administrator_capability);
     }
 
     add_role(self::CONTRIBUTOR_ROLE, __('Contributer'));
     $contributor_role = get_role(self::CONTRIBUTOR_ROLE);
-    foreach (self::CONTRIBUTOR_CAPABILITIES as $contributor_capability) {
+    foreach (self::CONTRIBUTOR_CAPABILITIES as $contributor_capability)
+    {
       $contributor_role->add_cap($contributor_capability);
     }
 
     add_role(self::CUSTOMER_SERVICE_ROLE, __('Customer Service'));
     $customer_service_role = get_role(self::CUSTOMER_SERVICE_ROLE);
-    foreach (self::CUSTOMER_SERVICE_CAPABILITIES as $customer_service_capability) {
+    foreach (self::CUSTOMER_SERVICE_CAPABILITIES as $customer_service_capability)
+    {
       $customer_service_role->add_cap($customer_service_capability);
     }
     
     add_role(self::DEVELOPER_ROLE, __('Developer'));
     $developer_role = get_role(self::DEVELOPER_ROLE);
-    foreach (self::DEVELOPER_CAPABILITIES as $developer_capability) {
+    foreach (self::DEVELOPER_CAPABILITIES as $developer_capability)
+    {
       $developer_role->add_cap($developer_capability);
     }
     
     add_role(self::EDITOR_ROLE, __('Editor'));
     $editor_role = get_role(self::EDITOR_ROLE);
-    foreach (self::EDITOR_CAPABILITIES as $editor_capability) {
+    foreach (self::EDITOR_CAPABILITIES as $editor_capability)
+    {
       $editor_role->add_cap($editor_capability);
     }
 
     add_role(self::MARKETING_ROLE, __('Marketing'));
     $marketing_role = get_role(self::MARKETING_ROLE);
-    foreach (self::MARKETING_CAPABILITIES as $marketing_capability) {
+    foreach (self::MARKETING_CAPABILITIES as $marketing_capability)
+    {
       $marketing_role->add_cap($marketing_capability);
     }
     
     add_role(self::PRODUCT_MANAGER_ROLE, __('Product Manager'));
     $product_manager_role = get_role(self::PRODUCT_MANAGER_ROLE);
-    foreach (self::PRODUCT_MANAGER_CAPABILITIES as $product_manager_capability) {
+    foreach (self::PRODUCT_MANAGER_CAPABILITIES as $product_manager_capability)
+    {
       $product_manager_role->add_cap($product_manager_capability);
     }
 
     add_role(self::SUBSCRIBER_ROLE, __('Subscriber'));
     $subscriber_role = get_role(self::SUBSCRIBER_ROLE);
-    foreach (self::SUBSCRIBER_CAPABILITIES as $subscriber_capability) {
+    foreach (self::SUBSCRIBER_CAPABILITIES as $subscriber_capability)
+    {
       $subscriber_role->add_cap($subscriber_capability);
     }
   }

@@ -1,10 +1,30 @@
 <?php
 
-namespace React_Wordpress;
+namespace React_WordPress;
 
-class React_Wordpress_Class {
-  public function __construct() {
+/**
+ * Base class for all classes used in the `React_WordPress` namespace. 
+ * 
+ * @since React WordPress 0.0.1
+ */
+class React_WordPress_Class
+{
+  /**
+   * Protected
+   */
+
+  /**
+   * Initialize `React_WordPress_Class` class
+   * 
+   * @return React_WordPress_Class
+   * 
+   * @since React WordPress 0.0.1
+   */
+  protected function __construct()
+  {
     // code and stuff...
+
+    return $this;
   }
 }
 

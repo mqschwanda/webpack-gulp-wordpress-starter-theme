@@ -1,8 +1,23 @@
 <?php
 
-namespace React_Wordpress;
+namespace React_WordPress;
 
-class MW_Adminimize_Manager extends React_Wordpress_Class {
+/**
+ * Manager for the WordPress Plugin: `Adminimize`.
+ * 
+ * Adminimize makes it easy to remove items from view based on a user’s role.
+ * 
+ * @see https://wordpress.org/plugins/adminimize/
+ * @see https://github.com/bueltge/adminimize
+ * @since React WordPress 0.0.1
+ * @package Adminimize
+ */
+class Adminimize_Plugin_Manager extends React_WordPress_Class
+{
+  /**
+   * Public
+   */
+
   public const ADMIN_ONLY_DASHBOARD_OPTION_ITEMS = array(
     'dashboard_site_health', // Site Health
     'dashboard_activity', // Recent Activity
@@ -268,71 +283,49 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
   public const DISABLED_NAV_MENU_ITEMS = array(
   );
 
-  public function __construct() {
+  /**
+   * Initialize `Adminimize_Plugin_Manager` class
+   * 
+   * @return Adminimize_Plugin_Manager
+   * 
+   * @since React WordPress 0.0.1
+   */
+  public function __construct()
+  {
     parent::__construct();
 
     add_action('init', array($this, 'init'));
 
     add_action('mw_adminimize_before_settings_form', array($this, 'mw_adminimize_before_settings_form'));
     add_action('mw_adminimize_after_settings_form', array($this, 'mw_adminimize_after_settings_form'));
+
+    return $this;
   }
 
   /**
-   * Get user roles using MW Adminimize helper function
+   * Fires after WordPress has finished loading but before any headers are sent.
    * 
-   * @return array 
+   * @see https://developer.wordpress.org/reference/hooks/init/
+   * @since React WordPress 0.0.1
    */
-  public static function get_user_roles() {
-    return _mw_adminimize_get_all_user_roles();
-  }
-
-  /**
-   * Get options using MW Adminimize helper function
-   * 
-   * @return array 
-   */
-  public static function get_options() {
-    return _mw_adminimize_get_option_value();
-  }
-
-  /**
-   * Get an option using MW Adminimize helper function
-   * 
-   * @param string $key
-   * @return mixed 
-   */
-  public static function get_option($key) {
-    return _mw_adminimize_get_option_value($key);
-  }
-
-  /**
-   * Set options using MW Adminimize helper function
-   * 
-   * @param array $options
-   * @return bool 
-   */
-  public static function set_options($options) {
-    return _mw_adminimize_update_option($options);
-  }
-
-  /**
-   * Merge multiple arrays together, remove all falsy items, and remove all duplicates
-   * 
-   * @param ?array ...arrays
-   * @return array
-   */
-  public static function merge_items_arrays(...$arrays) {
-    return array_filter(array_unique(array_merge(...$arrays)));
+  public static function init()
+  {
+    self::set_default_options();
   }
 
   /**
    * Get the disabled dashboard items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_dashboard_option_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_dashboard_option_items($user_role)
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    {
       return self::DISABLED_DASHBOARD_OPTION_ITEMS;
     }
 
@@ -346,14 +339,20 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled admin bar items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_admin_bar_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_admin_bar_items($user_role)
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    {
       return self::DISABLED_ADMIN_BAR_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_ADMIN_BAR_ITEMS,
         self::DISABLED_ADMIN_BAR_ITEMS,
@@ -371,10 +370,15 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled global items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_global_option_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_global_option_items($user_role)
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    {
       return self::DISABLED_GLOBAL_OPTION_ITEMS;
     }
 
@@ -388,14 +392,20 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled menu items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_menu_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_menu_items($user_role)
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    {
       return self::DISABLED_MENU_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_MENU_ITEMS,
         self::DISABLED_MENU_ITEMS,
@@ -413,14 +423,20 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled submenu items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_submenu_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_submenu_items($user_role)
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    {
       return self::DISABLED_SUBMENU_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_SUBMENU_ITEMS,
         self::DISABLED_SUBMENU_ITEMS,
@@ -438,14 +454,20 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled page items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_metaboxes_page_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_metaboxes_page_items($user_role)
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    {
       return self::DISABLED_METABOXES_PAGE_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_METABOXES_PAGE_ITEMS,
         self::DISABLED_METABOXES_PAGE_ITEMS,
@@ -463,14 +485,20 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled post items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_metaboxes_post_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_metaboxes_post_items($user_role)
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    {
       return self::DISABLED_METABOXES_POST_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Manager::SUBSCRIBER_ROLE) {
+    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_METABOXES_POST_ITEMS,
         self::DISABLED_METABOXES_POST_ITEMS,
@@ -488,10 +516,15 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled link items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_link_option_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_link_option_items($user_role)
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    {
       return self::DISABLED_LINK_ITEMS;
     }
 
@@ -505,10 +538,15 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled widget items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_widget_option_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_widget_option_items($user_role)
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    {
       return self::DISABLED_WIDGET_ITEMS;
     }
 
@@ -522,10 +560,15 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled nav menu items array for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_nav_menu_option_items($user_role) {
-    if ($user_role == User_Role_Editor_Manager::ADMINISTRATOR_ROLE) {
+  public static function get_disabled_nav_menu_option_items($user_role) 
+  {
+    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE) 
+    {
       return self::DISABLED_NAV_MENU_ITEMS;
     }
 
@@ -539,9 +582,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled dashboard items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_dashboard_option_items_key($user_role) {
+  public static function get_disabled_dashboard_option_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_dashboard_option_' . $user_role . '_items';
   }
 
@@ -549,9 +596,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled admin bar frontend items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_admin_bar_frontend_items_key($user_role) {
+  public static function get_disabled_admin_bar_frontend_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_admin_bar_frontend_' . $user_role . '_items';
   }
 
@@ -559,9 +610,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled admin bar backend items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_admin_bar_backend_items_key($user_role) {
+  public static function get_disabled_admin_bar_backend_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_admin_bar_' . $user_role . '_items';
   }
 
@@ -569,9 +624,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled global items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_global_option_items_key($user_role) {
+  public static function get_disabled_global_option_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_global_option_' . $user_role . '_items';
   }
 
@@ -579,9 +638,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled menu items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_menu_items_key($user_role) {
+  public static function get_disabled_menu_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_menu_' . $user_role . '_items';
   }
 
@@ -589,9 +652,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled submenu items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_submenu_items_key($user_role) {
+  public static function get_disabled_submenu_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_submenu_' . $user_role . '_items';
   }
 
@@ -599,9 +666,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled page items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_metaboxes_page_items_key($user_role) {
+  public static function get_disabled_metaboxes_page_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_metaboxes_page_' . $user_role . '_items';
   }
 
@@ -609,9 +680,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled post items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_metaboxes_post_items_key($user_role) {
+  public static function get_disabled_metaboxes_post_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_metaboxes_post_' . $user_role . '_items';
   }
 
@@ -619,9 +694,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled link items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_link_option_items_key($user_role) {
+  public static function get_disabled_link_option_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_link_option_' . $user_role . '_items';
   }
 
@@ -629,9 +708,13 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled widget items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_widget_option_items_key($user_role) {
+  public static function get_disabled_widget_option_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_widget_option_' . $user_role . '_items';
   }
 
@@ -639,19 +722,124 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
    * Get the disabled nav menu items key for a given user role
    * 
    * @param mixed $user_role
+   * 
    * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_nav_menu_option_items_key($user_role) {
+  public static function get_disabled_nav_menu_option_items_key($user_role)
+  {
     return 'mw_adminimize_disabled_nav_menu_option_' . $user_role . '_items';
   }
+
+  /**
+   * Get user roles using Adminimize function
+   * 
+   * @return array
+   * 
+   * @since React WordPress 0.0.1
+   */
+  public static function get_user_roles()
+  {
+    return _mw_adminimize_get_all_user_roles();
+  }
+
+  /**
+   * Get all options using an Adminimize function
+   * 
+   * @return mixed
+   * 
+   * @since React WordPress 0.0.1 
+   */
+  public static function get_options()
+  {
+    return _mw_adminimize_get_option_value();
+  }
+
+  /**
+   * Get a single option using an Adminimize function
+   * 
+   * @param string $key
+   *
+   * @return mixed
+   * 
+   * @since React WordPress 0.0.1
+   */
+  public static function get_option($key)
+  {
+    return _mw_adminimize_get_option_value($key);
+  }
+
+  /**
+   * Set options using Adminimize function
+   * 
+   * @param array $options
+   * 
+   * @return bool
+   * 
+   * @since React WordPress 0.0.1
+   */
+  public static function set_options($options)
+  {
+    return _mw_adminimize_update_option($options);
+  }
+
+  /**
+   * This function takes a string as a parameter and should return a string. The function
+   * will be called when the output buffer is flushed (sent) or cleaned (with ob_flush(), 
+   * ob_clean() or similar function) or when the output buffer is flushed to the browser 
+   * at the end of the request.
+   * 
+   * If function returns false original input is sent to the browser.
+   * 
+   * @param string $buffer
+   * 
+   * @return string,bool
+   * 
+   * @see https://www.php.net/manual/en/function.ob-start.php
+   */
+  public static function ob_start($buffer)
+  {
+    $buffer = self::preg_replace_disabled_inputs($buffer);
+
+    return $buffer;
+  }
+
+  /**
+   * Turn on output buffering before the Adminimize forms are generated
+   * 
+   * @since React WordPress 0.0.1
+   */
+  public static function mw_adminimize_before_settings_form()
+  {
+    ob_start('self::ob_start');
+  }
+
+  /**
+   * Send the output buffer and turn off output buffering after Adminimize forms are generated
+   * 
+   * @since React WordPress 0.0.1
+   */
+  public static function mw_adminimize_after_settings_form()
+  {
+    ob_end_flush();
+  }
+
+  /**
+   * Private
+   */
 
   /**
    * Get disabled options config by mapping keys and values
    * 
    * @param mixed $user_role 
+   * 
    * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function get_disabled_options_config($user_role) {
+  private function get_disabled_options_config($user_role)
+  {
     return array(
       // Admin Bar Frontend
       self::get_disabled_admin_bar_frontend_items_key($user_role) => self::get_disabled_admin_bar_items($user_role),
@@ -679,9 +867,50 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
   }
 
   /**
-   * Configure MW Adminimize 
+   * Find and replace input tags that are configured programatically by adding a disabled attribute 
+   * 
+   * @param string $html 
+   * 
+   * @return string
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function init() {
+  private function preg_replace_disabled_inputs($html)
+  {
+    $user_roles = self::get_user_roles();
+    $patterns = array();
+
+    // configure disabled options for each user role
+    foreach ($user_roles as $user_role)
+    {
+      $disabled_options_config = self::get_disabled_options_config($user_role);
+      // go through each disabled option key and get the array of disabled values
+      foreach ($disabled_options_config as $name => $values)
+      {
+        // configure pattern for each input value
+        foreach ($values as $value)
+        {
+          $pattern = '/<input(.*)(name="'.$name.'\[\]")(.*)(value="'.$value.'")(.*)\/>/m';
+          array_push($patterns, $pattern);
+        }
+      }
+    }
+
+    $replacement = '<input$1$2$3$4$5 disabled="true" />';
+    $html = preg_replace($patterns, $replacement, $html);
+
+    return $html;
+  }
+
+  /**
+   * Iterate over all user roles and options and set the default value if none exists
+   * 
+   * @return bool
+   * 
+   * @since React WordPress 0.0.1
+   */
+  private function set_default_options()
+  {
     $user_roles = self::get_user_roles();
     $options = self::get_options();
 
@@ -692,55 +921,33 @@ class MW_Adminimize_Manager extends React_Wordpress_Class {
     $options['_mw_adminimize_cat_full'] = 0; // do not force full height categories
 
     // configure disabled options for each user role
-    foreach ($user_roles as $user_role) {
+    foreach ($user_roles as $user_role)
+    {
       $disabled_options_config = self::get_disabled_options_config($user_role);
 
       // go through each disabled option key and configure the default settings
-      foreach ($disabled_options_config as $key => $value) {
+      foreach ($disabled_options_config as $key => $value)
+      {
         $options[$key] = self::merge_items_arrays($options[$key], $value);
       }
     }
 
-    self::set_options($options);
+    return self::set_options($options);
   }
 
   /**
-   * Handle the output buffer
+   * TODO: move to array util class
+   * 
+   * Merge multiple arrays together, remove all falsy items, and remove all duplicates
+   * 
+   * @param ?array ...$arrays
+   * 
+   * @return array
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function ob_start($buffer) {
-    $user_roles = self::get_user_roles();
-    $patterns = array();
-
-    // configure disabled options for each user role
-    foreach ($user_roles as $user_role) {
-      $disabled_options_config = self::get_disabled_options_config($user_role);
-      // go through each disabled option key and get the array of disabled values
-      foreach ($disabled_options_config as $name => $values) {
-        // configure pattern for each input value
-        foreach ($values as $value) {
-          $pattern = '/<input(.*)(name="'.$name.'\[\]")(.*)(value="'.$value.'")(.*)\/>/m';
-          array_push($patterns, $pattern);
-        }
-      }
-    }
-
-    $replacement = '<input$1$2$3$4$5 disabled="true" />';
-    $buffer = preg_replace($patterns, $replacement, $buffer);
-
-    return $buffer;
-  }
-
-  /**
-   * Turn on output buffering before the mw adminimize forms are generated
-   */
-  public static function mw_adminimize_before_settings_form() {
-    ob_start('self::ob_start');
-  }
-
-  /**
-   * Send the output buffer and turn off output buffering after mw adminimize forms are generated
-   */
-  public static function mw_adminimize_after_settings_form() {
-    ob_end_flush();
+  private function merge_items_arrays(...$arrays)
+  {
+    return array_filter(array_unique(array_merge(...$arrays)));
   }
 }

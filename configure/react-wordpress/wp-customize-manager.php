@@ -1,14 +1,19 @@
 <?php
 
-namespace React_Wordpress;
+namespace React_WordPress;
 
 /**
  * Contains methods for customizing the theme customization screen.
  * 
- * @link http://codex.wordpress.org/Theme_Customization_API
- * @since React Wordpress 0.0.1
+ * @see http://codex.wordpress.org/Theme_Customization_API
+ * @since React WordPress 0.0.1
  */
-class WP_Customize_Manager extends React_Wordpress_Class {
+class WP_Customize_Manager extends React_WordPress_Class
+{
+  /**
+   * Public
+   */
+
   public const BREAKPOINT_SECTION = 'breakpoints';
   public const PALETTE_SECTION = 'palette';
   public const SHAPE_SECTION = 'shape';
@@ -33,29 +38,29 @@ class WP_Customize_Manager extends React_Wordpress_Class {
     )
   );
 
-  public const XS_OPTION = React_Wordpress_Manager::THEME_SLUG . '_xs';
-  public const SM_OPTION = React_Wordpress_Manager::THEME_SLUG . '_sm';
-  public const MD_OPTION = React_Wordpress_Manager::THEME_SLUG . '_md';
-  public const LG_OPTION = React_Wordpress_Manager::THEME_SLUG . '_lg';
-  public const XL_OPTION = React_Wordpress_Manager::THEME_SLUG . '_xl';
-  public const MODE_OPTION = React_Wordpress_Manager::THEME_SLUG . '_mode';
-  public const PRIMARY_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_primary_color';
-  public const SECONDARY_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_secondary_color';
-  public const CONTRAST_TEXT_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_contrast_text_color';
-  public const ERROR_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_error_color';
-  public const WARNING_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_warning_color';
-  public const INFO_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_info_color';
-  public const SUCCESS_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_success_color';
-  public const BACKGROUND_COLOR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_background_color';
-  public const FONT_FAMILY_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_family';
-  public const FONT_SIZE_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_size';
-  public const FONT_WEIGHT_LIGHT_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_weight_light';
-  public const FONT_WEIGHT_REGULAR_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_weight_regular';
-  public const FONT_WEIGHT_MEDIUM_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_weight_medium';
-  public const FONT_WEIGHT_BOLD_OPTION = React_Wordpress_Manager::THEME_SLUG . '_font_weight_bold';
-  public const BORDER_RADIUS_OPTION = React_Wordpress_Manager::THEME_SLUG . '_border_radius';
+  public const XS_OPTION = React_WordPress_Manager::THEME_SLUG . '_xs';
+  public const SM_OPTION = React_WordPress_Manager::THEME_SLUG . '_sm';
+  public const MD_OPTION = React_WordPress_Manager::THEME_SLUG . '_md';
+  public const LG_OPTION = React_WordPress_Manager::THEME_SLUG . '_lg';
+  public const XL_OPTION = React_WordPress_Manager::THEME_SLUG . '_xl';
+  public const MODE_OPTION = React_WordPress_Manager::THEME_SLUG . '_mode';
+  public const PRIMARY_COLOR_OPTION = React_WordPress_Manager::THEME_SLUG . '_primary_color';
+  public const SECONDARY_COLOR_OPTION = React_WordPress_Manager::THEME_SLUG . '_secondary_color';
+  public const CONTRAST_TEXT_COLOR_OPTION = React_WordPress_Manager::THEME_SLUG . '_contrast_text_color';
+  public const ERROR_COLOR_OPTION = React_WordPress_Manager::THEME_SLUG . '_error_color';
+  public const WARNING_COLOR_OPTION = React_WordPress_Manager::THEME_SLUG . '_warning_color';
+  public const INFO_COLOR_OPTION = React_WordPress_Manager::THEME_SLUG . '_info_color';
+  public const SUCCESS_COLOR_OPTION = React_WordPress_Manager::THEME_SLUG . '_success_color';
+  public const BACKGROUND_COLOR_OPTION = React_WordPress_Manager::THEME_SLUG . '_background_color';
+  public const FONT_FAMILY_OPTION = React_WordPress_Manager::THEME_SLUG . '_font_family';
+  public const FONT_SIZE_OPTION = React_WordPress_Manager::THEME_SLUG . '_font_size';
+  public const FONT_WEIGHT_LIGHT_OPTION = React_WordPress_Manager::THEME_SLUG . '_font_weight_light';
+  public const FONT_WEIGHT_REGULAR_OPTION = React_WordPress_Manager::THEME_SLUG . '_font_weight_regular';
+  public const FONT_WEIGHT_MEDIUM_OPTION = React_WordPress_Manager::THEME_SLUG . '_font_weight_medium';
+  public const FONT_WEIGHT_BOLD_OPTION = React_WordPress_Manager::THEME_SLUG . '_font_weight_bold';
+  public const BORDER_RADIUS_OPTION = React_WordPress_Manager::THEME_SLUG . '_border_radius';
 
-  public const OPTIONS = array(
+  public const THEME_MODS = array(
     self::XS_OPTION => array(
       'default'     => 0,
       'description' => '',
@@ -230,6 +235,13 @@ class WP_Customize_Manager extends React_Wordpress_Class {
     ),
   );
 
+  /**
+   * Initialize `WP_Customize_Manager` class
+   * 
+   * @return WP_Customize_Manager
+   * 
+   * @since React WordPress 0.0.1
+   */
   public function __construct() {
     parent::__construct();
 
@@ -246,13 +258,14 @@ class WP_Customize_Manager extends React_Wordpress_Class {
     add_action('customize_preview_init', array($this, 'customize_preview_init'));
   }
 
+  /**
+   * Fires after WordPress has finished loading but before any headers are sent.
+   * 
+   * @see https://developer.wordpress.org/reference/hooks/init/
+   * @since React WordPress 0.0.1
+   */
   public static function init () {
-    foreach (self::OPTIONS as $key => $option) {
-      $theme_mod = get_theme_mod($key);
-      if (!$theme_mod) {
-        set_theme_mod($key, $option['default']);
-      }
-    }
+    self::configure_theme_mods();
   }
 
   /**
@@ -262,23 +275,23 @@ class WP_Customize_Manager extends React_Wordpress_Class {
   * Note: To enable instant preview, we have to actually write a bit of custom
   * javascript. See customize_preview_init() for more.
   *  
-  * @see add_action('customize_register',$func)
   * @param \WP_Customize_Manager $wp_customize
-  * @link http://ottopress.com/2012/how-to-leverage-the-theme-customizer-in-your-own-themes/
-  * @since React Wordpress 0.0.1
+  *
+  * @see http://ottopress.com/2012/how-to-leverage-the-theme-customizer-in-your-own-themes/
+  * @since React WordPress 0.0.1
   */
   public static function customize_register ($wp_customize) {
     // 1. Define a new section (if desired) to the Theme Customizer    
-    foreach (self::SECTIONS as $key => $section) {
-      $description = __($section['description']);
-      $description_hidden = $section['description_hidden'];
+    foreach (self::SECTIONS as $section_name => $config) {
+      $description = __($config['description']);
+      $description_hidden = $config['description_hidden'];
       $priority = 35;
-      $title = __($section['title']);
+      $title = __($config['title']);
 
       $wp_customize->add_section( 
-        $key,
+        $section_name,
         array(
-          'capability'         => User_Role_Editor_Manager::EDIT_THEME_OPTIONS_CAPABILITY,
+          'capability'         => User_Role_Editor_Plugin_Manager::EDIT_THEME_OPTIONS_CAPABILITY,
           'description'        => $description,
           'description_hidden' => $description_hidden,
           'priority'           => $priority,
@@ -288,12 +301,12 @@ class WP_Customize_Manager extends React_Wordpress_Class {
     } 
     
     // 2. Register new settings to the WP database...    
-    foreach (self::OPTIONS as $key => $option) {
+    foreach (self::THEME_MODS as $theme_mod_name => $config) {
       $wp_customize->add_setting( 
-        $key,
+        $theme_mod_name,
         array(
-          'capability'   => User_Role_Editor_Manager::EDIT_THEME_OPTIONS_CAPABILITY,
-          'default'      => $option['default'],
+          'capability'   => User_Role_Editor_Plugin_Manager::EDIT_THEME_OPTIONS_CAPABILITY,
+          'default'      => $config['default'],
           'transport'    => 'postMessage', 
           'type'         => 'theme_mod',
         ) 
@@ -301,36 +314,36 @@ class WP_Customize_Manager extends React_Wordpress_Class {
     }     
           
     // 3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
-    foreach (self::OPTIONS as $key => $option) {
-      $description = __($option['description']);
-      $label = __($option['label']);
+    foreach (self::THEME_MODS as $theme_mod_name => $config) {
+      $description = __($config['description']);
+      $label = __($config['label']);
       $priority = 10;
-      $section = $option['section'];
+      $section = $config['section'];
 
-      if ($option['type'] == 'color') {
+      if ($config['type'] == 'color') {
         $wp_customize->add_control(new \WP_Customize_Color_Control(
           $wp_customize,
-          $key,
+          $theme_mod_name,
           array(
             'description' => $description,
             'label'       => $label,
             'priority'    => $priority,
             'section'     => $section,
-            'settings'    => $key,
+            'settings'    => $theme_mod_name,
           ),
         ));
       } else {
         $wp_customize->add_control(
-          $key,
+          $theme_mod_name,
           array(
-            'choices'     => $option['choices'],
+            'choices'     => $config['choices'],
             'description' => $description,
-            'input_attrs' => $option['input_attrs'],
+            'input_attrs' => $config['input_attrs'],
             'label'       => $label,
             'priority'    => $priority,
             'section'     => $section,
-            'settings'    => $key,
-            'type'        => $option['type'],
+            'settings'    => $theme_mod_name,
+            'type'        => $config['type'],
           ),
         );
       }
@@ -340,26 +353,29 @@ class WP_Customize_Manager extends React_Wordpress_Class {
     // $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
   }
 
-   /**
-    * This will output the custom WordPress settings to the live theme's WP head.
-    * 
-    * Used by hook: 'wp_head', 'admin_head'
-    * 
-    * @see add_action('wp_head',$func)
-    * @see add_action('admin_head',$func)
-    * @since React Wordpress 0.0.1
-    */
-  public static function head() {
+  /**
+  * This will output the custom WordPress settings to the live theme's WP head.
+  * 
+  * @since React WordPress 0.0.1
+  */
+  public static function head()
+  {
     ?>
       <!-- <?php echo self::class ?> CSS--> 
       <style type="text/css">
         <?php
-          foreach (self::OPTIONS as $key => $value) {              
-            if ($value['css_var']) {
+          foreach (self::THEME_MODS as $theme_mod_name => $config)
+          {              
+            if ($config['css_var'])
+            {
               $selector = ':root';
-              $style = '--' . $key;
-              $mod_name = $key;
-              self::generate_css($selector, $style, $mod_name);
+              $style = '--' . $theme_mod_name;
+
+              self::generate_css(
+                $selector, 
+                $style, 
+                $theme_mod_name,
+              );
             }
           }
         ?>
@@ -368,55 +384,96 @@ class WP_Customize_Manager extends React_Wordpress_Class {
     <?php
   }
    
-   /**
-    * This outputs the javascript needed to automate the live settings preview.
-    * Also keep in mind that this function isn't necessary unless your settings 
-    * are using 'transport'=>'postMessage' instead of the default 'transport'
-    * => 'refresh'
-    * 
-    * Used by hook: 'customize_preview_init'
-    * 
-    * @see add_action('customize_preview_init',$func)
-    * @since React Wordpress 0.0.1
-    */
-  public static function customize_preview_init() {
+  /**
+  * This outputs the javascript needed to automate the live settings preview.
+  * Also keep in mind that this function isn't necessary unless your settings 
+  * are using 'transport'=>'postMessage' instead of the default 'transport'
+  * => 'refresh'
+  * 
+  * @since React WordPress 0.0.1
+  */
+  public static function customize_preview_init() 
+  {
     $handle = 'theme-customize-preview'; // Give the script a unique ID
     $src = get_template_directory_uri() . '/assets/dist/js/customize-preview.js'; // Define the path to the JS file
     $deps = array('jquery', 'customize-preview'); // Define dependencies
-    $ver = ''; // Define a version (optional) 
+    $ver = React_WordPress_Manager::THEME_VERSION; // Define a version (optional) 
     $in_footer = true; // Specify whether to put in footer (leave this true)
-    wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
+
+    wp_enqueue_script(
+      $handle, 
+      $src, 
+      $deps, 
+      $ver, 
+      $in_footer,
+    );
+  }
+
+  /**
+   * Private
+   */
+
+  /**
+   * Configure any theme mods that are missing.
+   * 
+   * @since React WordPress 0.0.1
+   */
+  private function configure_theme_mods ()
+  {
+    $theme_mods = self::THEME_MODS;
+    foreach ($theme_mods as $name => $config)
+    {
+      $value = get_theme_mod($name);
+      if (empty($value))
+      {
+        $value = $config['default'];
+        set_theme_mod($name, $value);
+      }
+    }
   }
 
   /**
    * This will generate a line of CSS for use in header output. If the setting
-   * ($mod_name) has no defined value, the CSS will not be output.
+   * ($theme_mod_name) has no defined value, the CSS will not be output.
    * 
-   * @uses get_theme_mod()
-   * @param string $selector CSS selector
-   * @param string $style The name of the CSS *property* to modify
-   * @param string $mod_name The name of the 'theme_mod' option to fetch
-   * @param string $prefix Optional. Anything that needs to be output before the CSS property
-   * @param string $postfix Optional. Anything that needs to be output after the CSS property
-   * @param bool $echo Optional. Whether to print directly to the page (default: true).
+   * @param string $selector - CSS selector
+   * @param string $style - The name of the CSS *property* to modify
+   * @param string $theme_mod_name - The name of the 'theme_mod' option to fetch
+   * @param string $prefix - Optional. Anything that needs to be output before the CSS property
+   * @param string $postfix - Optional. Anything that needs to be output after the CSS property
+   * @param bool $echo - Optional. Whether to print directly to the page (default: true).
+   * 
    * @return string Returns a single line of CSS with selectors and a property.
-   * @since React Wordpress 0.0.1
+   * 
+   * @since React WordPress 0.0.1
    */
-  public static function generate_css($selector, $style, $mod_name, $prefix = '', $postfix = '', $echo = true) {
-    $return = '';
-    $mod = get_theme_mod($mod_name);
-    if (!empty($mod)) {
+  private function generate_css(
+    $selector, 
+    $style, 
+    $theme_mod_name, 
+    $prefix = '', 
+    $postfix = '', 
+    $echo = true
+  )
+  {
+    $css = '';
+    $theme_mod = get_theme_mod($theme_mod_name);
+    if (!empty($theme_mod))
+    {
       $format = '%s { %s:%s; }';
-      $return = sprintf(
+      $css = sprintf(
         $format,
         $selector,
         $style,
-        $prefix.$mod.$postfix
+        $prefix.$theme_mod.$postfix,
       );
-      if ($echo) {
-        echo $return;
+      
+      if ($echo) 
+      {
+        echo $css;
       }
     }
-    return $return;
+
+    return $css;
   }
 }

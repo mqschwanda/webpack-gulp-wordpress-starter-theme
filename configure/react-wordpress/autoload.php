@@ -1,7 +1,10 @@
 <?php
 
-namespace React_Wordpress;
+namespace React_WordPress;
 
 include('react-wordpress-manager.php');
 
-React_Wordpress_Manager::autoload();
+/**
+ * Initialize `React_WordPress` namespace. 
+ */
+React_WordPress_Manager::autoload();
