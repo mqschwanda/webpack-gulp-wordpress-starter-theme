@@ -256,6 +256,8 @@ class WP_Customize_Manager extends React_WordPress_Class
     
     // Enqueue live preview javascript in Theme Customizer admin screen
     add_action('customize_preview_init', array($this, 'customize_preview_init'));
+
+    return $this;
   }
 
   /**
