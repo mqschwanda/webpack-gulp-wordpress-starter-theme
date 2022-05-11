@@ -26,7 +26,9 @@ module.exports = deepMerge({
 	},
 
 	options: {
-		sass: {},
+		sass: {
+      includePaths: ['node_modules']
+    },
 		autoprefixer: {
 			overrideBrowserslist: [
 				'last 2 version',

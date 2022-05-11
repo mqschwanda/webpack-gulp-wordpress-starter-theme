@@ -28,6 +28,7 @@
     "@babel/plugin-transform-runtime": "7.17.0",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "WordPress": "https://github.com/WordPress/wordpress-develop.git",
     "ansi-colors": "4.1.1",
     "autoprefixer": "10.4.5",
     "babel-loader": "8.2.5",
