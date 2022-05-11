@@ -38,7 +38,7 @@ add_action( 'wp_footer', 'my_deregister_scripts' );
 
 // delete jquery migrate
 function dequeue_jquery_migrate( &$scripts){
-	if(!is_admin()){
+	if(!React_WordPress\User::is_current_user_role_admin()){
 		$scripts->remove( 'jquery');
 	}
 }

@@ -177,11 +177,12 @@ class React_WordPress_Manager extends React_WordPress_Class
    */
   private function construct_react_wordpress_classes()
   {
-    include('role.php');
-    include('capability.php');
     include('adminimize-plugin-manager.php');
+    include('capability.php');
     include('plugin-activation-manager.php');
+    include('role.php');
     include('user-role-editor-plugin-manager.php');
+    include('user.php');
     include('wp-admin-css-color-manager.php');
     include('wp-customize-manager.php');
 
@@ -189,6 +190,7 @@ class React_WordPress_Manager extends React_WordPress_Class
     $this->capability = new Capability();
     $this->plugin_activation_manager = new Plugin_Activation_Manager();
     $this->role = new Role();
+    $this->user = new User();
     $this->user_role_editor_plugin_manager = new User_Role_Editor_Plugin_Manager();
     $this->wp_admin_css_color_manager = new WP_Admin_CSS_Color_Manager();
     $this->wp_customize_manager = new WP_Customize_Manager();
