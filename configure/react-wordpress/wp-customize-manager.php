@@ -293,7 +293,7 @@ class WP_Customize_Manager extends React_WordPress_Class
       $wp_customize->add_section( 
         $section_name,
         array(
-          'capability'         => User_Role_Editor_Plugin_Manager::EDIT_THEME_OPTIONS_CAPABILITY,
+          'capability'         => Capability::EDIT_THEME_OPTIONS,
           'description'        => $description,
           'description_hidden' => $description_hidden,
           'priority'           => $priority,
@@ -307,7 +307,7 @@ class WP_Customize_Manager extends React_WordPress_Class
       $wp_customize->add_setting( 
         $theme_mod_name,
         array(
-          'capability'   => User_Role_Editor_Plugin_Manager::EDIT_THEME_OPTIONS_CAPABILITY,
+          'capability'   => Capability::EDIT_THEME_OPTIONS,
           'default'      => $config['default'],
           'transport'    => 'postMessage', 
           'type'         => 'theme_mod',

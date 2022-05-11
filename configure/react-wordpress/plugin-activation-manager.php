@@ -117,7 +117,7 @@ class Plugin_Activation_Manager extends React_WordPress_Class
     'default_path' => '',                                                      // Default absolute path to bundled plugins.
     'menu'         => 'tgmpa-install-plugins',                                 // Menu slug.
     'parent_slug'  => 'themes.php',                                            // Parent menu slug.
-    'capability'   => User_Role_Editor_Plugin_Manager::EDIT_THEME_OPTIONS_CAPABILITY, // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+    'capability'   => Capability::EDIT_THEME_OPTIONS, // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
     'has_notices'  => true,                                                    // Show admin notices or not.
     'dismissable'  => false,                                                   // If false, a user cannot dismiss the nag message.
     'dismiss_msg'  => '',                                                      // If 'dismissable' is false, this message will be output at top of nag.

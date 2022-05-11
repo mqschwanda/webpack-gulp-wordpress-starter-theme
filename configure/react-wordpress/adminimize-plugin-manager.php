@@ -324,7 +324,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_dashboard_option_items($user_role)
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    if ($user_role == Role::ADMINISTRATOR)
     {
       return self::DISABLED_DASHBOARD_OPTION_ITEMS;
     }
@@ -346,12 +346,12 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_admin_bar_items($user_role)
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    if ($user_role == Role::ADMINISTRATOR)
     {
       return self::DISABLED_ADMIN_BAR_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    if ($user_role == Role::SUBSCRIBER)
     {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_ADMIN_BAR_ITEMS,
@@ -377,7 +377,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_global_option_items($user_role)
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    if ($user_role == Role::ADMINISTRATOR)
     {
       return self::DISABLED_GLOBAL_OPTION_ITEMS;
     }
@@ -399,12 +399,12 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_menu_items($user_role)
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    if ($user_role == Role::ADMINISTRATOR)
     {
       return self::DISABLED_MENU_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    if ($user_role == Role::SUBSCRIBER)
     {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_MENU_ITEMS,
@@ -430,12 +430,12 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_submenu_items($user_role)
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    if ($user_role == Role::ADMINISTRATOR)
     {
       return self::DISABLED_SUBMENU_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    if ($user_role == Role::SUBSCRIBER)
     {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_SUBMENU_ITEMS,
@@ -461,12 +461,12 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_metaboxes_page_items($user_role)
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    if ($user_role == Role::ADMINISTRATOR)
     {
       return self::DISABLED_METABOXES_PAGE_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    if ($user_role == Role::SUBSCRIBER)
     {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_METABOXES_PAGE_ITEMS,
@@ -492,12 +492,12 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_metaboxes_post_items($user_role)
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    if ($user_role == Role::ADMINISTRATOR)
     {
       return self::DISABLED_METABOXES_POST_ITEMS;
     }
 
-    if ($user_role == User_Role_Editor_Plugin_Manager::SUBSCRIBER_ROLE)
+    if ($user_role == Role::SUBSCRIBER)
     {
       return self::merge_items_arrays(
         self::DISABLED_SUBSCRIBER_METABOXES_POST_ITEMS,
@@ -523,7 +523,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_link_option_items($user_role)
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    if ($user_role == Role::ADMINISTRATOR)
     {
       return self::DISABLED_LINK_ITEMS;
     }
@@ -545,7 +545,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_widget_option_items($user_role)
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE)
+    if ($user_role == Role::ADMINISTRATOR)
     {
       return self::DISABLED_WIDGET_ITEMS;
     }
@@ -567,7 +567,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    */
   public static function get_disabled_nav_menu_option_items($user_role) 
   {
-    if ($user_role == User_Role_Editor_Plugin_Manager::ADMINISTRATOR_ROLE) 
+    if ($user_role == Role::ADMINISTRATOR) 
     {
       return self::DISABLED_NAV_MENU_ITEMS;
     }
