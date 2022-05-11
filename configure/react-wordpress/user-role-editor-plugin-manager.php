@@ -12,7 +12,7 @@ namespace React_WordPress;
  * @since React WordPress 0.0.1
  * @package User Role Editor
  */
-class User_Role_Editor_Plugin_Manager extends React_WordPress_Class
+class User_Role_Editor_Plugin_Manager extends React_WordPress_Singleton
 {
   /**
    * Public
@@ -31,7 +31,7 @@ class User_Role_Editor_Plugin_Manager extends React_WordPress_Class
   }
 
   /**
-   * Private
+   * Protected
    */
 
   /**
@@ -39,7 +39,7 @@ class User_Role_Editor_Plugin_Manager extends React_WordPress_Class
    * 
    * @since React WordPress 0.0.1
    */
-  private function __construct()
+  protected function __construct()
   {
     parent::__construct();
 

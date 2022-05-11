@@ -2,14 +2,16 @@
 
 namespace React_WordPress;
 
+// core
 include('react-wordpress-class.php');
+include('react-wordpress-singleton.php');
 
 /**
  * Manage all classes used in the `React_WordPress` namespace. 
  * 
  * @since React WordPress 0.0.1
  */
-class React_WordPress_Manager extends React_WordPress_Class
+class React_WordPress_Manager extends React_WordPress_Singleton
 {
   /**
    * Public
@@ -50,23 +52,6 @@ class React_WordPress_Manager extends React_WordPress_Class
    * @since React WordPress 0.0.1
    */
   public const TEXT_DOMAIN = self::THEME_SLUG;
-
-  /**
-   * Gets a singleton instance of the `React_WordPress_Manager` class.
-   *
-   * @return React_WordPress_Manager
-   * 
-   * @since React WordPress 0.0.1
-   */
-  public static function get_instance()
-  {
-      if (null === self::$instance)
-      {
-          self::$instance = new self();
-      }
-
-      return self::$instance;
-  }
   
   /**
    * Handle autoload of the `React_WordPress` namespace by initializing the singleton instance. 
@@ -140,24 +125,15 @@ class React_WordPress_Manager extends React_WordPress_Class
   }
 
   /**
-   * Private 
+   * Protected 
    */
-
-  /**
-   * The unique instance of the `React_WordPress_Manager` class.
-   *
-   * @var React_WordPress_Manager
-   * 
-   * @since React WordPress 0.0.1
-   */
-  private static $instance;
 
   /**
    * Initialize `React_WordPress_Manager` class
    * 
    * @since React WordPress 0.0.1
    */
-  private function __construct() 
+  protected function __construct() 
   {
     parent::__construct();
 
@@ -165,6 +141,10 @@ class React_WordPress_Manager extends React_WordPress_Class
 
     self::construct_react_wordpress_classes();
   }
+
+  /**
+   * Private 
+   */
 
   /**
    * Initialize all classes used by `React_WordPress` namespace.
@@ -177,24 +157,24 @@ class React_WordPress_Manager extends React_WordPress_Class
     include('capability.php');
     include('role.php');
     include('user.php');
-    $this->capability = new Capability();
-    $this->role = new Role();
-    $this->user = new User();
+    $this->capability = Capability::get_instance();
+    $this->role = Role::get_instance();
+    $this->user = User::get_instance();
     
     // wordpress core
     include('wp-admin-css-color-manager.php');
     include('wp-customize-manager.php');
-    $this->wp_admin_css_color_manager = new WP_Admin_CSS_Color_Manager();
-    $this->wp_customize_manager = new WP_Customize_Manager();
+    $this->wp_admin_css_color_manager = WP_Admin_CSS_Color_Manager::get_instance();
+    $this->wp_customize_manager = WP_Customize_Manager::get_instance();
 
     // plugins
     include('plugin-activation-manager.php');
-    $this->plugin_activation_manager = new Plugin_Activation_Manager();
+    $this->plugin_activation_manager = Plugin_Activation_Manager::get_instance();
 
     include('adminimize-plugin-manager.php');
     include('user-role-editor-plugin-manager.php');
-    $this->adminimize_plugin_manager = new Adminimize_Plugin_Manager();
-    $this->user_role_editor_plugin_manager = new User_Role_Editor_Plugin_Manager();
+    $this->adminimize_plugin_manager = Adminimize_Plugin_Manager::get_instance();
+    $this->user_role_editor_plugin_manager = User_Role_Editor_Plugin_Manager::get_instance();
     
   }
 }

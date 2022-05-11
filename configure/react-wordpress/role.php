@@ -7,7 +7,7 @@ namespace React_WordPress;
  * 
  * @since React WordPress 0.0.1
  */
-class Role extends React_WordPress_Class
+class Role extends React_WordPress_Singleton
 {
   /**
    * Public
@@ -58,7 +58,7 @@ class Role extends React_WordPress_Class
   }
 
   /**
-   * Private
+   * Protected
    */
 
   /**
@@ -66,12 +66,16 @@ class Role extends React_WordPress_Class
    * 
    * @since React WordPress 0.0.1
    */
-  private function __construct()
+  protected function __construct()
   {
     parent::__construct();
 
     add_action('init', array($this, 'init'));
   }
+
+  /**
+   * Private
+   */
 
   /**
    * Configure default roles and capabilities.

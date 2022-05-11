@@ -8,7 +8,7 @@ namespace React_WordPress;
  * @see http://codex.wordpress.org/Theme_Customization_API
  * @since React WordPress 0.0.1
  */
-class WP_Customize_Manager extends React_WordPress_Class
+class WP_Customize_Manager extends React_WordPress_Singleton
 {
   /**
    * Public
@@ -387,7 +387,7 @@ class WP_Customize_Manager extends React_WordPress_Class
   }
 
   /**
-   * Private
+   * Protected
    */
   
   /**
@@ -395,7 +395,7 @@ class WP_Customize_Manager extends React_WordPress_Class
    * 
    * @since React WordPress 0.0.1
    */
-  private function __construct() {
+  protected function __construct() {
     parent::__construct();
 
     add_action('init', array($this, 'init'));
@@ -410,6 +410,10 @@ class WP_Customize_Manager extends React_WordPress_Class
     // Enqueue live preview javascript in Theme Customizer admin screen
     add_action('customize_preview_init', array($this, 'customize_preview_init'));
   }
+
+  /**
+   * Private
+   */
 
   /**
    * Configure any theme mods that are missing.

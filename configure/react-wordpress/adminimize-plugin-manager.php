@@ -12,7 +12,7 @@ namespace React_WordPress;
  * @since React WordPress 0.0.1
  * @package Adminimize
  */
-class Adminimize_Plugin_Manager extends React_WordPress_Class
+class Adminimize_Plugin_Manager extends React_WordPress_Singleton
 {
   /**
    * Public
@@ -807,7 +807,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
   }
 
   /**
-   * Private
+   * Protected
    */
 
   /**
@@ -815,7 +815,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
    * 
    * @since React WordPress 0.0.1
    */
-  private function __construct()
+  protected function __construct()
   {
     parent::__construct();
 
@@ -824,6 +824,10 @@ class Adminimize_Plugin_Manager extends React_WordPress_Class
     add_action('mw_adminimize_before_settings_form', array($this, 'mw_adminimize_before_settings_form'));
     add_action('mw_adminimize_after_settings_form', array($this, 'mw_adminimize_after_settings_form'));
   }
+
+  /**
+   * Private
+   */
 
   /**
    * Get disabled options config by mapping keys and values

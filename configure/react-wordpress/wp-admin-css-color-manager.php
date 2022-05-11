@@ -7,7 +7,7 @@ namespace React_WordPress;
  * 
  * @since React WordPress 0.0.1
  */
-class WP_Admin_CSS_Color_Manager extends React_WordPress_Class
+class WP_Admin_CSS_Color_Manager extends React_WordPress_Singleton
 {
   /**
    * Public
@@ -58,7 +58,7 @@ class WP_Admin_CSS_Color_Manager extends React_WordPress_Class
   }
 
   /**
-   * Private
+   * Protected
    */
 
   /**
@@ -66,7 +66,7 @@ class WP_Admin_CSS_Color_Manager extends React_WordPress_Class
    * 
    * @since React WordPress 0.0.1
    */
-  public function __construct()
+  protected function __construct()
   {
     parent::__construct();
 
@@ -76,6 +76,10 @@ class WP_Admin_CSS_Color_Manager extends React_WordPress_Class
 
     remove_action('admin_color_scheme_picker', 'admin_color_scheme_picker');
   }
+
+  /**
+   * Private
+   */
 
   /**
    * Registers the admin color theme css file.

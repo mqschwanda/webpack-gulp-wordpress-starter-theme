@@ -7,7 +7,7 @@ namespace React_WordPress;
  * 
  * @since React WordPress 0.0.1
  */
-class User extends React_WordPress_Class
+class User extends React_WordPress_Singleton
 {
   /**
    * Public
@@ -61,7 +61,7 @@ class User extends React_WordPress_Class
   }
 
   /**
-   * Private
+   * Protected
    */
 
   /**
@@ -69,7 +69,7 @@ class User extends React_WordPress_Class
    * 
    * @since React WordPress 0.0.1
    */
-  private function __construct()
+  protected function __construct()
   {
     parent::__construct();
 
