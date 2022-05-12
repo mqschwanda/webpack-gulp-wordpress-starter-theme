@@ -1,26 +1,12 @@
 import React from 'react';
 import { render } from '@wordpress/element';
-import Footer from './Footer';
-import Header from './Header';
-import Main from './Main/index';
+import App from './App';
 
-function renderHeader() {
-	const [header] = document.getElementsByTagName('header');
-	render(<Header/>, header);
-}
-
-function renderMain() {
-	const [main] = document.getElementsByTagName('main');
-	render(<Main/>, main);
-}
-
-function renderFooter() {
-	const [footer] = document.getElementsByTagName('footer');
-	render(<Footer/>, footer);
+function renderApp() {
+	const root = document.getElementById('react_wordpress_root');
+	render(<App/>, root);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	renderHeader();
-	renderMain();
-	renderFooter();
+	renderApp();
 });
