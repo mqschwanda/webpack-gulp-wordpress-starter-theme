@@ -310,7 +310,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
       return self::DISABLED_DASHBOARD_OPTION_ITEMS;
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_DASHBOARD_OPTION_ITEMS,
       self::ADMIN_ONLY_DASHBOARD_OPTION_ITEMS
     ); 
@@ -334,14 +334,14 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
 
     if ($user_role == Role::SUBSCRIBER)
     {
-      return self::merge_items_arrays(
+      return Array_Utility::array_filter_unique_merge(
         self::DISABLED_SUBSCRIBER_ADMIN_BAR_ITEMS,
         self::DISABLED_ADMIN_BAR_ITEMS,
         self::ADMIN_ONLY_ADMIN_BAR_ITEMS
       );
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_ADMIN_BAR_ITEMS,
       self::ADMIN_ONLY_ADMIN_BAR_ITEMS
     ); 
@@ -363,7 +363,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
       return self::DISABLED_GLOBAL_OPTION_ITEMS;
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_GLOBAL_OPTION_ITEMS,
       self::ADMIN_ONLY_GLOBAL_OPTION_ITEMS
     ); 
@@ -387,14 +387,14 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
 
     if ($user_role == Role::SUBSCRIBER)
     {
-      return self::merge_items_arrays(
+      return Array_Utility::array_filter_unique_merge(
         self::DISABLED_SUBSCRIBER_MENU_ITEMS,
         self::DISABLED_MENU_ITEMS,
         self::ADMIN_ONLY_MENU_ITEMS
       );
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_MENU_ITEMS,
       self::ADMIN_ONLY_MENU_ITEMS
     ); 
@@ -418,14 +418,14 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
 
     if ($user_role == Role::SUBSCRIBER)
     {
-      return self::merge_items_arrays(
+      return Array_Utility::array_filter_unique_merge(
         self::DISABLED_SUBSCRIBER_SUBMENU_ITEMS,
         self::DISABLED_SUBMENU_ITEMS,
         self::ADMIN_ONLY_SUBMENU_ITEMS
       );
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_SUBMENU_ITEMS,
       self::ADMIN_ONLY_SUBMENU_ITEMS
     ); 
@@ -449,14 +449,14 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
 
     if ($user_role == Role::SUBSCRIBER)
     {
-      return self::merge_items_arrays(
+      return Array_Utility::array_filter_unique_merge(
         self::DISABLED_SUBSCRIBER_METABOXES_PAGE_ITEMS,
         self::DISABLED_METABOXES_PAGE_ITEMS,
         self::ADMIN_ONLY_METABOXES_PAGE_ITEMS
       );
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_METABOXES_PAGE_ITEMS,
       self::ADMIN_ONLY_METABOXES_PAGE_ITEMS
     ); 
@@ -480,14 +480,14 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
 
     if ($user_role == Role::SUBSCRIBER)
     {
-      return self::merge_items_arrays(
+      return Array_Utility::array_filter_unique_merge(
         self::DISABLED_SUBSCRIBER_METABOXES_POST_ITEMS,
         self::DISABLED_METABOXES_POST_ITEMS,
         self::ADMIN_ONLY_METABOXES_POST_ITEMS
       );
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_METABOXES_POST_ITEMS,
       self::ADMIN_ONLY_METABOXES_POST_ITEMS
     ); 
@@ -509,7 +509,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
       return self::DISABLED_LINK_ITEMS;
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_LINK_ITEMS,
       self::ADMIN_ONLY_LINK_ITEMS
     ); 
@@ -531,7 +531,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
       return self::DISABLED_WIDGET_ITEMS;
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_WIDGET_ITEMS,
       self::ADMIN_ONLY_WIDGET_ITEMS
     ); 
@@ -553,7 +553,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
       return self::DISABLED_NAV_MENU_ITEMS;
     }
 
-    return self::merge_items_arrays(
+    return Array_Utility::array_filter_unique_merge(
       self::DISABLED_NAV_MENU_ITEMS,
       self::ADMIN_ONLY_NAV_MENU_ITEMS
     ); 
@@ -928,26 +928,10 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
       // go through each disabled option key and configure the default settings
       foreach ($disabled_options_config as $key => $value)
       {
-        $options[$key] = self::merge_items_arrays($options[$key], $value);
+        $options[$key] = Array_Utility::array_filter_unique_merge($options[$key], $value);
       }
     }
 
     return self::set_options($options);
-  }
-
-  /**
-   * TODO: move to array util class
-   * 
-   * Merge multiple arrays together, remove all falsy items, and remove all duplicates
-   * 
-   * @param ?array ...$arrays
-   * 
-   * @return array
-   * 
-   * @since React WordPress 0.0.1
-   */
-  private function merge_items_arrays(...$arrays)
-  {
-    return array_filter(array_unique(array_merge(...$arrays)));
   }
 }

@@ -251,6 +251,12 @@ class React_WordPress_Manager extends React_WordPress_Singleton
     Capability::init();
     Role::init();
     User::init();
+
+    /**
+     * React WordPress: Utility 
+     */
+    include('utility/array-utility.php');
+    Array_Utility::init();
   }
 
   /**
