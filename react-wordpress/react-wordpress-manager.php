@@ -1,13 +1,18 @@
 <?php
 
 namespace React_WordPress;
-// react wordpress core
-include('react-wordpress-class.php');
-include('react-wordpress-singleton.php');
-// base
-include('capability.php');
-include('role.php');
-include('user.php');
+/**
+ * React WordPress: Base 
+ */
+include('base/react-wordpress-class.php');
+include('base/react-wordpress-singleton.php');
+
+/**
+ * React WordPress: Core 
+ */
+include('core/capability.php');
+include('core/role.php');
+include('core/user.php');
 Capability::get_instance();
 Role::get_instance();
 User::get_instance();
@@ -210,25 +215,29 @@ class React_WordPress_Manager extends React_WordPress_Singleton
    */
   private function construct_react_wordpress_classes()
   {    
-    // wordpress core
-    include('wp-admin-css-color-manager.php');
-    include('wp-customize-manager.php');
-    $this->wp_admin_css_color_manager = WP_Admin_CSS_Color_Manager::get_instance();
-    $this->wp_customize_manager = WP_Customize_Manager::get_instance();
-
-    // react wordpress
-    include('react-wordpress-admin-manager.php');
-    include('react-wordpress-scripts-manager.php');
+    /**
+     * React WordPress: WordPress 
+     */
+    include('wordpress/react-wordpress-admin-manager.php');
+    include('wordpress/react-wordpress-scripts-manager.php');
+    include('wordpress/wp-admin-css-color-manager.php');
+    include('wordpress/wp-customize-manager.php');
     $this->react_wordpress_admin_manager = React_WordPress_Admin_Manager::get_instance();
     $this->react_wordpress_scripts_manager = React_WordPress_Scripts_Manager::get_instance();
+    $this->wp_admin_css_color_manager = WP_Admin_CSS_Color_Manager::get_instance();
+    $this->wp_customize_manager = WP_Customize_Manager::get_instance();
     
-    // plugin manager
-    include('plugin-activation-manager.php');
+    /**
+     * React WordPress: Plugin Activation Manager 
+     */
+    include('plugins/plugin-activation-manager.php');
     $this->plugin_activation_manager = Plugin_Activation_Manager::get_instance();
     
-    // plugins
-    include('adminimize-plugin-manager.php');
-    include('user-role-editor-plugin-manager.php');
+    /**
+     * React WordPress: Plugins
+     */
+    include('plugins/adminimize-plugin-manager.php');
+    include('plugins/user-role-editor-plugin-manager.php');
     $this->adminimize_plugin_manager = Adminimize_Plugin_Manager::get_instance();
     $this->user_role_editor_plugin_manager = User_Role_Editor_Plugin_Manager::get_instance();
   }
@@ -300,7 +309,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
   }
 
   /**
-   * 
+   * Remove a registered script.
    * 
    * @since React WordPress 0.0.1
    */
