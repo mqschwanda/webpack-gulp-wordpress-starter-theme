@@ -6,16 +6,8 @@ namespace React_WordPress;
  */
 include('base/react-wordpress-class.php');
 include('base/react-wordpress-singleton.php');
+include('base/react-wordpress-static.php');
 
-/**
- * React WordPress: Core 
- */
-include('core/capability.php');
-include('core/role.php');
-include('core/user.php');
-Capability::get_instance();
-Role::get_instance();
-User::get_instance();
 
 /**
  * Manage all classes used in the `React_WordPress` namespace. 
@@ -201,7 +193,8 @@ class React_WordPress_Manager extends React_WordPress_Singleton
     add_filter('update_footer', '__return_empty_string', 11); 
 
     self::remove_wp_emoji();
-    self::construct_react_wordpress_classes();
+    self::initialize_statics();
+    self::initialize_singletons();
   }
 
   /**
@@ -213,7 +206,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
    * 
    * @since React WordPress 0.0.1
    */
-  private function construct_react_wordpress_classes()
+  private function initialize_singletons()
   {    
     /**
      * React WordPress: WordPress 
@@ -240,6 +233,24 @@ class React_WordPress_Manager extends React_WordPress_Singleton
     include('plugins/user-role-editor-plugin-manager.php');
     $this->adminimize_plugin_manager = Adminimize_Plugin_Manager::get_instance();
     $this->user_role_editor_plugin_manager = User_Role_Editor_Plugin_Manager::get_instance();
+  }
+
+  /**
+   * Initialize all classes used by `React_WordPress` namespace.
+   * 
+   * @since React WordPress 0.0.1
+   */
+  private function initialize_statics()
+  {    
+    /**
+     * React WordPress: Core 
+     */
+    include('core/capability.php');
+    include('core/role.php');
+    include('core/user.php');
+    Capability::init();
+    Role::init();
+    User::init();
   }
 
   /**

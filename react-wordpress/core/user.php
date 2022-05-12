@@ -7,7 +7,7 @@ namespace React_WordPress;
  * 
  * @since React WordPress 0.0.1
  */
-class User extends React_WordPress_Singleton
+class User extends React_WordPress_Static
 {
   /**
    * Public
@@ -21,7 +21,7 @@ class User extends React_WordPress_Singleton
    */
   public static function init()
   {
-    // code and stuff...
+    parent::init();
   }
 
   /**
@@ -58,21 +58,5 @@ class User extends React_WordPress_Singleton
   public static function is_current_user_role_admin()
   { 
     return self::is_current_user_role(Role::ADMINISTRATOR);
-  }
-
-  /**
-   * Protected
-   */
-
-  /**
-   * Initialize `User` class
-   * 
-   * @since React WordPress 0.0.1
-   */
-  protected function __construct()
-  {
-    parent::__construct();
-
-    add_action('init', array($this, 'init'));
   }
 }

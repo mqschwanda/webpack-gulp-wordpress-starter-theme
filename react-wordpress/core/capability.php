@@ -9,7 +9,7 @@ namespace React_WordPress;
  * 
  * @since React WordPress 0.0.1
  */
-class Capability extends React_WordPress_Singleton
+class Capability extends React_WordPress_Static
 {
   /**
    * Public
@@ -298,22 +298,6 @@ class Capability extends React_WordPress_Singleton
    */
   public static function init()
   {
-    //
-  }
-
-  /**
-   * Protected
-   */
-
-  /**
-   * Initialize `Capability` class
-   * 
-   * @since React WordPress 0.0.1
-   */
-  protected function __construct()
-  {
-    parent::__construct();
-
-    add_action('init', array($this, 'init'));
+    parent::init();
   }
 }
