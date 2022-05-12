@@ -838,7 +838,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
    * 
    * @since React WordPress 0.0.1
    */
-  private function get_disabled_options_config($user_role)
+  private static function get_disabled_options_config($user_role)
   {
     return array(
       // Admin Bar Frontend
@@ -875,7 +875,7 @@ class Adminimize_Plugin_Manager extends React_WordPress_Singleton
    * 
    * @since React WordPress 0.0.1
    */
-  private function preg_replace_disabled_inputs($html)
+  private static function preg_replace_disabled_inputs($html)
   {
     $user_roles = self::get_user_roles();
     $patterns = array();

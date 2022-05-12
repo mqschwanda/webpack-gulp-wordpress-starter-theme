@@ -68,7 +68,7 @@ class Role extends React_WordPress_Static
    *
    * @since React WordPress 0.0.1
    */
-  private function configure_roles_and_capabilities()
+  private static function configure_roles_and_capabilities()
   {
     foreach (self::DISABLED_ROLES as $disabled_role)
     {
