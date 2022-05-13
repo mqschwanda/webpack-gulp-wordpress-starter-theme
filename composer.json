@@ -3,7 +3,33 @@
   "description": "Blank Theme with Gulp and Webpack",
   "type": "wordpress-theme",
   "require": {
-    "tgmpa/tgm-plugin-activation": "^2.6",
+    "tgmpa/tgm-plugin-activation": "dev-develop",
     "calcinai/php-imagick": "^0.1.2"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+    "phpcsstandards/phpcsextra": "dev-develop",
+    "phpcsstandards/phpcsutils": "dev-develop",
+    "wp-coding-standards/wpcs": "dev-develop"
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-coding-standards/wpcs",
+        "version": "dev-develop",
+        "type": "composer",
+        "source": {
+          "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
+          "type": "git",
+          "reference": "develop"
+        }
+      }
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }
