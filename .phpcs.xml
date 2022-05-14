@@ -32,8 +32,6 @@
     <exclude name="WordPress.WP.I18n"/>
 		<!-- TODO: Fix and enable later... -->
     <exclude name="WordPress.Files.FileName"/>
-		<!-- TODO: Fix and enable later... -->
-    <exclude name="Squiz.Commenting.FileComment"/>
   </rule>
 
 	<rule ref="Squiz.ControlStructures.ControlSignature">

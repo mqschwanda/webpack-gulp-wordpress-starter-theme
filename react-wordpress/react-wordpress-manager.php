@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file is where all `React_WordPress` functionality is configured.
+ *
+ * @package React_WordPress.
+ * @since React WordPress 0.0.1
+ */
 
 namespace React_WordPress;
 

@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file is responsible for handling all base class configuration.
+ *
+ * @package React_WordPress.
+ * @since React WordPress 0.0.1
+ */
 
 namespace React_WordPress;
 
