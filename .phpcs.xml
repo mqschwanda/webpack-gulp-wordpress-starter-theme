@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<ruleset 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  name="Coding_Standards" 
+  namespace="React_WordPress\Coding_Standards" 
+  xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd"
+>
+	<description>React WordPress Coding Standards</description>
+
+	<rule ref="WordPress">    
+    <exclude name="WordPress.Arrays.ArrayDeclarationSpacing"/>
+
+    <exclude name="Generic.Classes.OpeningBraceSameLine"/>
+
+    <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+
+    <exclude name="Squiz.ControlStructures.ControlSignature"/>
+
+    <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+    <exclude name="PEAR.Functions.FunctionCallSignature"/>
+    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
+
+    <exclude name="Squiz.PHP.CommentedOutCode"/>
+    <exclude name="WordPress.PHP.YodaConditions"/>
+
+    <exclude name="Generic.WhiteSpace.ScopeIndent"/>
+    <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
+    <exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/>
+    <exclude name="WordPress.WhiteSpace.OperatorSpacing"/>
+
+		<!-- TODO: Fix and enable later... -->
+    <exclude name="WordPress.WP.I18n"/>
+		<!-- TODO: Fix and enable later... -->
+    <exclude name="WordPress.Files.FileName"/>
+		<!-- TODO: Fix and enable later... -->
+    <exclude name="Squiz.Commenting.FileComment"/>
+  </rule>
+
+	<rule ref="Squiz.ControlStructures.ControlSignature">
+		<properties>
+			<property name="requiredSpacesBeforeColon" value="0"/>
+		</properties>
+	</rule>
+
+	<rule ref="Generic.WhiteSpace.ScopeIndent">
+		<properties>
+			<property name="exact" value="false"/>
+			<property name="indent" value="1"/>
+			<property name="tabIndent" value="true"/>
+			<property name="ignoreIndentationTokens" type="array">
+				<element value="T_HEREDOC"/>
+				<element value="T_NOWDOC"/>
+				<element value="T_INLINE_HTML"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="PEAR.Functions.FunctionCallSignature">
+		<properties>
+			<property name="requiredSpacesAfterOpen" value="0"/>
+			<property name="requiredSpacesBeforeClose" value="0"/>
+      <!-- ... and for multi-line function calls, there should only be one parameter per line. -->
+			<property name="allowMultipleArguments" value="false"/>
+		</properties>
+	</rule>
+
+	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+		<properties>
+			<property name="equalsSpacing" value="1"/>
+			<property name="requiredSpacesAfterOpen" value="0"/>
+			<property name="requiredSpacesBeforeClose" value="0"/>
+		</properties>
+	</rule>
+
+</ruleset>

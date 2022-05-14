@@ -20,8 +20,8 @@
     "postinstall": "yarn build && echo \"THEME INSTALLED, GOOD TO GO !\"",
     "lint": "yarn lint:php",
     "lint-fix": "yarn lint-fix:php",
-    "lint:php": "vendor/bin/phpcs react-qwordpress/",
-    "lint-fix:php": "vendor/bin/phpcbf react-qwordpress/"
+    "lint:php": "vendor/bin/phpcs react-wordpress/",
+    "lint-fix:php": "vendor/bin/phpcbf react-wordpress/"
   },
   "engines": {
     "node": ">=12.0.0"

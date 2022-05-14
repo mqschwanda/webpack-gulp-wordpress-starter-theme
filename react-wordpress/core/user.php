@@ -4,59 +4,62 @@ namespace React_WordPress;
 
 /**
  * Manager for the WordPress: `User`.
- * 
+ *
  * @since React WordPress 0.0.1
  */
 class User extends React_WordPress_Static
 {
-  /**
-   * Public
-   */
+	/**
+	 * Public
+	 */
 
-  /**
-   * Fires after WordPress has finished loading but before any headers are sent.
-   * 
-   * @see https://developer.wordpress.org/reference/hooks/init/
-   * @since React WordPress 0.0.1
-   */
-  public static function init()
-  {
-    parent::init();
-  }
+	/**
+	 * Fires after WordPress has finished loading but before any headers are sent.
+	 *
+	 * @see https://developer.wordpress.org/reference/hooks/init/
+	 * @since React WordPress 0.0.1
+	 */
+	// @codingStandardsIgnoreLine
+	public static function init()
+	{
+		parent::init();
 
-  /**
-   * Retrieve the current user object.
-   * 
-   * @return WP_User Current WP_User instance.
-   * 
-   * @see https://developer.wordpress.org/reference/functions/wp_get_current_user/ 
-   */
-  public static function get_current_user()
-  {
-    return wp_get_current_user();
-  }
-  
-  /**
-   * Checks if the current user has a given role.
-   * 
-   * @param $user_role
-   * 
-   * @return bool
-   */
-  public static function is_current_user_role($user_role)
-  {
-    $current_user = self::get_current_user();
-    
-    return in_array($user_role, $current_user->roles);
-  }
+		// code and stuff...
+	}
 
-  /**
-   * Checks if the current user has an admin role.
-   * 
-   * @return bool
-   */
-  public static function is_current_user_role_admin()
-  { 
-    return self::is_current_user_role(Role::ADMINISTRATOR);
-  }
+	/**
+	 * Retrieve the current user object.
+	 *
+	 * @return WP_User Current WP_User instance.
+	 *
+	 * @see https://developer.wordpress.org/reference/functions/wp_get_current_user/
+	 */
+	public static function get_current_user()
+	{
+		return wp_get_current_user();
+	}
+
+	/**
+	 * Checks if the current user has a given role.
+	 *
+	 * @param mixed $user_role - User role name.
+	 *
+	 * @return bool
+	 */
+	public static function is_current_user_role($user_role)
+	{
+		$current_user = self::get_current_user();
+
+		return in_array($user_role, $current_user->roles, true);
+	}
+
+	/**
+	 * Checks if the current user has an admin role.
+	 *
+	 * @return bool
+	 */
+	public static function is_current_user_role_admin()
+	{
+		return self::is_current_user_role(Role::ADMINISTRATOR);
+	}
 }
