@@ -18,7 +18,7 @@ namespace React_WordPress;
  * @package Class
  * @category Capability
  */
-class Capability extends React_WordPress_Static
+class Capability extends Base_Static
 {
 	/**
 	 * Public

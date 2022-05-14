@@ -4,13 +4,13 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category React_WordPress_Manager
+ * @category Theme_Manager
  */
 
 namespace React_WordPress;
 
 /**
- * React WordPress: Base
+ * Base
  */
 require 'base/react-wordpress-class.php';
 require 'base/react-wordpress-singleton.php';
@@ -22,9 +22,9 @@ require 'base/react-wordpress-static.php';
  *
  * @since React WordPress 0.0.1
  * @package Class
- * @category React_WordPress_Manager
+ * @category Theme_Manager
  */
-class React_WordPress_Manager extends React_WordPress_Singleton
+class Theme_Manager extends Base_Singleton
 {
 	/**
 	 * Public
@@ -60,7 +60,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	/**
 	 * The default text domain that is used for translations in the `React_WordPress` namespace.
 	 *
-	 * @var React_WordPress_Manager::THEME_SLUG
+	 * @var Theme_Manager::THEME_SLUG
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -186,7 +186,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	 */
 
 	/**
-	 * Initialize `React_WordPress_Manager` class
+	 * Initialize `Theme_Manager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -222,25 +222,25 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	private function initialize_singletons()
 	{
 		/**
-		 * React WordPress: WordPress
+		 * WordPress
 		 */
 		include 'wordpress/react-wordpress-admin-manager.php';
 		include 'wordpress/react-wordpress-scripts-manager.php';
 		include 'wordpress/wp-admin-css-color-manager.php';
 		include 'wordpress/wp-customize-manager.php';
-		$this->react_wordpress_admin_manager   = React_WordPress_Admin_Manager::get_instance();
-		$this->react_wordpress_scripts_manager = React_WordPress_Scripts_Manager::get_instance();
-		$this->wp_admin_css_color_manager      = WP_Admin_CSS_Color_Manager::get_instance();
-		$this->wp_customize_manager            = WP_Customize_Manager::get_instance();
+		$this->wordpress_admin_manager         = WordPress_Admin_Manager::get_instance();
+		$this->wordpress_admin_theme_manager   = WordPress_Admin_Theme_Manager::get_instance();
+		$this->wordpress_customization_manager = WordPress_Customization_Manager::get_instance();
+		$this->wordpress_scripts_manager       = WordPress_Scripts_Manager::get_instance();
 
 		/**
-		 * React WordPress: Plugin Activation Manager
+		 * Plugin Activation Manager
 		 */
 		include 'plugins/plugin-activation-manager.php';
 		$this->plugin_activation_manager = Plugin_Activation_Manager::get_instance();
 
 		/**
-		 * React WordPress: Plugins
+		 * Plugins
 		 */
 		include 'plugins/adminimize-plugin-manager.php';
 		include 'plugins/user-role-editor-plugin-manager.php';
@@ -256,7 +256,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	private function initialize_statics()
 	{
 		/**
-		 * React WordPress: Core
+		 * Core
 		 */
 		include 'core/capability.php';
 		include 'core/role.php';
@@ -266,7 +266,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 		User::init();
 
 		/**
-		 * React WordPress: Utility
+		 * Utility
 		 */
 		include 'utility/array-utility.php';
 		Array_Utility::init();
@@ -376,14 +376,14 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 		function __(...$args)
 		{
 			// @codingStandardsIgnoreLine
-			React_WordPress_Manager::__(...$args);
+			Theme_Manager::__(...$args);
 		}
 
 		// @codingStandardsIgnoreLine
 		function esc_html__(...$args)
 		{
 			// @codingStandardsIgnoreLine
-			React_WordPress_Manager::esc_html__(...$args);
+			Theme_Manager::esc_html__(...$args);
 		}
 	}
 }

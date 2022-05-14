@@ -16,7 +16,7 @@ namespace React_WordPress;
  * @package Class
  * @category User
  */
-class User extends React_WordPress_Static
+class User extends Base_Static
 {
 	/**
 	 * Public

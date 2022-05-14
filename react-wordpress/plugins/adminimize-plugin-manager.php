@@ -20,7 +20,7 @@ namespace React_WordPress;
  * @package Class
  * @category Adminimize_Plugin_Manager
  */
-class Adminimize_Plugin_Manager extends React_WordPress_Singleton
+class Adminimize_Plugin_Manager extends Base_Singleton
 {
 	/**
 	 * Public

@@ -16,7 +16,7 @@ namespace React_WordPress;
  * @package Class
  * @category Role
  */
-class Role extends React_WordPress_Static
+class Role extends Base_Static
 {
 	/**
 	 * Public

@@ -20,7 +20,7 @@ namespace React_WordPress;
  * @package Class
  * @category User_Role_Editor_Plugin_Manager
  */
-class User_Role_Editor_Plugin_Manager extends React_WordPress_Singleton
+class User_Role_Editor_Plugin_Manager extends Base_Singleton
 {
 	/**
 	 * Public

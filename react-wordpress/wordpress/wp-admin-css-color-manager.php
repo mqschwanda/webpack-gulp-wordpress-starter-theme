@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category WP_Admin_CSS_Color_Manager
+ * @category WordPress_Admin_Theme_Manager
  */
 
 namespace React_WordPress;
@@ -14,9 +14,9 @@ namespace React_WordPress;
  *
  * @since React WordPress 0.0.1
  * @package Class
- * @category WP_Admin_CSS_Color_Manager
+ * @category WordPress_Admin_Theme_Manager
  */
-class WP_Admin_CSS_Color_Manager extends React_WordPress_Singleton
+class WordPress_Admin_Theme_Manager extends Base_Singleton
 {
 	/**
 	 * Public
@@ -25,20 +25,20 @@ class WP_Admin_CSS_Color_Manager extends React_WordPress_Singleton
 	/**
 	 * The name for the `React WordPress` theme.
 	 *
-	 * @var React_WordPress_Manager::THEME_NAME
+	 * @var Theme_Manager::THEME_NAME
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-		public const ADMIN_CSS_COLOR_NAME = React_WordPress_Manager::THEME_NAME;
+		public const ADMIN_CSS_COLOR_NAME = Theme_Manager::THEME_NAME;
 
 	/**
 	 * The unique key for the `React WordPress` theme.
 	 *
-	 * @var React_WordPress_Manager::THEME_SLUG
+	 * @var Theme_Manager::THEME_SLUG
 	 * q
 	 * @since React WordPress 0.0.1
 	 */
-	public const ADMIN_CSS_COLOR_KEY = React_WordPress_Manager::THEME_SLUG;
+	public const ADMIN_CSS_COLOR_KEY = Theme_Manager::THEME_SLUG;
 
 	/**
 	 * Fires after WordPress has finished loading but before any headers are sent.
@@ -56,7 +56,7 @@ class WP_Admin_CSS_Color_Manager extends React_WordPress_Singleton
 	 *
 	 * @param string $color_scheme - Name of the admin Color Scheme.
 	 *
-	 * @return WP_Admin_CSS_Color_Manager::ADMIN_CSS_COLOR_KEY
+	 * @return WordPress_Admin_Theme_Manager::ADMIN_CSS_COLOR_KEY
 	 *
 	 * @see https://wordpress.stackexchange.com/questions/126697/set-default-admin-colour-for-all-users
 	 * @since React WordPress 0.0.1
@@ -73,7 +73,7 @@ class WP_Admin_CSS_Color_Manager extends React_WordPress_Singleton
 	 */
 
 	/**
-	 * Initialize `WP_Admin_CSS_Color_Manager` class
+	 * Initialize `WordPress_Admin_Theme_Manager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */

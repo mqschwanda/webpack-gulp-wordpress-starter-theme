@@ -16,7 +16,7 @@ namespace React_WordPress;
  * @package Class
  * @category Array_Utility
  */
-class Array_Utility extends React_WordPress_Static
+class Array_Utility extends Base_Static
 {
 	/**
 	 * Public

@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category React_WordPress_Admin_Manager
+ * @category WordPress_Admin_Manager
  */
 
 namespace React_WordPress;
@@ -14,9 +14,9 @@ namespace React_WordPress;
  *
  * @since React WordPress 0.0.1
  * @package Class
- * @category React_WordPress_Admin_Manager
+ * @category WordPress_Admin_Manager
  */
-class React_WordPress_Admin_Manager extends React_WordPress_Singleton
+class WordPress_Admin_Manager extends Base_Singleton
 {
 	/**
 	 * Public
@@ -51,7 +51,7 @@ class React_WordPress_Admin_Manager extends React_WordPress_Singleton
 	 */
 
 	/**
-	 * Initialize `React_WordPress_Admin_Manager` class
+	 * Initialize `WordPress_Admin_Manager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */
