@@ -12,9 +12,9 @@ namespace React_WordPress;
 /**
  * Base
  */
-require 'base/react-wordpress-class.php';
-require 'base/react-wordpress-singleton.php';
-require 'base/react-wordpress-static.php';
+require 'base/base-class.php';
+require 'base/base-singleton.php';
+require 'base/base-static.php';
 
 
 /**
@@ -224,10 +224,10 @@ class Theme_Manager extends Base_Singleton
 		/**
 		 * WordPress
 		 */
-		include 'wordpress/react-wordpress-admin-manager.php';
-		include 'wordpress/react-wordpress-scripts-manager.php';
-		include 'wordpress/wp-admin-css-color-manager.php';
-		include 'wordpress/wp-customize-manager.php';
+		include 'wordpress/wordpress-admin-manager.php';
+		include 'wordpress/wordpress-admin-theme-manager.php';
+		include 'wordpress/wordpress-customization-manager.php';
+		include 'wordpress/wordpress-scripts-manager.php';
 		$this->wordpress_admin_manager         = WordPress_Admin_Manager::get_instance();
 		$this->wordpress_admin_theme_manager   = WordPress_Admin_Theme_Manager::get_instance();
 		$this->wordpress_customization_manager = WordPress_Customization_Manager::get_instance();

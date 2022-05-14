@@ -9,7 +9,7 @@
 
 namespace React_WordPress;
 
-require 'react-wordpress-manager.php';
+require 'theme-manager.php';
 
 /**
  * Initialize theme.
