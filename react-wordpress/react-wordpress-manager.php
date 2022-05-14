@@ -1,9 +1,10 @@
 <?php
 /**
- * This file is where all `React_WordPress` functionality is configured.
+ * This file is where the `React_WordPress` namespace is configured.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category React_WordPress_Manager
  */
 
 namespace React_WordPress;
@@ -17,9 +18,11 @@ require 'base/react-wordpress-static.php';
 
 
 /**
- * Manage all classes used in the `React_WordPress` namespace.
+ * This class manages the configuration of the `React_WordPress` namespace.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category React_WordPress_Manager
  */
 class React_WordPress_Manager extends React_WordPress_Singleton
 {
@@ -55,7 +58,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	public const THEME_VERSION = '0.0.1';
 
 	/**
-	 * The text domain that is used as the default for translations done in the `React_WordPress` namespace.
+	 * The default text domain that is used for translations in the `React_WordPress` namespace.
 	 *
 	 * @var React_WordPress_Manager::THEME_SLUG
 	 *
@@ -74,6 +77,8 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
+	 * TODO: fix issue with `WordPress.WP.I18n`
+	 *
 	 * Retrieve the translation of $text. If there is no translation, or the text domain isn't loaded, the original text is returned.
 	 *
 	 * @param string $text — Text to translate.
@@ -90,6 +95,8 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
+	 * TODO: fix issue with `WordPress.WP.I18n`
+	 *
 	 * Retrieve the translation of $text and escapes it for safe use in HTML output. If there is no translation, or the text domain isn't loaded, the original text is escaped and returned.
 	 *
 	 * @param string $text — Text to translate.
@@ -108,8 +115,8 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	/**
 	 * Fires after the theme is loaded.
 	 *
-	 * @since React WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/hooks/after_setup_theme/
+	 * @since React WordPress 0.0.1
 	 */
 	public static function after_setup_theme()
 	{
@@ -122,8 +129,8 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	 *
 	 * @param \WP_Scripts $scripts - WP_Scripts object.
 	 *
-	 * @since React WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/wp_default_scripts/
+	 * @since React WordPress 0.0.1
 	 */
 	public static function wp_default_scripts(&$scripts)
 	{
@@ -208,7 +215,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	 */
 
 	/**
-	 * Initialize all classes used by `React_WordPress` namespace.
+	 * Initialize all singleton classes used by `React_WordPress` namespace.
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -242,7 +249,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Initialize all classes used by `React_WordPress` namespace.
+	 * Initialize all static classes used by `React_WordPress` namespace.
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -266,7 +273,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Remove WP Emoji
+	 * Remove WordPress Emoji support.
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -279,7 +286,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Force all scripts to load in footer
+	 * Force all scripts to load in footer.
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -291,7 +298,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Add SVG to allowed file uploads
+	 * Add SVG to allowed file uploads.
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -303,7 +310,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Delete jquery migrate
+	 * Stop jQuery script from running when it is not needed.
 	 *
 	 * @param \WP_Scripts $scripts - WP_Scripts object.
 	 *
@@ -318,7 +325,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Registers theme support all features.
+	 * Registers theme support for all needed WordPress features.
 	 *
 	 * @since React WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/add_theme_support/
@@ -334,7 +341,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Remove a registered script.
+	 * Prevent registered scripts from loading.
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -345,7 +352,7 @@ class React_WordPress_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Load the theme’s translated strings.
+	 * Load the theme translation strings.
 	 *
 	 * @since React WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/load_theme_textdomain/

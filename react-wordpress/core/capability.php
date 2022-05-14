@@ -2,8 +2,9 @@
 /**
  * This file is responsible for handling WordPress Capability.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category Capability
  */
 
 namespace React_WordPress;
@@ -14,6 +15,8 @@ namespace React_WordPress;
  * User Role Editor allows you to change user roles and capabilities easy.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category Capability
  */
 class Capability extends React_WordPress_Static
 {

@@ -2,8 +2,9 @@
 /**
  * This file is responsible for handling all base class configuration.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category React_WordPress_Class
  */
 
 namespace React_WordPress;
@@ -12,6 +13,8 @@ namespace React_WordPress;
  * Base class for all classes used in the `React_WordPress` namespace.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category React_WordPress_Class
  */
 class React_WordPress_Class
 {

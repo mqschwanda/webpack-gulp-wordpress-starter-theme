@@ -2,17 +2,20 @@
 /**
  * This file is responsible for configuring WordPress theme customization.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category WP_Customize_Manager
  */
 
 namespace React_WordPress;
 
 /**
- * Contains methods for customizing the theme customization screen.
+ * This class manages the configuration of the theme's customization screen.
  *
  * @see http://codex.wordpress.org/Theme_Customization_API
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category React_WordPress_Manager
  */
 class WP_Customize_Manager extends React_WordPress_Singleton
 {

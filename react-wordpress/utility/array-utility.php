@@ -2,8 +2,9 @@
 /**
  * This file is responsible for configuring array utilities.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category Array_Utility
  */
 
 namespace React_WordPress;
@@ -12,6 +13,8 @@ namespace React_WordPress;
  * Array Utility Class.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category Array_Utility
  */
 class Array_Utility extends React_WordPress_Static
 {
@@ -34,7 +37,7 @@ class Array_Utility extends React_WordPress_Static
 	}
 
 	/**
-	 * Merge multiple arrays together, remove all falsy items, and remove all duplicates
+	 * Merge multiple arrays together, remove all falsy items, and remove all duplicates.
 	 *
 	 * @param ?array ...$arrays - Arrays to be manipulated.
 	 *

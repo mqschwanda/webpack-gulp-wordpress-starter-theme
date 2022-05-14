@@ -2,8 +2,9 @@
 /**
  * This file is responsible for handling all static class configuration.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category React_WordPress_Static
  */
 
 namespace React_WordPress;
@@ -12,6 +13,8 @@ namespace React_WordPress;
  * Base class for all static classes used in the `React_WordPress` namespace.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category React_WordPress_Static
  */
 class React_WordPress_Static extends React_WordPress_Class
 {
@@ -20,7 +23,7 @@ class React_WordPress_Static extends React_WordPress_Class
 	 */
 
 	/**
-	 * Initialize `React_WordPress_Static` class
+	 * Initialize `React_WordPress_Static` class.
 	 *
 	 * @since React WordPress 0.0.1
 	 */

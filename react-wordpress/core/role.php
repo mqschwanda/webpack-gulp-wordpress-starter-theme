@@ -2,8 +2,9 @@
 /**
  * This file is responsible for handling WordPress Role.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category Role
  */
 
 namespace React_WordPress;
@@ -12,6 +13,8 @@ namespace React_WordPress;
  * Manager for the WordPress: `Role`.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category Role
  */
 class Role extends React_WordPress_Static
 {

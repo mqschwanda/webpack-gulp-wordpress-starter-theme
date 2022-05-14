@@ -2,8 +2,9 @@
 /**
  * This file is responsible for configuring WordPress plugin: `User Role Editor`.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category User_Role_Editor_Plugin_Manager
  */
 
 namespace React_WordPress;
@@ -16,7 +17,8 @@ namespace React_WordPress;
  * @see https://www.role-editor.com/
  * @see https://wordpress.org/plugins/user-role-editor/
  * @since React WordPress 0.0.1
- * @package User Role Editor
+ * @package Class
+ * @category User_Role_Editor_Plugin_Manager
  */
 class User_Role_Editor_Plugin_Manager extends React_WordPress_Singleton
 {

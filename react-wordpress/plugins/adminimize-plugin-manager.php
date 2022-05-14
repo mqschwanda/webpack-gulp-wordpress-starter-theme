@@ -2,8 +2,9 @@
 /**
  * This file is responsible for configuring WordPress plugin: `Adminimize`.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category Adminimize_Plugin_Manager
  */
 
 namespace React_WordPress;
@@ -16,7 +17,8 @@ namespace React_WordPress;
  * @see https://wordpress.org/plugins/adminimize/
  * @see https://github.com/bueltge/adminimize
  * @since React WordPress 0.0.1
- * @package Adminimize
+ * @package Class
+ * @category Adminimize_Plugin_Manager
  */
 class Adminimize_Plugin_Manager extends React_WordPress_Singleton
 {

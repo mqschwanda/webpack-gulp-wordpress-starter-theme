@@ -2,7 +2,8 @@
 /**
  * This file is the entry point for the `React_WordPress` namespace.
  *
- * @package React_WordPress.
+ * @package React_WordPress
+ * @category React_WordPress_Manager
  * @since React WordPress 0.0.1
  */
 

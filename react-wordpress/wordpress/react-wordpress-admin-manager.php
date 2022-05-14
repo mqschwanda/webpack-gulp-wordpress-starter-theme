@@ -2,8 +2,9 @@
 /**
  * This file is responsible for configuring WordPress admin functionality.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category React_WordPress_Admin_Manager
  */
 
 namespace React_WordPress;
@@ -12,6 +13,8 @@ namespace React_WordPress;
  * Manage admin functionality in the `React_WordPress` namespace.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category React_WordPress_Admin_Manager
  */
 class React_WordPress_Admin_Manager extends React_WordPress_Singleton
 {
@@ -48,7 +51,7 @@ class React_WordPress_Admin_Manager extends React_WordPress_Singleton
 	 */
 
 	/**
-	 * Initialize `React_WordPress_Manager` class
+	 * Initialize `React_WordPress_Admin_Manager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */

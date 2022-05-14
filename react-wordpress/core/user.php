@@ -2,8 +2,9 @@
 /**
  * This file is responsible for handling WordPress User.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category User
  */
 
 namespace React_WordPress;
@@ -12,6 +13,8 @@ namespace React_WordPress;
  * Manager for the WordPress: `User`.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category User
  */
 class User extends React_WordPress_Static
 {

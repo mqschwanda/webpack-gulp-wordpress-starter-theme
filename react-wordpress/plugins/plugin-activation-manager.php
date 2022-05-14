@@ -2,8 +2,9 @@
 /**
  * This file is responsible for configuring composer package: `TGM-Plugin-Activation`.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category TGM-Plugin-Activation
  */
 
 namespace React_WordPress;
@@ -18,7 +19,8 @@ namespace React_WordPress;
  * @see http://tgmpluginactivation.com/configuration/
  * @see https://github.com/TGMPA/TGM-Plugin-Activation
  * @since React WordPress 0.0.1
- * @package TGM-Plugin-Activation
+ * @package Class
+ * @category TGM-Plugin-Activation
  */
 class Plugin_Activation_Manager extends React_WordPress_Singleton
 {
@@ -106,18 +108,18 @@ class Plugin_Activation_Manager extends React_WordPress_Singleton
 	);
 
 	/**
-     * Array of configuration settings. Amend each line as needed.
-     *
-     * TGMPA will start providing localized text strings soon. If you already have translations of our standard
-     * strings available, please help us make TGMPA even better by giving us access to these translations or by
-     * sending in a pull-request with .po file(s) with the translations.
-     *
-     * Only uncomment the strings in the config array if you want to customize the strings.
-     *
-     * @var array
-     *
-     * @since React WordPress 0.0.1
-     */
+	 * Array of configuration settings. Amend each line as needed.
+	 *
+	 * TGMPA will start providing localized text strings soon. If you already have translations of our standard
+	 * strings available, please help us make TGMPA even better by giving us access to these translations or by
+	 * sending in a pull-request with .po file(s) with the translations.
+	 *
+	 * Only uncomment the strings in the config array if you want to customize the strings.
+	 *
+	 * @var array
+	 *
+	 * @since React WordPress 0.0.1
+	 */
 	public const CONFIG = array(
 		'id'           => 'tgmpa',                                                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                                                      // Default absolute path to bundled plugins.
@@ -234,7 +236,7 @@ class Plugin_Activation_Manager extends React_WordPress_Singleton
 	 */
 
 	/**
-	 * Initialize `Plugin_Activation_Manager` class
+	 * Initialize `Plugin_Activation_Manager` class.
 	 *
 	 * @since React WordPress 0.0.1
 	 */

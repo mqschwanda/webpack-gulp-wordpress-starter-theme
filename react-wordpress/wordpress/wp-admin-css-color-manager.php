@@ -2,8 +2,9 @@
 /**
  * This file is responsible for configuring WordPress Admin theme.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category WP_Admin_CSS_Color_Manager
  */
 
 namespace React_WordPress;
@@ -12,6 +13,8 @@ namespace React_WordPress;
  * Admin Theme Color Manager class for the `React_WordPress` namespace.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category WP_Admin_CSS_Color_Manager
  */
 class WP_Admin_CSS_Color_Manager extends React_WordPress_Singleton
 {

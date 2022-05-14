@@ -2,8 +2,9 @@
 /**
  * This file is responsible for configuring WordPress scripts.
  *
- * @package React_WordPress.
  * @since React WordPress 0.0.1
+ * @package React_WordPress
+ * @category React_WordPress_Scripts_Manager
  */
 
 namespace React_WordPress;
@@ -12,6 +13,8 @@ namespace React_WordPress;
  * Manage all scripts used in the `React_WordPress` namespace.
  *
  * @since React WordPress 0.0.1
+ * @package Class
+ * @category React_WordPress_Scripts_Manager
  */
 class React_WordPress_Scripts_Manager extends React_WordPress_Singleton
 {
@@ -20,7 +23,7 @@ class React_WordPress_Scripts_Manager extends React_WordPress_Singleton
 	 */
 
 	/**
-	 * Get the directory of all assets
+	 * Get the directory of all assets.
 	 *
 	 * @return string
 	 *
@@ -32,7 +35,7 @@ class React_WordPress_Scripts_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Get the directory of all bundled js
+	 * Get the directory of all bundled js.
 	 *
 	 * @return string
 	 *
@@ -44,7 +47,7 @@ class React_WordPress_Scripts_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Get the directory of all bundled css
+	 * Get the directory of all bundled css.
 	 *
 	 * @return string
 	 *
@@ -58,8 +61,8 @@ class React_WordPress_Scripts_Manager extends React_WordPress_Singleton
 	/**
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
-	 * @since React WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/hooks/init/
+	 * @since React WordPress 0.0.1
 	 */
 	public static function init()
 	{
@@ -67,10 +70,10 @@ class React_WordPress_Scripts_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Enqueue a script.
+	 * Enqueue main javascript script.
 	 *
-	 * @since React WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+	 * @since React WordPress 0.0.1
 	 */
 	public function enqueue_scripts_javascript()
 	{
@@ -90,10 +93,10 @@ class React_WordPress_Scripts_Manager extends React_WordPress_Singleton
 	}
 
 	/**
-	 * Enqueue a CSS stylesheet.
+	 * Enqueue main CSS stylesheet script.
 	 *
-	 * @since React WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+	 * @since React WordPress 0.0.1
 	 */
 	public function enqueue_scripts_stylesheet()
 	{
@@ -117,7 +120,7 @@ class React_WordPress_Scripts_Manager extends React_WordPress_Singleton
 	 */
 
 	/**
-	 * Initialize `React_WordPress_Manager` class
+	 * Initialize `React_WordPress_Scripts_Manager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */
