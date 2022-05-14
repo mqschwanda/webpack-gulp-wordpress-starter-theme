@@ -67,6 +67,15 @@ class Theme_Manager extends Base_Singleton
 	public const TEXT_DOMAIN = self::THEME_SLUG;
 
 	/**
+	 * The root div id used for react in the `React_WordPress` namespace.
+	 *
+	 * @var 'react_wordpress_root'
+	 *
+	 * @since React WordPress 0.0.1
+	 */
+	public const REACT_ROOT = self::THEME_SLUG . '_root';
+
+	/**
 	 * Handle autoload of the `React_WordPress` namespace by initializing the singleton instance.
 	 *
 	 * @since React WordPress 0.0.1

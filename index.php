@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-    <div id="react_wordpress_root"></div>
+		<div id="<?php echo esc_html(React_WordPress\Theme_Manager::REACT_ROOT); ?>"></div>
 
 <?php
 get_footer();
