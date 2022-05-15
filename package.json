@@ -1,5 +1,5 @@
 {
-  "name": "@mqs/react_wordpress",
+  "name": "@mqs/react-headless-wordpress",
   "description": "A starter-kit for WordPress themes",
   "version": "0.0.1",
   "author": "Mark Q Schwanda",
@@ -20,8 +20,8 @@
     "postinstall": "yarn build && echo \"THEME INSTALLED, GOOD TO GO !\"",
     "lint": "yarn lint:php",
     "lint-fix": "yarn lint-fix:php",
-    "lint:php": "vendor/bin/phpcs react-wordpress/",
-    "lint-fix:php": "vendor/bin/phpcbf react-wordpress/"
+    "lint:php": "vendor/bin/phpcs namespaces/",
+    "lint-fix:php": "vendor/bin/phpcbf namespaces/"
   },
   "engines": {
     "node": ">=12.0.0"
