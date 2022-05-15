@@ -103,7 +103,7 @@ class WordPressAdminThemeManager extends BaseSingleton
 	{
 		$key    = self::ADMIN_CSS_COLOR_KEY;
 		$name   = __(self::ADMIN_CSS_COLOR_NAME);
-		$url    = get_template_directory_uri() . '/assets/dist/css/wp-admin-css-color.css';
+		$url    = WordPressScriptsManager::getStylesDirectoryUri() . '/wp-admin-css-color.css';
 		$colors = array(
 			'var(--react_wordpress_primary_color)',
 			'var(--react_wordpress_secondary_color)',

@@ -390,7 +390,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	public static function customize_preview_init()
 	{ // phpcs:enable
 		$handle    = 'theme-customize-preview'; // Give the script a unique ID
-		$src       = get_template_directory_uri() . '/assets/dist/js/customize-preview.js'; // Define the path to the JS file
+		$src       = WordPressScriptsManager::getJavascriptsDirectoryUri() . '/customize-preview.js'; // Define the path to the JS file
 		$deps      = array('jquery', 'customize-preview'); // Define dependencies
 		$ver       = ThemeManager::THEME_VERSION; // Define a version (optional)
 		$in_footer = true; // Specify whether to put in footer (leave this true)
