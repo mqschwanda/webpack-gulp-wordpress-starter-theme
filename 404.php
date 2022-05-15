@@ -1,9 +1,9 @@
 <?php
-get_header();
-?>
+/**
+ * This file is rendered as html and delivered to the client.
+ *
+ * @since React WordPress 0.0.1
+ * @package ReactHeadlessWordPress
+ */
 
-<div id="<?php echo esc_html(ReactHeadlessWordPress\ThemeManager::REACT_ROOT); ?>"></div>
-
-<?php
-get_footer();
-?>
+ReactHeadlessWordPress\ThemeManager::render();

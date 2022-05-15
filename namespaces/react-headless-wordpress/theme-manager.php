@@ -86,6 +86,18 @@ class ThemeManager extends BaseSingleton
 	}
 
 	/**
+	 * Render the website content as html.
+	 *
+	 * @since React WordPress 0.0.1
+	 */
+	public static function render()
+	{
+		get_header();
+		self::renderReactRoot();
+		get_footer();
+	}
+
+	/**
 	 * TODO: fix issue with `WordPress.WP.I18n`
 	 *
 	 * Retrieve the translation of $text. If there is no translation, or the text domain isn't loaded, the original text is returned.
@@ -285,6 +297,18 @@ class ThemeManager extends BaseSingleton
 		$path   = get_template_directory() . '/languages';
 
 		load_theme_textdomain($domain, $path);
+	}
+
+	/**
+	 * Render react root.
+	 *
+	 * @since React WordPress 0.0.1
+	 */
+	public static function renderReactRoot()
+	{
+	?>
+		<div id="<?php echo esc_html(self::REACT_ROOT); ?>"></div>
+	<?php
 	}
 
 	/**
