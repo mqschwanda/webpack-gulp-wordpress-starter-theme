@@ -34,7 +34,7 @@ class UserRoleEditorPluginManager extends BaseSingleton
 	 */
 	public static function init()
 	{
-		// ...
+		// code and stuff...
 	}
 
 	/**

@@ -33,6 +33,7 @@ class WordPressAdminManager extends BaseSingleton
 		// code and stuff...
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Filters the legacy contextual help list.
 	 *
@@ -40,7 +41,7 @@ class WordPressAdminManager extends BaseSingleton
 	 * @see https://developer.wordpress.org/reference/hooks/contextual_help_list/
 	 */
 	public function contextual_help_list()
-	{
+	{ // phpcs:enable
 		global $current_screen;
 
 		$current_screen->remove_help_tabs();

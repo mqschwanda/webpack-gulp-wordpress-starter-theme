@@ -251,9 +251,10 @@ class WordPressCustomizationManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 */
 	public static function init () {
-		self::configure_theme_mods();
+		self::configureThemeMods();
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * This hooks into 'customize_register' (available as of WP 3.4) and allows
 	 * you to add new sections and controls to the Theme Customize screen.
@@ -266,9 +267,11 @@ class WordPressCustomizationManager extends BaseSingleton
 	 * @see http://ottopress.com/2012/how-to-leverage-the-theme-customizer-in-your-own-themes/
 	 * @since React WordPress 0.0.1
 	 */
-	public static function customize_register ($wp_customize) {
+	public static function customize_register ($wp_customize)
+	{ // phpcs:enable
 		// 1. Define a new section (if desired) to the Theme Customizer
-		foreach (self::SECTIONS as $section_name => $config) {
+		foreach (self::SECTIONS as $section_name => $config)
+		{
 			$description        = __($config['description']);
 			$description_hidden = $config['description_hidden'];
 			$priority           = 35;
@@ -287,7 +290,8 @@ class WordPressCustomizationManager extends BaseSingleton
 		}
 
 		// 2. Register new settings to the WP database...
-		foreach (self::THEME_MODS as $theme_mod_name => $config) {
+		foreach (self::THEME_MODS as $theme_mod_name => $config)
+		{
 			$wp_customize->add_setting(
 				$theme_mod_name,
 				array(
@@ -300,13 +304,15 @@ class WordPressCustomizationManager extends BaseSingleton
 		}
 
 		// 3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
-		foreach (self::THEME_MODS as $theme_mod_name => $config) {
+		foreach (self::THEME_MODS as $theme_mod_name => $config)
+		{
 			$description = __($config['description']);
 			$label       = __($config['label']);
 			$priority    = 10;
 			$section     = $config['section'];
 
-			if ('color' === $config['type']) {
+			if ('color' === $config['type'])
+			{
 				$wp_customize->add_control(new \WP_Customize_Color_Control(
 					$wp_customize,
 					$theme_mod_name,
@@ -318,7 +324,9 @@ class WordPressCustomizationManager extends BaseSingleton
 						'settings'    => $theme_mod_name,
 					),
 				));
-			} else {
+			}
+			else
+			{
 				$wp_customize->add_control(
 					$theme_mod_name,
 					array(
@@ -357,7 +365,7 @@ class WordPressCustomizationManager extends BaseSingleton
 							$selector = ':root';
 							$style    = '--' . $theme_mod_name;
 
-							self::generate_css(
+							self::generateCSS(
 								$selector,
 								$style,
 								$theme_mod_name,
@@ -370,6 +378,7 @@ class WordPressCustomizationManager extends BaseSingleton
 		<?php
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * This outputs the javascript needed to automate the live settings preview.
 	 * Also keep in mind that this function isn't necessary unless your settings
@@ -379,7 +388,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 */
 	public static function customize_preview_init()
-	{
+	{ // phpcs:enable
 		$handle    = 'theme-customize-preview'; // Give the script a unique ID
 		$src       = get_template_directory_uri() . '/assets/dist/js/customize-preview.js'; // Define the path to the JS file
 		$deps      = array('jquery', 'customize-preview'); // Define dependencies
@@ -429,7 +438,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private function configure_theme_mods ()
+	private function configureThemeMods ()
 	{
 		$theme_mods = self::THEME_MODS;
 		foreach ($theme_mods as $name => $config)
@@ -458,7 +467,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private function generate_css(
+	private function generateCSS(
 		$selector,
 		$style,
 		$theme_mod_name,

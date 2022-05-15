@@ -43,7 +43,7 @@ class User extends BaseStatic
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/wp_get_current_user/
 	 */
-	public static function get_current_user()
+	public static function getCurrentUser()
 	{
 		return wp_get_current_user();
 	}
@@ -55,9 +55,9 @@ class User extends BaseStatic
 	 *
 	 * @return bool
 	 */
-	public static function is_current_user_role($user_role)
+	public static function isCurrentUserRole($user_role)
 	{
-		$current_user = self::get_current_user();
+		$current_user = self::getCurrentUser();
 
 		return in_array($user_role, $current_user->roles, true);
 	}
@@ -67,8 +67,8 @@ class User extends BaseStatic
 	 *
 	 * @return bool
 	 */
-	public static function is_current_user_role_admin()
+	public static function isCurrentUserRoleAdmin()
 	{
-		return self::is_current_user_role(Role::ADMINISTRATOR);
+		return self::isCurrentUserRole(Role::ADMINISTRATOR);
 	}
 }

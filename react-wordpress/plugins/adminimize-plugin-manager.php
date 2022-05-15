@@ -299,7 +299,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 */
 	public static function init()
 	{
-		self::set_default_options();
+		self::setDefaultOptions();
 	}
 
 	/**
@@ -311,14 +311,14 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_dashboard_option_items($user_role)
+	public static function getDisabledDashboardOptionItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
 			return self::DISABLED_DASHBOARD_OPTION_ITEMS;
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_DASHBOARD_OPTION_ITEMS,
 			self::ADMIN_ONLY_DASHBOARD_OPTION_ITEMS
 		);
@@ -333,7 +333,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_admin_bar_items($user_role)
+	public static function getDisabledAdminBarItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
@@ -342,14 +342,14 @@ class AdminimizePluginManager extends BaseSingleton
 
 		if ($user_role === Role::SUBSCRIBER)
 		{
-			return ArrayUtility::array_filter_unique_merge(
+			return ArrayUtility::arrayFilterUniqueMerge(
 				self::DISABLED_SUBSCRIBER_ADMIN_BAR_ITEMS,
 				self::DISABLED_ADMIN_BAR_ITEMS,
 				self::ADMIN_ONLY_ADMIN_BAR_ITEMS
 			);
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_ADMIN_BAR_ITEMS,
 			self::ADMIN_ONLY_ADMIN_BAR_ITEMS
 		);
@@ -364,14 +364,14 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_global_option_items($user_role)
+	public static function getDisabledGlobalOptionItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
 			return self::DISABLED_GLOBAL_OPTION_ITEMS;
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_GLOBAL_OPTION_ITEMS,
 			self::ADMIN_ONLY_GLOBAL_OPTION_ITEMS
 		);
@@ -386,7 +386,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_menu_items($user_role)
+	public static function getDisabledMenuItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
@@ -395,14 +395,14 @@ class AdminimizePluginManager extends BaseSingleton
 
 		if ($user_role === Role::SUBSCRIBER)
 		{
-			return ArrayUtility::array_filter_unique_merge(
+			return ArrayUtility::arrayFilterUniqueMerge(
 				self::DISABLED_SUBSCRIBER_MENU_ITEMS,
 				self::DISABLED_MENU_ITEMS,
 				self::ADMIN_ONLY_MENU_ITEMS
 			);
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_MENU_ITEMS,
 			self::ADMIN_ONLY_MENU_ITEMS
 		);
@@ -417,7 +417,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_submenu_items($user_role)
+	public static function getDisabledSubmenuItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
@@ -426,14 +426,14 @@ class AdminimizePluginManager extends BaseSingleton
 
 		if ($user_role === Role::SUBSCRIBER)
 		{
-			return ArrayUtility::array_filter_unique_merge(
+			return ArrayUtility::arrayFilterUniqueMerge(
 				self::DISABLED_SUBSCRIBER_SUBMENU_ITEMS,
 				self::DISABLED_SUBMENU_ITEMS,
 				self::ADMIN_ONLY_SUBMENU_ITEMS
 			);
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_SUBMENU_ITEMS,
 			self::ADMIN_ONLY_SUBMENU_ITEMS
 		);
@@ -448,7 +448,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_metaboxes_page_items($user_role)
+	public static function getDisabledMetaboxesPageItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
@@ -457,14 +457,14 @@ class AdminimizePluginManager extends BaseSingleton
 
 		if ($user_role === Role::SUBSCRIBER)
 		{
-			return ArrayUtility::array_filter_unique_merge(
+			return ArrayUtility::arrayFilterUniqueMerge(
 				self::DISABLED_SUBSCRIBER_METABOXES_PAGE_ITEMS,
 				self::DISABLED_METABOXES_PAGE_ITEMS,
 				self::ADMIN_ONLY_METABOXES_PAGE_ITEMS
 			);
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_METABOXES_PAGE_ITEMS,
 			self::ADMIN_ONLY_METABOXES_PAGE_ITEMS
 		);
@@ -479,7 +479,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_metaboxes_post_items($user_role)
+	public static function getDisabledMetaboxesPostItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
@@ -488,14 +488,14 @@ class AdminimizePluginManager extends BaseSingleton
 
 		if ($user_role === Role::SUBSCRIBER)
 		{
-			return ArrayUtility::array_filter_unique_merge(
+			return ArrayUtility::arrayFilterUniqueMerge(
 				self::DISABLED_SUBSCRIBER_METABOXES_POST_ITEMS,
 				self::DISABLED_METABOXES_POST_ITEMS,
 				self::ADMIN_ONLY_METABOXES_POST_ITEMS
 			);
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_METABOXES_POST_ITEMS,
 			self::ADMIN_ONLY_METABOXES_POST_ITEMS
 		);
@@ -510,14 +510,14 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_link_option_items($user_role)
+	public static function getDisabledLinkOptionItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
 			return self::DISABLED_LINK_ITEMS;
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_LINK_ITEMS,
 			self::ADMIN_ONLY_LINK_ITEMS
 		);
@@ -532,14 +532,14 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_widget_option_items($user_role)
+	public static function getDisabledWidgetOptionItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
 			return self::DISABLED_WIDGET_ITEMS;
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_WIDGET_ITEMS,
 			self::ADMIN_ONLY_WIDGET_ITEMS
 		);
@@ -554,14 +554,14 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_nav_menu_option_items($user_role)
+	public static function getDisabledNavMenuOptionItems($user_role)
 	{
 		if ($user_role === Role::ADMINISTRATOR)
 		{
 			return self::DISABLED_NAV_MENU_ITEMS;
 		}
 
-		return ArrayUtility::array_filter_unique_merge(
+		return ArrayUtility::arrayFilterUniqueMerge(
 			self::DISABLED_NAV_MENU_ITEMS,
 			self::ADMIN_ONLY_NAV_MENU_ITEMS
 		);
@@ -576,7 +576,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_dashboard_option_items_key($user_role)
+	public static function getDisabledDashboardOptionItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_dashboard_option_' . $user_role . '_items';
 	}
@@ -590,7 +590,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_admin_bar_frontend_items_key($user_role)
+	public static function getDisabledAdminBarFrontendItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_admin_bar_frontend_' . $user_role . '_items';
 	}
@@ -604,7 +604,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_admin_bar_backend_items_key($user_role)
+	public static function getDisabledAdminBarBackendItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_admin_bar_' . $user_role . '_items';
 	}
@@ -618,7 +618,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_global_option_items_key($user_role)
+	public static function getDisabledGlobalOptionItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_global_option_' . $user_role . '_items';
 	}
@@ -632,7 +632,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_menu_items_key($user_role)
+	public static function getDisabledMenuItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_menu_' . $user_role . '_items';
 	}
@@ -646,7 +646,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_submenu_items_key($user_role)
+	public static function getDisabledSubmenuItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_submenu_' . $user_role . '_items';
 	}
@@ -660,7 +660,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_metaboxes_page_items_key($user_role)
+	public static function getDisabledMetaboxesPageItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_metaboxes_page_' . $user_role . '_items';
 	}
@@ -674,7 +674,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_metaboxes_post_items_key($user_role)
+	public static function getDisabledMetaboxesPostItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_metaboxes_post_' . $user_role . '_items';
 	}
@@ -688,7 +688,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_link_option_items_key($user_role)
+	public static function getDisabledLinkOptionItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_link_option_' . $user_role . '_items';
 	}
@@ -702,7 +702,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_widget_option_items_key($user_role)
+	public static function getDisabledWidgetOptionItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_widget_option_' . $user_role . '_items';
 	}
@@ -716,7 +716,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_disabled_nav_menu_option_items_key($user_role)
+	public static function getDisabledNavMenuOptionItemsKey($user_role)
 	{
 		return 'mw_adminimize_disabled_nav_menu_option_' . $user_role . '_items';
 	}
@@ -728,7 +728,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_user_roles()
+	public static function getUserRoles()
 	{
 		return _mw_adminimize_get_all_user_roles();
 	}
@@ -740,7 +740,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_options()
+	public static function getOptions()
 	{
 		return _mw_adminimize_get_option_value();
 	}
@@ -754,7 +754,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_option($key)
+	public static function getOption($key)
 	{
 		return _mw_adminimize_get_option_value($key);
 	}
@@ -768,11 +768,12 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function set_options($options)
+	public static function setOptions($options)
 	{
 		return _mw_adminimize_update_option($options);
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * This function takes a string as a parameter and should return a string. The function
 	 * will be called when the output buffer is flushed (sent) or cleaned (with ob_flush(),
@@ -788,29 +789,31 @@ class AdminimizePluginManager extends BaseSingleton
 	 * @see https://www.php.net/manual/en/function.ob-start.php
 	 */
 	public static function ob_start($buffer)
-	{
-		$buffer = self::preg_replace_disabled_inputs($buffer);
+	{ // phpcs:enable
+		$buffer = self::pregReplaceDisabledInputs($buffer);
 
 		return $buffer;
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Turn on output buffering before the Adminimize forms are generated
 	 *
 	 * @since React WordPress 0.0.1
 	 */
 	public static function mw_adminimize_before_settings_form()
-	{
+	{ // phpcs:enable
 		ob_start('self::ob_start');
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Send the output buffer and turn off output buffering after Adminimize forms are generated
 	 *
 	 * @since React WordPress 0.0.1
 	 */
 	public static function mw_adminimize_after_settings_form()
-	{
+	{ // phpcs:enable
 		ob_end_flush();
 	}
 
@@ -846,31 +849,31 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private static function get_disabled_options_config($user_role)
+	private static function getDisabledOptionsConfig($user_role)
 	{
 		return array(
 			// Admin Bar Frontend
-			self::get_disabled_admin_bar_frontend_items_key($user_role) => self::get_disabled_admin_bar_items($user_role),
+			self::getDisabledAdminBarFrontendItemsKey($user_role) => self::getDisabledAdminBarItems($user_role),
 			// Admin Bar Backend
-			self::get_disabled_admin_bar_backend_items_key($user_role) => self::get_disabled_admin_bar_items($user_role),
+			self::getDisabledAdminBarBackendItemsKey($user_role) => self::getDisabledAdminBarItems($user_role),
 			// Global
-			self::get_disabled_global_option_items_key($user_role) => self::get_disabled_global_option_items($user_role),
+			self::getDisabledGlobalOptionItemsKey($user_role) => self::getDisabledGlobalOptionItems($user_role),
 			// Dashboard Options
-			self::get_disabled_dashboard_option_items_key($user_role) => self::get_disabled_dashboard_option_items($user_role),
+			self::getDisabledDashboardOptionItemsKey($user_role) => self::getDisabledDashboardOptionItems($user_role),
 			// Menu
-			self::get_disabled_menu_items_key($user_role) => self::get_disabled_menu_items($user_role),
+			self::getDisabledMenuItemsKey($user_role)    => self::getDisabledMenuItems($user_role),
 			// Submenu
-			self::get_disabled_submenu_items_key($user_role) => self::get_disabled_submenu_items($user_role),
+			self::getDisabledSubmenuItemsKey($user_role) => self::getDisabledSubmenuItems($user_role),
 			// Page Write
-			self::get_disabled_metaboxes_page_items_key($user_role) => self::get_disabled_metaboxes_page_items($user_role),
+			self::getDisabledMetaboxesPageItemsKey($user_role) => self::getDisabledMetaboxesPageItems($user_role),
 			// Post Write
-			self::get_disabled_metaboxes_post_items_key($user_role) => self::get_disabled_metaboxes_post_items($user_role),
+			self::getDisabledMetaboxesPostItemsKey($user_role) => self::getDisabledMetaboxesPostItems($user_role),
 			// Link
-			self::get_disabled_link_option_items_key($user_role) => self::get_disabled_link_option_items($user_role),
+			self::getDisabledLinkOptionItemsKey($user_role) => self::getDisabledLinkOptionItems($user_role),
 			// Widgets
-			self::get_disabled_widget_option_items_key($user_role) => self::get_disabled_widget_option_items($user_role),
+			self::getDisabledWidgetOptionItemsKey($user_role) => self::getDisabledWidgetOptionItems($user_role),
 			// WP Nav Menu
-			self::get_disabled_nav_menu_option_items_key($user_role) => self::get_disabled_nav_menu_option_items($user_role),
+			self::getDisabledNavMenuOptionItemsKey($user_role) => self::getDisabledNavMenuOptionItems($user_role),
 		);
 	}
 
@@ -883,15 +886,15 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private static function preg_replace_disabled_inputs($html)
+	private static function pregReplaceDisabledInputs($html)
 	{
-		$user_roles = self::get_user_roles();
+		$user_roles = self::getUserRoles();
 		$patterns   = array();
 
 		// configure disabled options for each user role
 		foreach ($user_roles as $user_role)
 		{
-			$disabled_options_config = self::get_disabled_options_config($user_role);
+			$disabled_options_config = self::getDisabledOptionsConfig($user_role);
 			// go through each disabled option key and get the array of disabled values
 			foreach ($disabled_options_config as $name => $values)
 			{
@@ -917,10 +920,10 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private function set_default_options()
+	private function setDefaultOptions()
 	{
-		$user_roles = self::get_user_roles();
-		$options    = self::get_options();
+		$user_roles = self::getUserRoles();
+		$options    = self::getOptions();
 
 		// Backend options
 		$options['_mw_adminimize_user_info'] = 0; // show user info area on the top right side of backend
@@ -931,15 +934,15 @@ class AdminimizePluginManager extends BaseSingleton
 		// configure disabled options for each user role
 		foreach ($user_roles as $user_role)
 		{
-			$disabled_options_config = self::get_disabled_options_config($user_role);
+			$disabled_options_config = self::getDisabledOptionsConfig($user_role);
 
 			// go through each disabled option key and configure the default settings
 			foreach ($disabled_options_config as $key => $value)
 			{
-				$options[ $key ] = ArrayUtility::array_filter_unique_merge($options[ $key ], $value);
+				$options[ $key ] = ArrayUtility::arrayFilterUniqueMerge($options[ $key ], $value);
 			}
 		}
 
-		return self::set_options($options);
+		return self::setOptions($options);
 	}
 }

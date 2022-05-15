@@ -45,7 +45,7 @@ class ArrayUtility extends BaseStatic
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function array_filter_unique_merge(...$arrays)
+	public static function arrayFilterUniqueMerge(...$arrays)
 	{
 		return array_filter(array_unique(array_merge(...$arrays)));
 	}

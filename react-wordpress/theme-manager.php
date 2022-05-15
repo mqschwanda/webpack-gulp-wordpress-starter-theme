@@ -82,7 +82,7 @@ class ThemeManager extends BaseSingleton
 	 */
 	public static function autoload()
 	{
-		self::get_instance();
+		self::getInstance();
 	}
 
 	/**
@@ -103,6 +103,7 @@ class ThemeManager extends BaseSingleton
 		return \__($text, $domain);
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * TODO: fix issue with `WordPress.WP.I18n`
 	 *
@@ -117,10 +118,11 @@ class ThemeManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 */
 	public static function esc_html__($text, $domain = self::TEXT_DOMAIN)
-	{
+	{ // phpcs:enable
 		return \esc_html__($text, $domain);
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Fires after the theme is loaded.
 	 *
@@ -128,11 +130,12 @@ class ThemeManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 */
 	public static function after_setup_theme()
-	{
-		self::add_theme_support();
-		self::load_theme_textdomain();
+	{ // phpcs:enable
+		self::addThemeSupport();
+		self::loadThemeTextdomain();
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Register all WordPress scripts.
 	 *
@@ -142,10 +145,11 @@ class ThemeManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 */
 	public static function wp_default_scripts(&$scripts)
-	{
-		self::remove_jquery($scripts);
+	{ // phpcs:enable
+		self::removeJquery($scripts);
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Filters list of allowed mime types and file extensions.
 	 *
@@ -153,10 +157,11 @@ class ThemeManager extends BaseSingleton
 	 * @see https://developer.wordpress.org/reference/hooks/upload_mimes/
 	 */
 	public static function upload_mimes()
-	{
-		self::upload_mimes_svg();
+	{ // phpcs:enable
+		self::uploadMimesSvg();
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Fires when scripts and styles are enqueued.
 	 *
@@ -164,10 +169,11 @@ class ThemeManager extends BaseSingleton
 	 * @see https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/
 	 */
 	public static function wp_enqueue_scripts()
-	{
-		self::force_scripts_in_footer();
+	{ // phpcs:enable
+		self::forceScriptsInFooter();
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Fire the wp_footer action.
 	 *
@@ -175,8 +181,8 @@ class ThemeManager extends BaseSingleton
 	 * @see https://developer.wordpress.org/reference/functions/wp_footer/
 	 */
 	public static function wp_footer()
-	{
-		self::deregister_scripts();
+	{ // phpcs:enable
+		self::deregisterScripts();
 	}
 
 	/**
@@ -187,7 +193,7 @@ class ThemeManager extends BaseSingleton
 	 */
 	public static function init()
 	{
-		self::define_react_wordpress_functions();
+		self::defineReactWordpressFunctions();
 	}
 
 	/**
@@ -214,9 +220,9 @@ class ThemeManager extends BaseSingleton
 		add_filter('admin_footer_text', '__return_empty_string', 11);
 		add_filter('update_footer', '__return_empty_string', 11);
 
-		self::remove_wp_emoji();
-		self::initialize_statics();
-		self::initialize_singletons();
+		self::removeWpEmoji();
+		self::initializeStatics();
+		self::initializeSingletons();
 	}
 
 	/**
@@ -228,7 +234,7 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private function initialize_singletons()
+	private function initializeSingletons()
 	{
 		/**
 		 * WordPress
@@ -237,24 +243,24 @@ class ThemeManager extends BaseSingleton
 		include 'wordpress/wordpress-admin-theme-manager.php';
 		include 'wordpress/wordpress-customization-manager.php';
 		include 'wordpress/wordpress-scripts-manager.php';
-		$this->wordpress_admin_manager         = WordPressAdminManager::get_instance();
-		$this->wordpress_admin_theme_manager   = WordPressAdminThemeManager::get_instance();
-		$this->wordpress_customization_manager = WordPressCustomizationManager::get_instance();
-		$this->wordpress_scripts_manager       = WordPressScriptsManager::get_instance();
+		$this->wordpress_admin_manager         = WordPressAdminManager::getInstance();
+		$this->wordpress_admin_theme_manager   = WordPressAdminThemeManager::getInstance();
+		$this->wordpress_customization_manager = WordPressCustomizationManager::getInstance();
+		$this->wordpress_scripts_manager       = WordPressScriptsManager::getInstance();
 
 		/**
 		 * Plugin Activation Manager
 		 */
 		include 'plugins/plugin-activation-manager.php';
-		$this->plugin_activation_manager = PluginActivationManager::get_instance();
+		$this->plugin_activation_manager = PluginActivationManager::getInstance();
 
 		/**
 		 * Plugins
 		 */
 		include 'plugins/adminimize-plugin-manager.php';
 		include 'plugins/user-role-editor-plugin-manager.php';
-		$this->adminimize_plugin_manager       = AdminimizePluginManager::get_instance();
-		$this->user_role_editor_plugin_manager = UserRoleEditorPluginManager::get_instance();
+		$this->adminimize_plugin_manager       = AdminimizePluginManager::getInstance();
+		$this->user_role_editor_plugin_manager = UserRoleEditorPluginManager::getInstance();
 	}
 
 	/**
@@ -262,7 +268,7 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private function initialize_statics()
+	private function initializeStatics()
 	{
 		/**
 		 * Core
@@ -286,7 +292,7 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private function remove_wp_emoji()
+	private function removeWpEmoji()
 	{
 		remove_action('wp_head', 'print_emoji_detection_script', 7);
 		remove_action('wp_print_styles', 'print_emoji_styles');
@@ -299,7 +305,7 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private static function force_scripts_in_footer()
+	private static function forceScriptsInFooter()
 	{
 		remove_action('wp_head', 'wp_print_scripts');
 		remove_action('wp_head', 'wp_print_head_scripts', 9);
@@ -311,7 +317,7 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private static function upload_mimes_svg()
+	private static function uploadMimesSvg()
 	{
 		$mime_types['svg'] = 'image/svg+xml';
 
@@ -325,9 +331,9 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private static function remove_jquery(&$scripts)
+	private static function removeJquery(&$scripts)
 	{
-		if (!User::is_current_user_role_admin())
+		if (!User::isCurrentUserRoleAdmin())
 		{
 			$scripts->remove('jquery');
 		}
@@ -339,7 +345,7 @@ class ThemeManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/add_theme_support/
 	 */
-	private static function add_theme_support()
+	private static function addThemeSupport()
 	{
 		// IMAGES
 		add_theme_support('post-thumbnails');
@@ -354,7 +360,7 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private static function deregister_scripts()
+	private static function deregisterScripts()
 	{
 		// delete wp-embed.js from footer
 		wp_deregister_script('wp-embed');
@@ -366,7 +372,7 @@ class ThemeManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/load_theme_textdomain/
 	 */
-	private static function load_theme_textdomain()
+	private static function loadThemeTextdomain()
 	{
 		$domain = self::TEXT_DOMAIN;
 		$path   = get_template_directory() . '/languages';
@@ -379,7 +385,7 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private static function define_react_wordpress_functions()
+	private static function defineReactWordpressFunctions()
 	{
 		// @codingStandardsIgnoreLine
 		function __(...$args)

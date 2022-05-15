@@ -29,7 +29,7 @@ class WordPressScriptsManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_assets_directory_uri()
+	public static function getAssetsDirectoryUri()
 	{
 		return get_template_directory_uri() . '/assets';
 	}
@@ -41,9 +41,9 @@ class WordPressScriptsManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_javascripts_directory_uri()
+	public static function getJavascriptsDirectoryUri()
 	{
-		return self::get_assets_directory_uri() . '/dist/js';
+		return self::getAssetsDirectoryUri() . '/dist/js';
 	}
 
 	/**
@@ -53,9 +53,9 @@ class WordPressScriptsManager extends BaseSingleton
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	public static function get_styles_directory_uri()
+	public static function getStylesDirectoryUri()
 	{
-		return self::get_assets_directory_uri() . '/dist/css';
+		return self::getAssetsDirectoryUri() . '/dist/css';
 	}
 
 	/**
@@ -69,6 +69,7 @@ class WordPressScriptsManager extends BaseSingleton
 		// code and stuff...
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Enqueue main javascript script.
 	 *
@@ -76,9 +77,9 @@ class WordPressScriptsManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 */
 	public function enqueue_scripts_javascript()
-	{
+	{ // phpcs:enable
 		$handle    = 'main';
-		$src       = self::get_javascripts_directory_uri() . '/main.js';
+		$src       = self::getJavascriptsDirectoryUri() . '/main.js';
 		$deps      = array();
 		$ver       = ThemeManager::THEME_VERSION;
 		$in_footer = true;
@@ -92,6 +93,7 @@ class WordPressScriptsManager extends BaseSingleton
 		);
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Enqueue main CSS stylesheet script.
 	 *
@@ -99,9 +101,9 @@ class WordPressScriptsManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 */
 	public function enqueue_scripts_stylesheet()
-	{
+	{ // phpcs:enable
 		$handle = 'main';
-		$src    = self::get_styles_directory_uri() . '/main.css';
+		$src    = self::getStylesDirectoryUri() . '/main.css';
 		$deps   = array();
 		$ver    = ThemeManager::THEME_VERSION;
 		$media  = 'all';

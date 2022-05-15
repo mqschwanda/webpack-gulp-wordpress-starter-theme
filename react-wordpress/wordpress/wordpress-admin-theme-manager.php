@@ -48,9 +48,10 @@ class WordPressAdminThemeManager extends BaseSingleton
 	 */
 	public static function init()
 	{
-		self::configure_wp_admin_css_color();
+		self::configureWpAdminCssColor();
 	}
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Force `React WordPress` admin theme.
 	 *
@@ -62,7 +63,7 @@ class WordPressAdminThemeManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 */
 	public static function get_user_option_admin_color($color_scheme)
-	{
+	{ // phpcs:enable
 		$color_scheme = self::ADMIN_CSS_COLOR_KEY;
 
 		return $color_scheme;
@@ -98,7 +99,7 @@ class WordPressAdminThemeManager extends BaseSingleton
 	 * @see https://developer.wordpress.org/reference/functions/wp_admin_css_color/
 	 * @since React WordPress 0.0.1
 	 */
-	private function configure_wp_admin_css_color()
+	private function configureWpAdminCssColor()
 	{
 		$key    = self::ADMIN_CSS_COLOR_KEY;
 		$name   = __(self::ADMIN_CSS_COLOR_NAME);

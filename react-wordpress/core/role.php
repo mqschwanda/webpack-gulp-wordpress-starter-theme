@@ -65,7 +65,7 @@ class Role extends BaseStatic
 	{
 		parent::init();
 
-		self::configure_roles_and_capabilities();
+		self::configureRolesAndCapabilities();
 	}
 
 	/**
@@ -77,7 +77,7 @@ class Role extends BaseStatic
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-	private static function configure_roles_and_capabilities()
+	private static function configureRolesAndCapabilities()
 	{
 		foreach (self::DISABLED_ROLES as $disabled_role)
 		{

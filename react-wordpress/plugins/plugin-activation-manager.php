@@ -209,6 +209,7 @@ class PluginActivationManager extends BaseSingleton
 		*/
 	);
 
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
 	 * Register the required plugins for this theme.
 	 *
@@ -224,7 +225,7 @@ class PluginActivationManager extends BaseSingleton
 	 * @since React WordPress 0.0.1
 	 */
 	public static function tgmpa_register()
-	{
+	{ // phpcs:enable
 		tgmpa(
 			self::PLUGINS,
 			self::CONFIG

@@ -21,7 +21,7 @@ class BaseSingleton extends BaseClass
 	/**
 	 * Public
 	 */
-	public static function get_instance()
+	public static function getInstance()
 	{
 			$class = get_called_class();
 
