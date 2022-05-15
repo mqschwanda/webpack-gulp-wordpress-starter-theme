@@ -70,8 +70,11 @@
 		</properties>
 	</rule>
 
+	<rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
 	<rule ref="Squiz.Classes.ValidClassName"/>
-
+	<rule ref="Squiz.Scope.MethodScope"/>
 	<rule ref="PSR1.Methods.CamelCapsMethodName"/>
+	<rule ref="PSR2.Methods.MethodDeclaration"/>
+	<!-- <rule ref="Squiz.NamingConventions.ValidFunctionName"/> -->
 
 </ruleset>
