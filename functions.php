@@ -7,11 +7,11 @@
  */
 
 /**
- * Autoloader
+ * Vendor: Autoloader
  */
 require 'vendor/autoload.php';
 
 /**
- * React Wordress Autoloader
+ * React Headless Wordress: Autoloader
  */
-require 'react-headless-wordpress/autoload.php';
+require 'namespaces/react-headless-wordpress/autoload.php';
