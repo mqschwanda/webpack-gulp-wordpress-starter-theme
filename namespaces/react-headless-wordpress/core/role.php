@@ -65,6 +65,21 @@ class Role extends BaseStatic
 	{
 		parent::init();
 
+		add_action('after_switch_theme', array(self, 'after_switch_theme'));
+	}
+
+	// phpcs:disable PSR1.Methods.CamelCapsMethodName
+	/**
+	 * Fires on the first WP load after a theme switch if the old theme still exists.
+	 *
+	 * Callback functions attached to this hook are only triggered in the theme (and/or child theme)
+	 * being activated. To do things when your theme is deactivated, use switch_theme.
+	 *
+	 * @see https://developer.wordpress.org/reference/hooks/after_switch_theme/
+	 * @since React WordPress 0.0.1
+	 */
+	public static function after_switch_theme ()
+	{ // phpcs:enable
 		self::configureRolesAndCapabilities();
 	}
 
