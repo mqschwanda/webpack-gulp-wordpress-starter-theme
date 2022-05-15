@@ -46,6 +46,8 @@ class WordPressScriptsManager extends BaseSingleton
 	public static function wp_enqueue_scripts()
 	{ // phpcs:enable
 		self::forceScriptsInFooter();
+		self::enqueueScriptsJavascript();
+		self::enqueueScriptsStylesheet();
 	}
 
 	// phpcs:disable PSR1.Methods.CamelCapsMethodName
@@ -107,54 +109,6 @@ class WordPressScriptsManager extends BaseSingleton
 		// code and stuff...
 	}
 
-	// phpcs:disable PSR1.Methods.CamelCapsMethodName
-	/**
-	 * Enqueue main javascript script.
-	 *
-	 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_script/
-	 * @since React WordPress 0.0.1
-	 */
-	public function enqueue_scripts_javascript()
-	{ // phpcs:enable
-		$handle    = 'main';
-		$src       = self::getJavascriptsDirectoryUri() . '/main.js';
-		$deps      = array();
-		$ver       = ThemeManager::THEME_VERSION;
-		$in_footer = true;
-
-		wp_enqueue_script(
-			$handle,
-			$src,
-			$deps,
-			$ver,
-			$in_footer,
-		);
-	}
-
-	// phpcs:disable PSR1.Methods.CamelCapsMethodName
-	/**
-	 * Enqueue main CSS stylesheet script.
-	 *
-	 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_style/
-	 * @since React WordPress 0.0.1
-	 */
-	public function enqueue_scripts_stylesheet()
-	{ // phpcs:enable
-		$handle = 'main';
-		$src    = self::getStylesDirectoryUri() . '/main.css';
-		$deps   = array();
-		$ver    = ThemeManager::THEME_VERSION;
-		$media  = 'all';
-
-		wp_enqueue_style(
-			$handle,
-			$src,
-			$deps,
-			$ver,
-			$media,
-		);
-	}
-
 	/**
 	 * Protected
 	 */
@@ -175,8 +129,6 @@ class WordPressScriptsManager extends BaseSingleton
 		add_action('wp_default_scripts', array($this, 'wp_default_scripts'));
 
 		add_action('wp_enqueue_scripts', array($this, 'wp_enqueue_scripts'));
-		add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts_javascript'), 100);
-		add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts_stylesheet'));
 
 		self::removeWpEmoji();
 	}
@@ -234,5 +186,51 @@ class WordPressScriptsManager extends BaseSingleton
 		remove_action('wp_print_styles', 'print_emoji_styles');
 		remove_action('admin_print_scripts', 'print_emoji_detection_script');
 		remove_action('admin_print_styles', 'print_emoji_styles');
+	}
+
+	/**
+	 * Enqueue main javascript script.
+	 *
+	 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+	 * @since React WordPress 0.0.1
+	 */
+	private function enqueueScriptsJavascript()
+	{
+		$handle    = 'main';
+		$src       = self::getJavascriptsDirectoryUri() . '/main.js';
+		$deps      = array();
+		$ver       = ThemeManager::THEME_VERSION;
+		$in_footer = true;
+
+		wp_enqueue_script(
+			$handle,
+			$src,
+			$deps,
+			$ver,
+			$in_footer,
+		);
+	}
+
+	/**
+	 * Enqueue main CSS stylesheet script.
+	 *
+	 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+	 * @since React WordPress 0.0.1
+	 */
+	private function enqueueScriptsStylesheet()
+	{
+		$handle = 'main';
+		$src    = self::getStylesDirectoryUri() . '/main.css';
+		$deps   = array();
+		$ver    = ThemeManager::THEME_VERSION;
+		$media  = 'all';
+
+		wp_enqueue_style(
+			$handle,
+			$src,
+			$deps,
+			$ver,
+			$media,
+		);
 	}
 }
