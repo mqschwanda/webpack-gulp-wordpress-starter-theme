@@ -2,7 +2,7 @@
 <ruleset 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   name="Coding_Standards" 
-  namespace="React_WordPress\Coding_Standards" 
+  namespace="ReactHeadlessWordPress\Coding_Standards" 
   xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd"
 >
 	<description>React WordPress Coding Standards</description>

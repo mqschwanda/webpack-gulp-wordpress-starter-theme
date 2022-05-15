@@ -3,11 +3,11 @@
  * This file is responsible for handling WordPress Capability.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category Capability
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
  * Manager for the WordPress: `Capability`.

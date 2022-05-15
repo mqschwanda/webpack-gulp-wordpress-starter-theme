@@ -3,14 +3,14 @@
  * This file is responsible for configuring WordPress admin functionality.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category WordPressAdminManager
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
- * Manage admin functionality in the `React_WordPress` namespace.
+ * Manage admin functionality in the `ReactHeadlessWordPress` namespace.
  *
  * @since React WordPress 0.0.1
  * @package Class

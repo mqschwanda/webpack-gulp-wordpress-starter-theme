@@ -3,14 +3,14 @@
  * This file is responsible for configuring WordPress Admin theme.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category WordPressAdminThemeManager
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
- * Admin Theme Color Manager class for the `React_WordPress` namespace.
+ * Admin Theme Color Manager class for the `ReactHeadlessWordPress` namespace.
  *
  * @since React WordPress 0.0.1
  * @package Class

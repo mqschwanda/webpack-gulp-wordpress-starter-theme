@@ -3,11 +3,11 @@
  * This file is responsible for configuring WordPress theme customization.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category WordPressCustomizationManager
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
  * This class manages the configuration of the theme's customization screen.

@@ -3,11 +3,11 @@
  * This file is responsible for configuring composer package: `TGM-Plugin-Activation`.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category TGM-Plugin-Activation
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
  * TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your

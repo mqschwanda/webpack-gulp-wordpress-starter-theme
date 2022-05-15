@@ -3,11 +3,11 @@
  * This file is responsible for handling WordPress User.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category User
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
  * Manager for the WordPress: `User`.

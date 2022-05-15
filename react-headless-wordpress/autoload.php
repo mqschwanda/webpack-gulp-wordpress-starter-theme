@@ -1,13 +1,13 @@
 <?php
 /**
- * This file is the entry point for the `React_WordPress` namespace.
+ * This file is the entry point for the `ReactHeadlessWordPress` namespace.
  *
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category ThemeManager
  * @since React WordPress 0.0.1
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 require 'theme-manager.php';
 

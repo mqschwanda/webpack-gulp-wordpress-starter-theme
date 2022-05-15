@@ -3,11 +3,11 @@
  * This file is responsible for configuring array utilities.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category ArrayUtility
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
  * Array Utility Class.

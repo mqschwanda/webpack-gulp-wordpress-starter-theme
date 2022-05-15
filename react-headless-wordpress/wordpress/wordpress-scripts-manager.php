@@ -3,14 +3,14 @@
  * This file is responsible for configuring WordPress scripts.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category WordPressScriptsManager
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
- * Manage all scripts used in the `React_WordPress` namespace.
+ * Manage all scripts used in the `ReactHeadlessWordPress` namespace.
  *
  * @since React WordPress 0.0.1
  * @package Class

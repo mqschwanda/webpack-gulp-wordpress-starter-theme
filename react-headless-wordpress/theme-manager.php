@@ -1,13 +1,13 @@
 <?php
 /**
- * This file is where the `React_WordPress` namespace is configured.
+ * This file is where the `ReactHeadlessWordPress` namespace is configured.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category ThemeManager
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
  * Base
@@ -18,7 +18,7 @@ require 'base/base-static.php';
 
 
 /**
- * This class manages the configuration of the `React_WordPress` namespace.
+ * This class manages the configuration of the `ReactHeadlessWordPress` namespace.
  *
  * @since React WordPress 0.0.1
  * @package Class
@@ -58,7 +58,7 @@ class ThemeManager extends BaseSingleton
 	public const THEME_VERSION = '0.0.1';
 
 	/**
-	 * The default text domain that is used for translations in the `React_WordPress` namespace.
+	 * The default text domain that is used for translations in the `ReactHeadlessWordPress` namespace.
 	 *
 	 * @var ThemeManager::THEME_SLUG
 	 *
@@ -67,7 +67,7 @@ class ThemeManager extends BaseSingleton
 	public const TEXT_DOMAIN = self::THEME_SLUG;
 
 	/**
-	 * The root div id used for react in the `React_WordPress` namespace.
+	 * The root div id used for react in the `ReactHeadlessWordPress` namespace.
 	 *
 	 * @var 'react_wordpress_root'
 	 *
@@ -76,7 +76,7 @@ class ThemeManager extends BaseSingleton
 	public const REACT_ROOT = self::THEME_SLUG . '_root';
 
 	/**
-	 * Handle autoload of the `React_WordPress` namespace by initializing the singleton instance.
+	 * Handle autoload of the `ReactHeadlessWordPress` namespace by initializing the singleton instance.
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -188,7 +188,7 @@ class ThemeManager extends BaseSingleton
 	 */
 
 	/**
-	 * Initialize all singleton classes used by `React_WordPress` namespace.
+	 * Initialize all singleton classes used by `ReactHeadlessWordPress` namespace.
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -222,7 +222,7 @@ class ThemeManager extends BaseSingleton
 	}
 
 	/**
-	 * Initialize all static classes used by `React_WordPress` namespace.
+	 * Initialize all static classes used by `ReactHeadlessWordPress` namespace.
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -288,7 +288,7 @@ class ThemeManager extends BaseSingleton
 	}
 
 	/**
-	 * Define functions in the `React_WordPress` namespace.
+	 * Define functions in the `ReactHeadlessWordPress` namespace.
 	 *
 	 * @since React WordPress 0.0.1
 	 */

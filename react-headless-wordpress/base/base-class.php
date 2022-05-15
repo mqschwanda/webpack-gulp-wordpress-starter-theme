@@ -3,14 +3,14 @@
  * This file is responsible for handling all base class configuration.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category BaseClass
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
- * Base class for all classes used in the `React_WordPress` namespace.
+ * Base class for all classes used in the `ReactHeadlessWordPress` namespace.
  *
  * @since React WordPress 0.0.1
  * @package Class

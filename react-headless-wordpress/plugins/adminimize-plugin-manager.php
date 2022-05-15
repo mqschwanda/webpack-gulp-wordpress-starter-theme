@@ -3,11 +3,11 @@
  * This file is responsible for configuring WordPress plugin: `Adminimize`.
  *
  * @since React WordPress 0.0.1
- * @package React_WordPress
+ * @package ReactHeadlessWordPress
  * @category AdminimizePluginManager
  */
 
-namespace React_WordPress;
+namespace ReactHeadlessWordPress;
 
 /**
  * Manager for the WordPress Plugin: `Adminimize`.
