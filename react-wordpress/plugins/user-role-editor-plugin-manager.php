@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category User_Role_Editor_Plugin_Manager
+ * @category UserRoleEditorPluginManager
  */
 
 namespace React_WordPress;
@@ -18,9 +18,9 @@ namespace React_WordPress;
  * @see https://wordpress.org/plugins/user-role-editor/
  * @since React WordPress 0.0.1
  * @package Class
- * @category User_Role_Editor_Plugin_Manager
+ * @category UserRoleEditorPluginManager
  */
-class User_Role_Editor_Plugin_Manager extends Base_Singleton
+class UserRoleEditorPluginManager extends BaseSingleton
 {
 	/**
 	 * Public
@@ -42,7 +42,7 @@ class User_Role_Editor_Plugin_Manager extends Base_Singleton
 	 */
 
 	/**
-	 * Initialize `User_Role_Editor_Plugin_Manager` class
+	 * Initialize `UserRoleEditorPluginManager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */

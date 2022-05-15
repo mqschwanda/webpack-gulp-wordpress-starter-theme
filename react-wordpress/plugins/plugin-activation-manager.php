@@ -22,7 +22,7 @@ namespace React_WordPress;
  * @package Class
  * @category TGM-Plugin-Activation
  */
-class Plugin_Activation_Manager extends Base_Singleton
+class PluginActivationManager extends BaseSingleton
 {
 	/**
 	 * Public
@@ -236,7 +236,7 @@ class Plugin_Activation_Manager extends Base_Singleton
 	 */
 
 	/**
-	 * Initialize `Plugin_Activation_Manager` class.
+	 * Initialize `PluginActivationManager` class.
 	 *
 	 * @since React WordPress 0.0.1
 	 */

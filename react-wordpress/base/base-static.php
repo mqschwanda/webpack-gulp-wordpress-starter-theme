@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category Base_Static
+ * @category BaseStatic
  */
 
 namespace React_WordPress;
@@ -14,16 +14,16 @@ namespace React_WordPress;
  *
  * @since React WordPress 0.0.1
  * @package Class
- * @category Base_Static
+ * @category BaseStatic
  */
-class Base_Static extends Base_Class
+class BaseStatic extends BaseClass
 {
 	/**
 	 * Public
 	 */
 
 	/**
-	 * Initialize `Base_Static` class.
+	 * Initialize `BaseStatic` class.
 	 *
 	 * @since React WordPress 0.0.1
 	 */

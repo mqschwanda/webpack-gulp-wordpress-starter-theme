@@ -70,4 +70,5 @@
 		</properties>
 	</rule>
 
+	<rule ref="Squiz.Classes.ValidClassName"/>
 </ruleset>

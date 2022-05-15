@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category Base_Singleton
+ * @category BaseSingleton
  */
 
 namespace React_WordPress;
@@ -14,9 +14,9 @@ namespace React_WordPress;
  *
  * @since React WordPress 0.0.1
  * @package Class
- * @category Base_Singleton
+ * @category BaseSingleton
  */
-class Base_Singleton extends Base_Class
+class BaseSingleton extends BaseClass
 {
 	/**
 	 * Public
@@ -38,7 +38,7 @@ class Base_Singleton extends Base_Class
 	 */
 
 	/**
-	 * Initialize `Base_Singleton` class
+	 * Initialize `BaseSingleton` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -61,7 +61,7 @@ class Base_Singleton extends Base_Class
 	 */
 
 	/**
-	 * Clone `Base_Singleton` class
+	 * Clone `BaseSingleton` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */

@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category WordPress_Customization_Manager
+ * @category WordPressCustomizationManager
  */
 
 namespace React_WordPress;
@@ -15,9 +15,9 @@ namespace React_WordPress;
  * @see http://codex.wordpress.org/Theme_Customization_API
  * @since React WordPress 0.0.1
  * @package Class
- * @category WordPress_Customization_Manager
+ * @category WordPressCustomizationManager
  */
-class WordPress_Customization_Manager extends Base_Singleton
+class WordPressCustomizationManager extends BaseSingleton
 {
 	/**
 	 * Public
@@ -47,27 +47,27 @@ class WordPress_Customization_Manager extends Base_Singleton
 		),
 	);
 
-	public const XS_OPTION                  = Theme_Manager::THEME_SLUG . '_xs';
-	public const SM_OPTION                  = Theme_Manager::THEME_SLUG . '_sm';
-	public const MD_OPTION                  = Theme_Manager::THEME_SLUG . '_md';
-	public const LG_OPTION                  = Theme_Manager::THEME_SLUG . '_lg';
-	public const XL_OPTION                  = Theme_Manager::THEME_SLUG . '_xl';
-	public const MODE_OPTION                = Theme_Manager::THEME_SLUG . '_mode';
-	public const PRIMARY_COLOR_OPTION       = Theme_Manager::THEME_SLUG . '_primary_color';
-	public const SECONDARY_COLOR_OPTION     = Theme_Manager::THEME_SLUG . '_secondary_color';
-	public const CONTRAST_TEXT_COLOR_OPTION = Theme_Manager::THEME_SLUG . '_contrast_text_color';
-	public const ERROR_COLOR_OPTION         = Theme_Manager::THEME_SLUG . '_error_color';
-	public const WARNING_COLOR_OPTION       = Theme_Manager::THEME_SLUG . '_warning_color';
-	public const INFO_COLOR_OPTION          = Theme_Manager::THEME_SLUG . '_info_color';
-	public const SUCCESS_COLOR_OPTION       = Theme_Manager::THEME_SLUG . '_success_color';
-	public const BACKGROUND_COLOR_OPTION    = Theme_Manager::THEME_SLUG . '_background_color';
-	public const FONT_FAMILY_OPTION         = Theme_Manager::THEME_SLUG . '_font_family';
-	public const FONT_SIZE_OPTION           = Theme_Manager::THEME_SLUG . '_font_size';
-	public const FONT_WEIGHT_LIGHT_OPTION   = Theme_Manager::THEME_SLUG . '_font_weight_light';
-	public const FONT_WEIGHT_REGULAR_OPTION = Theme_Manager::THEME_SLUG . '_font_weight_regular';
-	public const FONT_WEIGHT_MEDIUM_OPTION  = Theme_Manager::THEME_SLUG . '_font_weight_medium';
-	public const FONT_WEIGHT_BOLD_OPTION    = Theme_Manager::THEME_SLUG . '_font_weight_bold';
-	public const BORDER_RADIUS_OPTION       = Theme_Manager::THEME_SLUG . '_border_radius';
+	public const XS_OPTION                  = ThemeManager::THEME_SLUG . '_xs';
+	public const SM_OPTION                  = ThemeManager::THEME_SLUG . '_sm';
+	public const MD_OPTION                  = ThemeManager::THEME_SLUG . '_md';
+	public const LG_OPTION                  = ThemeManager::THEME_SLUG . '_lg';
+	public const XL_OPTION                  = ThemeManager::THEME_SLUG . '_xl';
+	public const MODE_OPTION                = ThemeManager::THEME_SLUG . '_mode';
+	public const PRIMARY_COLOR_OPTION       = ThemeManager::THEME_SLUG . '_primary_color';
+	public const SECONDARY_COLOR_OPTION     = ThemeManager::THEME_SLUG . '_secondary_color';
+	public const CONTRAST_TEXT_COLOR_OPTION = ThemeManager::THEME_SLUG . '_contrast_text_color';
+	public const ERROR_COLOR_OPTION         = ThemeManager::THEME_SLUG . '_error_color';
+	public const WARNING_COLOR_OPTION       = ThemeManager::THEME_SLUG . '_warning_color';
+	public const INFO_COLOR_OPTION          = ThemeManager::THEME_SLUG . '_info_color';
+	public const SUCCESS_COLOR_OPTION       = ThemeManager::THEME_SLUG . '_success_color';
+	public const BACKGROUND_COLOR_OPTION    = ThemeManager::THEME_SLUG . '_background_color';
+	public const FONT_FAMILY_OPTION         = ThemeManager::THEME_SLUG . '_font_family';
+	public const FONT_SIZE_OPTION           = ThemeManager::THEME_SLUG . '_font_size';
+	public const FONT_WEIGHT_LIGHT_OPTION   = ThemeManager::THEME_SLUG . '_font_weight_light';
+	public const FONT_WEIGHT_REGULAR_OPTION = ThemeManager::THEME_SLUG . '_font_weight_regular';
+	public const FONT_WEIGHT_MEDIUM_OPTION  = ThemeManager::THEME_SLUG . '_font_weight_medium';
+	public const FONT_WEIGHT_BOLD_OPTION    = ThemeManager::THEME_SLUG . '_font_weight_bold';
+	public const BORDER_RADIUS_OPTION       = ThemeManager::THEME_SLUG . '_border_radius';
 
 	public const THEME_MODS = array(
 		self::XS_OPTION                  => array(
@@ -383,7 +383,7 @@ class WordPress_Customization_Manager extends Base_Singleton
 		$handle    = 'theme-customize-preview'; // Give the script a unique ID
 		$src       = get_template_directory_uri() . '/assets/dist/js/customize-preview.js'; // Define the path to the JS file
 		$deps      = array('jquery', 'customize-preview'); // Define dependencies
-		$ver       = Theme_Manager::THEME_VERSION; // Define a version (optional)
+		$ver       = ThemeManager::THEME_VERSION; // Define a version (optional)
 		$in_footer = true; // Specify whether to put in footer (leave this true)
 
 		wp_enqueue_script(
@@ -400,7 +400,7 @@ class WordPress_Customization_Manager extends Base_Singleton
 	 */
 
 	/**
-	 * Initialize `WordPress_Customization_Manager` class
+	 * Initialize `WordPressCustomizationManager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */

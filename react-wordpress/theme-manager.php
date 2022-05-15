@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category Theme_Manager
+ * @category ThemeManager
  */
 
 namespace React_WordPress;
@@ -22,9 +22,9 @@ require 'base/base-static.php';
  *
  * @since React WordPress 0.0.1
  * @package Class
- * @category Theme_Manager
+ * @category ThemeManager
  */
-class Theme_Manager extends Base_Singleton
+class ThemeManager extends BaseSingleton
 {
 	/**
 	 * Public
@@ -60,7 +60,7 @@ class Theme_Manager extends Base_Singleton
 	/**
 	 * The default text domain that is used for translations in the `React_WordPress` namespace.
 	 *
-	 * @var Theme_Manager::THEME_SLUG
+	 * @var ThemeManager::THEME_SLUG
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -195,7 +195,7 @@ class Theme_Manager extends Base_Singleton
 	 */
 
 	/**
-	 * Initialize `Theme_Manager` class
+	 * Initialize `ThemeManager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */
@@ -237,24 +237,24 @@ class Theme_Manager extends Base_Singleton
 		include 'wordpress/wordpress-admin-theme-manager.php';
 		include 'wordpress/wordpress-customization-manager.php';
 		include 'wordpress/wordpress-scripts-manager.php';
-		$this->wordpress_admin_manager         = WordPress_Admin_Manager::get_instance();
-		$this->wordpress_admin_theme_manager   = WordPress_Admin_Theme_Manager::get_instance();
-		$this->wordpress_customization_manager = WordPress_Customization_Manager::get_instance();
-		$this->wordpress_scripts_manager       = WordPress_Scripts_Manager::get_instance();
+		$this->wordpress_admin_manager         = WordPressAdminManager::get_instance();
+		$this->wordpress_admin_theme_manager   = WordPressAdminThemeManager::get_instance();
+		$this->wordpress_customization_manager = WordPressCustomizationManager::get_instance();
+		$this->wordpress_scripts_manager       = WordPressScriptsManager::get_instance();
 
 		/**
 		 * Plugin Activation Manager
 		 */
 		include 'plugins/plugin-activation-manager.php';
-		$this->plugin_activation_manager = Plugin_Activation_Manager::get_instance();
+		$this->plugin_activation_manager = PluginActivationManager::get_instance();
 
 		/**
 		 * Plugins
 		 */
 		include 'plugins/adminimize-plugin-manager.php';
 		include 'plugins/user-role-editor-plugin-manager.php';
-		$this->adminimize_plugin_manager       = Adminimize_Plugin_Manager::get_instance();
-		$this->user_role_editor_plugin_manager = User_Role_Editor_Plugin_Manager::get_instance();
+		$this->adminimize_plugin_manager       = AdminimizePluginManager::get_instance();
+		$this->user_role_editor_plugin_manager = UserRoleEditorPluginManager::get_instance();
 	}
 
 	/**
@@ -278,7 +278,7 @@ class Theme_Manager extends Base_Singleton
 		 * Utility
 		 */
 		include 'utility/array-utility.php';
-		Array_Utility::init();
+		ArrayUtility::init();
 	}
 
 	/**
@@ -385,14 +385,14 @@ class Theme_Manager extends Base_Singleton
 		function __(...$args)
 		{
 			// @codingStandardsIgnoreLine
-			Theme_Manager::__(...$args);
+			ThemeManager::__(...$args);
 		}
 
 		// @codingStandardsIgnoreLine
 		function esc_html__(...$args)
 		{
 			// @codingStandardsIgnoreLine
-			Theme_Manager::esc_html__(...$args);
+			ThemeManager::esc_html__(...$args);
 		}
 	}
 }

@@ -3,7 +3,7 @@
  * This file is the entry point for the `React_WordPress` namespace.
  *
  * @package React_WordPress
- * @category Theme_Manager
+ * @category ThemeManager
  * @since React WordPress 0.0.1
  */
 
@@ -14,4 +14,4 @@ require 'theme-manager.php';
 /**
  * Initialize theme.
  */
-Theme_Manager::autoload();
+ThemeManager::autoload();

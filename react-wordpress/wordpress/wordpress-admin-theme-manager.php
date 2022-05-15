@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category WordPress_Admin_Theme_Manager
+ * @category WordPressAdminThemeManager
  */
 
 namespace React_WordPress;
@@ -14,9 +14,9 @@ namespace React_WordPress;
  *
  * @since React WordPress 0.0.1
  * @package Class
- * @category WordPress_Admin_Theme_Manager
+ * @category WordPressAdminThemeManager
  */
-class WordPress_Admin_Theme_Manager extends Base_Singleton
+class WordPressAdminThemeManager extends BaseSingleton
 {
 	/**
 	 * Public
@@ -25,20 +25,20 @@ class WordPress_Admin_Theme_Manager extends Base_Singleton
 	/**
 	 * The name for the `React WordPress` theme.
 	 *
-	 * @var Theme_Manager::THEME_NAME
+	 * @var ThemeManager::THEME_NAME
 	 *
 	 * @since React WordPress 0.0.1
 	 */
-		public const ADMIN_CSS_COLOR_NAME = Theme_Manager::THEME_NAME;
+		public const ADMIN_CSS_COLOR_NAME = ThemeManager::THEME_NAME;
 
 	/**
 	 * The unique key for the `React WordPress` theme.
 	 *
-	 * @var Theme_Manager::THEME_SLUG
+	 * @var ThemeManager::THEME_SLUG
 	 * q
 	 * @since React WordPress 0.0.1
 	 */
-	public const ADMIN_CSS_COLOR_KEY = Theme_Manager::THEME_SLUG;
+	public const ADMIN_CSS_COLOR_KEY = ThemeManager::THEME_SLUG;
 
 	/**
 	 * Fires after WordPress has finished loading but before any headers are sent.
@@ -56,7 +56,7 @@ class WordPress_Admin_Theme_Manager extends Base_Singleton
 	 *
 	 * @param string $color_scheme - Name of the admin Color Scheme.
 	 *
-	 * @return WordPress_Admin_Theme_Manager::ADMIN_CSS_COLOR_KEY
+	 * @return WordPressAdminThemeManager::ADMIN_CSS_COLOR_KEY
 	 *
 	 * @see https://wordpress.stackexchange.com/questions/126697/set-default-admin-colour-for-all-users
 	 * @since React WordPress 0.0.1
@@ -73,7 +73,7 @@ class WordPress_Admin_Theme_Manager extends Base_Singleton
 	 */
 
 	/**
-	 * Initialize `WordPress_Admin_Theme_Manager` class
+	 * Initialize `WordPressAdminThemeManager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */

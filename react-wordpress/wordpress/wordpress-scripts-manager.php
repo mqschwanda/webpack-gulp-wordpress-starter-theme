@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category WordPress_Scripts_Manager
+ * @category WordPressScriptsManager
  */
 
 namespace React_WordPress;
@@ -14,9 +14,9 @@ namespace React_WordPress;
  *
  * @since React WordPress 0.0.1
  * @package Class
- * @category WordPress_Scripts_Manager
+ * @category WordPressScriptsManager
  */
-class WordPress_Scripts_Manager extends Base_Singleton
+class WordPressScriptsManager extends BaseSingleton
 {
 	/**
 	 * Public
@@ -80,7 +80,7 @@ class WordPress_Scripts_Manager extends Base_Singleton
 		$handle    = 'main';
 		$src       = self::get_javascripts_directory_uri() . '/main.js';
 		$deps      = array();
-		$ver       = Theme_Manager::THEME_VERSION;
+		$ver       = ThemeManager::THEME_VERSION;
 		$in_footer = true;
 
 		wp_enqueue_script(
@@ -103,7 +103,7 @@ class WordPress_Scripts_Manager extends Base_Singleton
 		$handle = 'main';
 		$src    = self::get_styles_directory_uri() . '/main.css';
 		$deps   = array();
-		$ver    = Theme_Manager::THEME_VERSION;
+		$ver    = ThemeManager::THEME_VERSION;
 		$media  = 'all';
 
 		wp_enqueue_style(
@@ -120,7 +120,7 @@ class WordPress_Scripts_Manager extends Base_Singleton
 	 */
 
 	/**
-	 * Initialize `WordPress_Scripts_Manager` class
+	 * Initialize `WordPressScriptsManager` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */

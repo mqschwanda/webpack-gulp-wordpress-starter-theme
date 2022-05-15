@@ -4,7 +4,7 @@
  *
  * @since React WordPress 0.0.1
  * @package React_WordPress
- * @category Base_Class
+ * @category BaseClass
  */
 
 namespace React_WordPress;
@@ -14,16 +14,16 @@ namespace React_WordPress;
  *
  * @since React WordPress 0.0.1
  * @package Class
- * @category Base_Class
+ * @category BaseClass
  */
-class Base_Class
+class BaseClass
 {
 	/**
 	 * Protected
 	 */
 
 	/**
-	 * Initialize `Base_Class` class
+	 * Initialize `BaseClass` class
 	 *
 	 * @since React WordPress 0.0.1
 	 */
