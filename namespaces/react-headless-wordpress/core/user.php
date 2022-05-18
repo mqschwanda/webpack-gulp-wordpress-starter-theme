@@ -2,7 +2,7 @@
 /**
  * This file is responsible for handling WordPress User.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category User
  */
@@ -12,7 +12,7 @@ namespace ReactHeadlessWordPress;
 /**
  * Manager for the WordPress: `User`.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category User
  */
@@ -26,7 +26,7 @@ class User extends BaseStatic
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	// @codingStandardsIgnoreLine
 	public static function init()

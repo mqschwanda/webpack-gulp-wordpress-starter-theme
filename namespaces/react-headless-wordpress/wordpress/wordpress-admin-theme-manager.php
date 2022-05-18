@@ -2,7 +2,7 @@
 /**
  * This file is responsible for configuring WordPress Admin theme.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category WordPressAdminThemeManager
  */
@@ -12,7 +12,7 @@ namespace ReactHeadlessWordPress;
 /**
  * Admin Theme Color Manager class for the `ReactHeadlessWordPress` namespace.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category WordPressAdminThemeManager
  */
@@ -23,20 +23,20 @@ class WordPressAdminThemeManager extends BaseSingleton
 	 */
 
 	/**
-	 * The name for the `React WordPress` theme.
+	 * The name for the `React Headless WordPress` theme.
 	 *
 	 * @var ThemeManager::THEME_NAME
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 		public const ADMIN_CSS_COLOR_NAME = ThemeManager::THEME_NAME;
 
 	/**
-	 * The unique key for the `React WordPress` theme.
+	 * The unique key for the `React Headless WordPress` theme.
 	 *
 	 * @var ThemeManager::THEME_SLUG
 	 * q
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public const ADMIN_CSS_COLOR_KEY = ThemeManager::THEME_SLUG;
 
@@ -44,7 +44,7 @@ class WordPressAdminThemeManager extends BaseSingleton
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function init()
 	{
@@ -53,14 +53,14 @@ class WordPressAdminThemeManager extends BaseSingleton
 
 	// phpcs:disable PSR1.Methods.CamelCapsMethodName
 	/**
-	 * Force `React WordPress` admin theme.
+	 * Force `React Headless WordPress` admin theme.
 	 *
 	 * @param string $color_scheme - Name of the admin Color Scheme.
 	 *
 	 * @return WordPressAdminThemeManager::ADMIN_CSS_COLOR_KEY
 	 *
 	 * @see https://wordpress.stackexchange.com/questions/126697/set-default-admin-colour-for-all-users
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function get_user_option_admin_color($color_scheme)
 	{ // phpcs:enable
@@ -76,7 +76,7 @@ class WordPressAdminThemeManager extends BaseSingleton
 	/**
 	 * Initialize `WordPressAdminThemeManager` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct()
 	{
@@ -97,7 +97,7 @@ class WordPressAdminThemeManager extends BaseSingleton
 	 * Registers the admin color theme css file.
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/wp_admin_css_color/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private function configureWpAdminCssColor()
 	{

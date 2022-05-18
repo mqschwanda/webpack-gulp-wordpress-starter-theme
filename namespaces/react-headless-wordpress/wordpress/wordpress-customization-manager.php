@@ -2,7 +2,7 @@
 /**
  * This file is responsible for configuring WordPress theme customization.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category WordPressCustomizationManager
  */
@@ -13,7 +13,7 @@ namespace ReactHeadlessWordPress;
  * This class manages the configuration of the theme's customization screen.
  *
  * @see http://codex.wordpress.org/Theme_Customization_API
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category WordPressCustomizationManager
  */
@@ -248,7 +248,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function init () {
 		self::configureThemeMods();
@@ -265,7 +265,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	 * @param \WP_Customize_Manager $wp_customize - WP_Customize_Manager instance.
 	 *
 	 * @see http://ottopress.com/2012/how-to-leverage-the-theme-customizer-in-your-own-themes/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function customize_register ($wp_customize)
 	{ // phpcs:enable
@@ -350,7 +350,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	/**
 	 * This will output the custom WordPress settings to the live theme's WP head.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function head()
 	{
@@ -385,7 +385,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	 * are using 'transport'=>'postMessage' instead of the default 'transport'
 	 * => 'refresh'
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function customize_preview_init()
 	{ // phpcs:enable
@@ -411,7 +411,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	/**
 	 * Initialize `WordPressCustomizationManager` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct() {
 		parent::__construct();
@@ -436,7 +436,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	/**
 	 * Configure any theme mods that are missing.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private function configureThemeMods ()
 	{
@@ -465,7 +465,7 @@ class WordPressCustomizationManager extends BaseSingleton
 	 *
 	 * @return string Returns a single line of CSS with selectors and a property.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private function generateCSS(
 		$selector,

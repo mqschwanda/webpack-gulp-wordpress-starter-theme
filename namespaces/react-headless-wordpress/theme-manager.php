@@ -2,7 +2,7 @@
 /**
  * This file is where the `ReactHeadlessWordPress` namespace is configured.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category ThemeManager
  */
@@ -20,7 +20,7 @@ require 'base/base-static.php';
 /**
  * This class manages the configuration of the `ReactHeadlessWordPress` namespace.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category ThemeManager
  */
@@ -31,29 +31,29 @@ class ThemeManager extends BaseSingleton
 	 */
 
 	/**
-	 * The `React WordPress` theme name in human readable format.
+	 * The `React Headless WordPress` theme name in human readable format.
 	 *
-	 * @var 'React WordPress'
+	 * @var 'React Headless WordPress'
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
-		public const THEME_NAME = 'React WordPress';
+		public const THEME_NAME = 'React Headless WordPress';
 
 	/**
-	 * The `React WordPress` theme slug that is used throughout the codebase as a unique theme id.
+	 * The `React Headless WordPress` theme slug that is used throughout the codebase as a unique theme id.
 	 *
 	 * @var 'react_wordpress'
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public const THEME_SLUG = 'react_wordpress';
 
 	/**
-	 * The `React WordPress` theme version that is used throughout the codebase.
+	 * The `React Headless WordPress` theme version that is used throughout the codebase.
 	 *
 	 * @var '0.0.1'
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public const THEME_VERSION = '0.0.1';
 
@@ -62,7 +62,7 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @var ThemeManager::THEME_SLUG
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public const TEXT_DOMAIN = self::THEME_SLUG;
 
@@ -71,14 +71,14 @@ class ThemeManager extends BaseSingleton
 	 *
 	 * @var 'react_wordpress_root'
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public const REACT_ROOT = self::THEME_SLUG . '_root';
 
 	/**
 	 * Handle autoload of the `ReactHeadlessWordPress` namespace by initializing the singleton instance.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function autoload()
 	{
@@ -88,7 +88,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Render the website content as html.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function render()
 	{
@@ -108,7 +108,7 @@ class ThemeManager extends BaseSingleton
 	 * @return string — Translated text.
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/__/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function __($text, $domain = self::TEXT_DOMAIN)
 	{
@@ -127,7 +127,7 @@ class ThemeManager extends BaseSingleton
 	 * @return string — Translated text.
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/esc_html__/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function esc_html__($text, $domain = self::TEXT_DOMAIN)
 	{ // phpcs:enable
@@ -139,7 +139,7 @@ class ThemeManager extends BaseSingleton
 	 * Fires after the theme is loaded.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/after_setup_theme/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function after_setup_theme()
 	{ // phpcs:enable
@@ -151,7 +151,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Filters list of allowed mime types and file extensions.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/hooks/upload_mimes/
 	 */
 	public static function upload_mimes()
@@ -162,7 +162,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/hooks/init/
 	 */
 	public static function init()
@@ -177,7 +177,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Initialize `ThemeManager` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct()
 	{
@@ -202,7 +202,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Initialize all singleton classes used by `ReactHeadlessWordPress` namespace.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private function initializeSingletons()
 	{
@@ -238,7 +238,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Initialize all static classes used by `ReactHeadlessWordPress` namespace.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private function initializeStatics()
 	{
@@ -262,7 +262,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Add SVG to allowed file uploads.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function uploadMimesSvg()
 	{
@@ -274,7 +274,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Registers theme support for all needed WordPress features.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/add_theme_support/
 	 */
 	private static function addThemeSupport()
@@ -290,7 +290,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Load the theme translation strings.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/load_theme_textdomain/
 	 */
 	private static function loadThemeTextdomain()
@@ -304,7 +304,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Render react root.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function renderReactRoot()
 	{
@@ -316,7 +316,7 @@ class ThemeManager extends BaseSingleton
 	/**
 	 * Define functions in the `ReactHeadlessWordPress` namespace.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function defineReactWordpressFunctions()
 	{

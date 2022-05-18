@@ -2,7 +2,7 @@
 /**
  * This file is where the theme functions are configured.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  */
 

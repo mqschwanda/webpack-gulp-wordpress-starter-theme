@@ -2,7 +2,7 @@
 /**
  * This file is rendered as html and delivered to the client.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  */
 

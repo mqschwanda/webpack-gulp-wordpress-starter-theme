@@ -2,7 +2,7 @@
 /**
  * This file is responsible for handling WordPress Capability.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category Capability
  */
@@ -14,7 +14,7 @@ namespace ReactHeadlessWordPress;
  *
  * User Role Editor allows you to change user roles and capabilities easy.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category Capability
  */
@@ -303,7 +303,7 @@ class Capability extends BaseStatic
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	// @codingStandardsIgnoreLine
 	public static function init()

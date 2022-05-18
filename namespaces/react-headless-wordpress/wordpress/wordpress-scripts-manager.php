@@ -2,7 +2,7 @@
 /**
  * This file is responsible for configuring WordPress scripts.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category WordPressScriptsManager
  */
@@ -12,7 +12,7 @@ namespace ReactHeadlessWordPress;
 /**
  * Manage all scripts used in the `ReactHeadlessWordPress` namespace.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category WordPressScriptsManager
  */
@@ -29,7 +29,7 @@ class WordPressScriptsManager extends BaseSingleton
 	 * @param \WP_Scripts $scripts - WP_Scripts object.
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/wp_default_scripts/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function wp_default_scripts(&$scripts)
 	{ // phpcs:enable
@@ -40,7 +40,7 @@ class WordPressScriptsManager extends BaseSingleton
 	/**
 	 * Fires when scripts and styles are enqueued.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/
 	 */
 	public static function wp_enqueue_scripts()
@@ -54,7 +54,7 @@ class WordPressScriptsManager extends BaseSingleton
 	/**
 	 * Fire the wp_footer action.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/functions/wp_footer/
 	 */
 	public static function wp_footer()
@@ -67,7 +67,7 @@ class WordPressScriptsManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getAssetsDirectoryUri()
 	{
@@ -79,7 +79,7 @@ class WordPressScriptsManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getJavascriptsDirectoryUri()
 	{
@@ -91,7 +91,7 @@ class WordPressScriptsManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getStylesDirectoryUri()
 	{
@@ -102,7 +102,7 @@ class WordPressScriptsManager extends BaseSingleton
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function init()
 	{
@@ -116,7 +116,7 @@ class WordPressScriptsManager extends BaseSingleton
 	/**
 	 * Initialize `WordPressScriptsManager` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct()
 	{
@@ -142,7 +142,7 @@ class WordPressScriptsManager extends BaseSingleton
 	 *
 	 * @param \WP_Scripts $scripts - WP_Scripts object.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function removeJquery(&$scripts)
 	{
@@ -155,7 +155,7 @@ class WordPressScriptsManager extends BaseSingleton
 	/**
 	 * Force all scripts to load in footer.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function forceScriptsInFooter()
 	{
@@ -167,7 +167,7 @@ class WordPressScriptsManager extends BaseSingleton
 	/**
 	 * Prevent registered scripts from loading.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function deregisterScripts()
 	{
@@ -178,7 +178,7 @@ class WordPressScriptsManager extends BaseSingleton
 	/**
 	 * Remove WordPress Emoji support.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private function removeWpEmoji()
 	{
@@ -192,7 +192,7 @@ class WordPressScriptsManager extends BaseSingleton
 	 * Enqueue main javascript script.
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_script/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private function enqueueScriptsJavascript()
 	{
@@ -215,7 +215,7 @@ class WordPressScriptsManager extends BaseSingleton
 	 * Enqueue main CSS stylesheet script.
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/wp_enqueue_style/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private function enqueueScriptsStylesheet()
 	{

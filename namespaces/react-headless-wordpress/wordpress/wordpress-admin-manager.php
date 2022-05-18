@@ -2,7 +2,7 @@
 /**
  * This file is responsible for configuring WordPress admin functionality.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category WordPressAdminManager
  */
@@ -12,7 +12,7 @@ namespace ReactHeadlessWordPress;
 /**
  * Manage admin functionality in the `ReactHeadlessWordPress` namespace.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category WordPressAdminManager
  */
@@ -25,7 +25,7 @@ class WordPressAdminManager extends BaseSingleton
 	/**
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/hooks/init/
 	 */
 	public static function init()
@@ -37,7 +37,7 @@ class WordPressAdminManager extends BaseSingleton
 	/**
 	 * Filters the legacy contextual help list.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 * @see https://developer.wordpress.org/reference/hooks/contextual_help_list/
 	 */
 	public function contextual_help_list()
@@ -54,7 +54,7 @@ class WordPressAdminManager extends BaseSingleton
 	/**
 	 * Initialize `WordPressAdminManager` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct()
 	{

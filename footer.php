@@ -4,7 +4,7 @@
  *
  * Contains footer content and the closing of the `body` and `html` tags.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  */
 

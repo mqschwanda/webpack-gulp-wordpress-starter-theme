@@ -2,7 +2,7 @@
 /**
  * This file is responsible for handling WordPress Role.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category Role
  */
@@ -12,7 +12,7 @@ namespace ReactHeadlessWordPress;
 /**
  * Manager for the WordPress: `Role`.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category Role
  */
@@ -59,7 +59,7 @@ class Role extends BaseStatic
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function init()
 	{
@@ -76,7 +76,7 @@ class Role extends BaseStatic
 	 * being activated. To do things when your theme is deactivated, use switch_theme.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/after_switch_theme/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function after_switch_theme ()
 	{ // phpcs:enable
@@ -90,7 +90,7 @@ class Role extends BaseStatic
 	/**
 	 * Configure default roles and capabilities.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function configureRolesAndCapabilities()
 	{

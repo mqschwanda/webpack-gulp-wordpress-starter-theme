@@ -2,7 +2,7 @@
 /**
  * This file is responsible for handling all singleton class configuration.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category BaseSingleton
  */
@@ -12,7 +12,7 @@ namespace ReactHeadlessWordPress;
 /**
  * Base class for all singleton classes used in the `ReactHeadlessWordPress` namespace.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category BaseSingleton
  */
@@ -40,7 +40,7 @@ class BaseSingleton extends BaseClass
 	/**
 	 * Initialize `BaseSingleton` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct()
 	{
@@ -52,7 +52,7 @@ class BaseSingleton extends BaseClass
 	 *
 	 * @var $instances - Instances hash.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected static $instances;
 
@@ -63,7 +63,7 @@ class BaseSingleton extends BaseClass
 	/**
 	 * Clone `BaseSingleton` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	final private function __clone()
 	{

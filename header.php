@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till the `body` tag.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  */
 

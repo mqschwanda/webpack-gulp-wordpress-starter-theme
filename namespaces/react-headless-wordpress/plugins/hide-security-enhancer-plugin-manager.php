@@ -2,7 +2,7 @@
 /**
  * This file is responsible for configuring WordPress plugin: `WP Hide & Security Enhancer`.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category HideSecurityEnhancerPluginManager
  */
@@ -17,7 +17,7 @@ namespace ReactHeadlessWordPress;
  *
  * @see https://plugins.svn.wordpress.org/wp-hide-security-enhancer/
  * @see https://wordpress.org/plugins/wp-hide-security-enhancer/
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category HideSecurityEnhancerPluginManager
  */
@@ -390,7 +390,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function init()
 	{
@@ -403,7 +403,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	 * @param mixed $settings - settings object.
 	 * @param bool  $should_clear_cache - should trigger cache update.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function setSettings($settings, $should_clear_cache = false)
 	{
@@ -427,7 +427,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	 *
 	 * @return mixed settings object.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getSettings()
 	{
@@ -445,7 +445,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	 *
 	 * @return mixed setting value.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getModuleItemSetting($item_id)
 	{
@@ -464,7 +464,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	 * @param bool  $should_clear_cache - should trigger cache update.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function setModuleItemSetting($item_key, $item_value, $should_clear_cache = false)
 	{
@@ -481,7 +481,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	 * @param array $items - array of key value pairs for each item.
 	 * @param bool  $should_clear_cache - should trigger cache update.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function setModuleItemSettings($items, $should_clear_cache = false)
 	{
@@ -503,7 +503,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	 * being activated. To do things when your theme is deactivated, use switch_theme.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/after_switch_theme/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function after_switch_theme ()
 	{ // phpcs:enable
@@ -517,7 +517,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	/**
 	 * Initialize `HideSecurityEnhancerPluginManager` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct()
 	{
@@ -537,7 +537,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	/**
 	 * Set the default settings
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function configureDefaultModuleItemSettings()
 	{
@@ -551,7 +551,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	 *
 	 * @return array $default_settings.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function getDefaultModuleItemSettings()
 	{
@@ -565,7 +565,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	 *
 	 * @return array $remove_admin_bar_settings
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function getRemoveAdminBarSettings()
 	{
@@ -583,7 +583,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	/**
 	 * Clear the cache content.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function cacheClear()
 	{
@@ -595,7 +595,7 @@ class HideSecurityEnhancerPluginManager extends BaseSingleton
 	/**
 	 * Register Menu Page so it is only shown to admins.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function registerMenuPage()
 	{

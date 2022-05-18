@@ -4,7 +4,7 @@
  *
  * @package ReactHeadlessWordPress
  * @category ThemeManager
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  */
 
 namespace ReactHeadlessWordPress;

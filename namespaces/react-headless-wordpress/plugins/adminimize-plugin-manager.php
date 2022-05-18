@@ -2,7 +2,7 @@
 /**
  * This file is responsible for configuring WordPress plugin: `Adminimize`.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category AdminimizePluginManager
  */
@@ -16,7 +16,7 @@ namespace ReactHeadlessWordPress;
  *
  * @see https://wordpress.org/plugins/adminimize/
  * @see https://github.com/bueltge/adminimize
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category AdminimizePluginManager
  */
@@ -295,7 +295,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function init()
 	{
@@ -309,7 +309,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledDashboardOptionItems($user_role)
 	{
@@ -331,7 +331,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledAdminBarItems($user_role)
 	{
@@ -362,7 +362,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledGlobalOptionItems($user_role)
 	{
@@ -384,7 +384,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledMenuItems($user_role)
 	{
@@ -415,7 +415,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledSubmenuItems($user_role)
 	{
@@ -446,7 +446,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledMetaboxesPageItems($user_role)
 	{
@@ -477,7 +477,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledMetaboxesPostItems($user_role)
 	{
@@ -508,7 +508,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledLinkOptionItems($user_role)
 	{
@@ -530,7 +530,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledWidgetOptionItems($user_role)
 	{
@@ -552,7 +552,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledNavMenuOptionItems($user_role)
 	{
@@ -574,7 +574,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledDashboardOptionItemsKey($user_role)
 	{
@@ -588,7 +588,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledAdminBarFrontendItemsKey($user_role)
 	{
@@ -602,7 +602,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledAdminBarBackendItemsKey($user_role)
 	{
@@ -616,7 +616,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledGlobalOptionItemsKey($user_role)
 	{
@@ -630,7 +630,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledMenuItemsKey($user_role)
 	{
@@ -644,7 +644,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledSubmenuItemsKey($user_role)
 	{
@@ -658,7 +658,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledMetaboxesPageItemsKey($user_role)
 	{
@@ -672,7 +672,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledMetaboxesPostItemsKey($user_role)
 	{
@@ -686,7 +686,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledLinkOptionItemsKey($user_role)
 	{
@@ -700,7 +700,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledWidgetOptionItemsKey($user_role)
 	{
@@ -714,7 +714,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getDisabledNavMenuOptionItemsKey($user_role)
 	{
@@ -726,7 +726,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getUserRoles()
 	{
@@ -738,7 +738,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return mixed
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getOptions()
 	{
@@ -752,7 +752,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return mixed
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function getOption($key)
 	{
@@ -766,7 +766,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return bool
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function setOptions($options)
 	{
@@ -799,7 +799,7 @@ class AdminimizePluginManager extends BaseSingleton
 	/**
 	 * Turn on output buffering before the Adminimize forms are generated
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function mw_adminimize_before_settings_form()
 	{ // phpcs:enable
@@ -810,7 +810,7 @@ class AdminimizePluginManager extends BaseSingleton
 	/**
 	 * Send the output buffer and turn off output buffering after Adminimize forms are generated
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function mw_adminimize_after_settings_form()
 	{ // phpcs:enable
@@ -824,7 +824,7 @@ class AdminimizePluginManager extends BaseSingleton
 	/**
 	 * Initialize `AdminimizePluginManager` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct()
 	{
@@ -847,7 +847,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function getDisabledOptionsConfig($user_role)
 	{
@@ -884,7 +884,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return string
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private static function pregReplaceDisabledInputs($html)
 	{
@@ -918,7 +918,7 @@ class AdminimizePluginManager extends BaseSingleton
 	 *
 	 * @return bool
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	private function setDefaultOptions()
 	{

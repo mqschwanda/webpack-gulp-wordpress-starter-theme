@@ -2,7 +2,7 @@
 /**
  * This file is responsible for configuring WordPress plugin: `User Role Editor`.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category UserRoleEditorPluginManager
  */
@@ -16,7 +16,7 @@ namespace ReactHeadlessWordPress;
  *
  * @see https://www.role-editor.com/
  * @see https://wordpress.org/plugins/user-role-editor/
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category UserRoleEditorPluginManager
  */
@@ -30,7 +30,7 @@ class UserRoleEditorPluginManager extends BaseSingleton
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function init()
 	{
@@ -44,7 +44,7 @@ class UserRoleEditorPluginManager extends BaseSingleton
 	/**
 	 * Initialize `UserRoleEditorPluginManager` class
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct()
 	{

@@ -2,7 +2,7 @@
 /**
  * This file is responsible for configuring composer package: `TGM-Plugin-Activation`.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category TGM-Plugin-Activation
  */
@@ -18,7 +18,7 @@ namespace ReactHeadlessWordPress;
  *
  * @see http://tgmpluginactivation.com/configuration/
  * @see https://github.com/TGMPA/TGM-Plugin-Activation
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category TGM-Plugin-Activation
  */
@@ -34,7 +34,7 @@ class PluginActivationManager extends BaseSingleton
 	 *
 	 * @var array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public const PLUGINS = array(
 
@@ -124,7 +124,7 @@ class PluginActivationManager extends BaseSingleton
 	 *
 	 * @var array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public const CONFIG = array(
 		'id'           => 'tgmpa',                                                 // Unique ID for hashing notices for multiple instances of TGMPA.
@@ -228,7 +228,7 @@ class PluginActivationManager extends BaseSingleton
 	 *
 	 * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function tgmpa_register()
 	{ // phpcs:enable
@@ -245,7 +245,7 @@ class PluginActivationManager extends BaseSingleton
 	/**
 	 * Initialize `PluginActivationManager` class.
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	protected function __construct()
 	{

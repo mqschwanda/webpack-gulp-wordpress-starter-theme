@@ -2,7 +2,7 @@
 /**
  * This file is responsible for configuring array utilities.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package ReactHeadlessWordPress
  * @category ArrayUtility
  */
@@ -12,7 +12,7 @@ namespace ReactHeadlessWordPress;
 /**
  * Array Utility Class.
  *
- * @since React WordPress 0.0.1
+ * @since React Headless WordPress 0.0.1
  * @package Class
  * @category ArrayUtility
  */
@@ -26,7 +26,7 @@ class ArrayUtility extends BaseStatic
 	 * Fires after WordPress has finished loading but before any headers are sent.
 	 *
 	 * @see https://developer.wordpress.org/reference/hooks/init/
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	// @codingStandardsIgnoreLine
 	public static function init()
@@ -43,7 +43,7 @@ class ArrayUtility extends BaseStatic
 	 *
 	 * @return array
 	 *
-	 * @since React WordPress 0.0.1
+	 * @since React Headless WordPress 0.0.1
 	 */
 	public static function arrayFilterUniqueMerge(...$arrays)
 	{
