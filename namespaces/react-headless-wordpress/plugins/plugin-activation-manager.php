@@ -104,6 +104,12 @@ class PluginActivationManager extends BaseSingleton
 			'slug'             => 'wp-graphql',
 			'force_activation' => true,
 		),
+		array(
+			'name'             => 'WP Hide & Security Enhancer',
+			'required'         => true,
+			'slug'             => 'wp-hide-security-enhancer',
+			'force_activation' => true,
+		),
 
 	);
 

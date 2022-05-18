@@ -228,9 +228,11 @@ class ThemeManager extends BaseSingleton
 		 * Plugins
 		 */
 		include 'plugins/adminimize-plugin-manager.php';
+		include 'plugins/hide-security-enhancer-plugin-manager.php';
 		include 'plugins/user-role-editor-plugin-manager.php';
-		$this->adminimize_plugin_manager       = AdminimizePluginManager::getInstance();
-		$this->user_role_editor_plugin_manager = UserRoleEditorPluginManager::getInstance();
+		$this->adminimize_plugin_manager             = AdminimizePluginManager::getInstance();
+		$this->hide_security_enhancer_plugin_manager = HideSecurityEnhancerPluginManager::getInstance();
+		$this->user_role_editor_plugin_manager       = UserRoleEditorPluginManager::getInstance();
 	}
 
 	/**
