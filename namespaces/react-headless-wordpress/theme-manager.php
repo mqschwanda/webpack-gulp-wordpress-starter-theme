@@ -67,15 +67,6 @@ class ThemeManager extends BaseSingleton
 	public const TEXT_DOMAIN = self::THEME_SLUG;
 
 	/**
-	 * The root div id used for react in the `ReactHeadlessWordPress` namespace.
-	 *
-	 * @var 'react_wordpress_root'
-	 *
-	 * @since React Headless WordPress 0.0.1
-	 */
-	public const REACT_ROOT = self::THEME_SLUG . '_root';
-
-	/**
 	 * Handle autoload of the `ReactHeadlessWordPress` namespace by initializing the singleton instance.
 	 *
 	 * @since React Headless WordPress 0.0.1
@@ -93,7 +84,7 @@ class ThemeManager extends BaseSingleton
 	public static function render()
 	{
 		get_header();
-		self::renderReactRoot();
+		ReactManager::render();
 		get_footer();
 	}
 
@@ -257,6 +248,12 @@ class ThemeManager extends BaseSingleton
 		 */
 		include 'utility/array-utility.php';
 		ArrayUtility::init();
+
+		/**
+		 * General
+		 */
+		include 'react-manager.php';
+		ReactManager::init();
 	}
 
 	/**
@@ -299,18 +296,6 @@ class ThemeManager extends BaseSingleton
 		$path   = get_template_directory() . '/languages';
 
 		load_theme_textdomain($domain, $path);
-	}
-
-	/**
-	 * Render react root.
-	 *
-	 * @since React Headless WordPress 0.0.1
-	 */
-	public static function renderReactRoot()
-	{
-	?>
-		<div id="<?php echo esc_html(self::REACT_ROOT); ?>"></div>
-	<?php
 	}
 
 	/**
